@@ -7,6 +7,9 @@ TagManager:
   - PBlocks
   - BlockUI
   - Lever
+  - PCircles
+  - IBlocks
+  - Lock
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class SwitchManager : MonoBehaviour
     public GameObject[] Switch;
     private int numberOfSwitches = 3; 
     public List<bool> switchOrder = new List<bool>();
+    public string tags = "";
 
     public int currentIndex = 0;
     public bool Solved = false;
@@ -55,7 +56,7 @@ public class SwitchManager : MonoBehaviour
 
         foreach (Transform child in allChildren)
         {
-            if (child.CompareTag("Lever"))
+            if (child.CompareTag(tags))
             {
                 switchList.Add(child.gameObject);
             }

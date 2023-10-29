@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Switch: []
   switchOrder: 
+  tags: Lever
   currentIndex: 0
   Solved: 0
 --- !u!1 &6713456572033362304

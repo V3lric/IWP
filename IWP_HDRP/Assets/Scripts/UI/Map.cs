@@ -19,12 +19,12 @@ public class Map : MonoBehaviour
 
     public void HubScene()
     {
-        if (currentScene != 0)
+        if (currentScene != 1)
             SceneManager.LoadScene("HubScene");
     }
     public void Scene1()
     {
-        if (currentScene != 1)
+        if (currentScene != 2)
             SceneManager.LoadScene("Scene1");
     }
 }
