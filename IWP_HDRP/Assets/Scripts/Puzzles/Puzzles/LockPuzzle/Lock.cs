@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
     public string Player = "Player";
-    public GameObject text,wheel,camera;
+    public GameObject text, wheel, camera;
     public bool hit = false;
     public float rotationSpeed = 90.0f; // Adjust the speed as needed
     private bool isRotating = false;
