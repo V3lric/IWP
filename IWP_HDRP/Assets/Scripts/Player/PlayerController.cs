@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private PlayerData pData;
     [Header("Player Stats")]
-    public int walkSpeed = 100;
-    public int talentPt,coins = 0;
+    [SerializeField] int walkSpeed;
+    [SerializeField] int talentPt,coins;
 
     [Header("Movement Stats")]
     public float maxForwardSpeed = 5f;
@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        GameObject data = GameObject.FindGameObjectWithTag("Data");
+        pData = data.GetComponent<PlayerData>();
+
+        walkSpeed = pData.GetWalkSpeed();
     }
 
     // Update is called once per frame

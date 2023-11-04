@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
     public GameObject setCam, dCam, saveCam;
+    private GameObject data;
+    private PlayerData pData;
     // Start is called before the first frame update
     void Start()
     {
-        
+        data = GameObject.FindGameObjectWithTag("Data");
+        pData = data.GetComponent<PlayerData>();
     }
 
     // Update is called once per frame
@@ -41,5 +45,23 @@ public class Mainmenu : MonoBehaviour
         dCam.SetActive(false);
         setCam.SetActive(false);
         saveCam.SetActive(false);
+    }
+
+    public void SetEasy()
+    {
+        pData.SetDifficulty(0);
+        pData.SetDate();
+        SceneManager.LoadScene("HubScene");
+    }
+    public void SetMed()
+    {
+        pData.SetDifficulty(1);
+        SceneManager.LoadScene("HubScene");
+    }
+
+    public void SetHard()
+    {
+        pData.SetDifficulty(2);
+        SceneManager.LoadScene("HubScene");
     }
 }
