@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject map,portal;
+    public GameObject map;
     private bool bmap = false;
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,5 @@ public class UIManager : MonoBehaviour
                 bmap = false;
             }
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        map.SetActive(true);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        map.SetActive(false);
     }
 }

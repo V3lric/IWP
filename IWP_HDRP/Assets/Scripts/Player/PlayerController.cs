@@ -38,9 +38,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        GameObject data = GameObject.FindGameObjectWithTag("Data");
-        pData = data.GetComponent<PlayerData>();
-
+        pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
         walkSpeed = pData.GetWalkSpeed();
     }
 

@@ -16,6 +16,7 @@ public class PlayerData : MonoBehaviour
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Data");
         if (objs.Length > 1)
         {
+            Debug.Log("More than 1 instance detected");
             Destroy(this.gameObject);
         }
 
@@ -41,6 +42,11 @@ public class PlayerData : MonoBehaviour
     public void SetDate()
     {
         savedDate = DateTime.Now.ToLongDateString().ToString();
+    }
+
+    public string GetDate()
+    {
+        return savedDate;
     }
 
     public int GetWalkSpeed()

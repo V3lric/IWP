@@ -11,8 +11,7 @@ public class Mainmenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        data = GameObject.FindGameObjectWithTag("Data");
-        pData = data.GetComponent<PlayerData>();
+        pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
     }
 
     // Update is called once per frame
@@ -56,12 +55,14 @@ public class Mainmenu : MonoBehaviour
     public void SetMed()
     {
         pData.SetDifficulty(1);
+        pData.SetDate();
         SceneManager.LoadScene("HubScene");
     }
 
     public void SetHard()
     {
         pData.SetDifficulty(2);
+        pData.SetDate();
         SceneManager.LoadScene("HubScene");
     }
 }
