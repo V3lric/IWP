@@ -11,6 +11,8 @@ TagManager:
   - IBlocks
   - Lock
   - Data
+  - Game
+  - CP
   layers:
   - Default
   - TransparentFX
