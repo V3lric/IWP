@@ -3,46 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public UnityEvent Stages;
-    [SerializeField] private GameObject[] Switch;
-    [SerializeField] private int Checkpoints, UIBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
+
+    [Header("Objective UI")]
+    [SerializeField] private GameObject[] cpTrigger;
+    [SerializeField] private int checkPoints, uiBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
+    public TextMeshProUGUI header, text;
+    public string[] uiHeader, uiText;
 
     private void Start()
     {
-        Switch = GameObject.FindGameObjectsWithTag("CP");
-        Transform[] switchlist;
+        cpTrigger = GameObject.FindGameObjectsWithTag("CP");
+        Transform[] cpList;
 
-        switchlist = new Transform[Switch.Length];
+        cpList = new Transform[cpTrigger.Length];
 
-        for (int i = 0; i < Switch.Length; i++)//find and store all cp inside list to ref pos ltr
+        for (int i = 0; i < cpTrigger.Length; i++)//find and store all cp inside list to ref pos ltr
         {
-            switchlist[i] = Switch[i].transform;
+            cpList[i] = cpTrigger[i].transform;
         }
     }
+
     public void Stage1()
     {
 
     }
 
-    public void Stage2()
+public void Stage2()
     {
 
     }
 
     public void CPIncrease()
     {
-        Checkpoints++;
-        UIBubbleCP++;
+        checkPoints++;
+        uiBubbleCP++;
 
         Debug.Log(CheckPoint());
-        Debug.Log(Switch.Length);
+        text.text = uiText[checkPoints];
+        header.text = uiHeader[checkPoints];
     }
 
     public Vector3 CheckPoint()
     {
-        return Switch[Checkpoints].transform.position;
+        return cpTrigger[checkPoints].transform.position;
     }
 }
