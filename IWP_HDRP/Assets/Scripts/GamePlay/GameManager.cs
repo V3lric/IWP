@@ -8,7 +8,9 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public UnityEvent Stages;
-
+    [Header("Gameplay")]
+    public bool puzzle1 = false;
+    public bool puzzle2 = false;
     [Header("Objective UI")]
     [SerializeField] private GameObject[] cpTrigger;
     [SerializeField] private int checkPoints, uiBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
         {
             cpList[i] = cpTrigger[i].transform;
         }
+        text.text = uiText[checkPoints];
+        header.text = uiHeader[checkPoints];
     }
 
     public void Stage1()
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-public void Stage2()
+    public void Stage2()
     {
 
     }
@@ -51,5 +55,10 @@ public void Stage2()
     public Vector3 CheckPoint()
     {
         return cpTrigger[checkPoints].transform.position;
+    }
+    public void death()
+    {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Player.transform.position = cpTrigger[checkPoints].transform.position;
     }
 }

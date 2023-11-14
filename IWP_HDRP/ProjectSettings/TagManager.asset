@@ -13,6 +13,7 @@ TagManager:
   - Data
   - Game
   - CP
+  - Puzzles
   layers:
   - Default
   - TransparentFX
