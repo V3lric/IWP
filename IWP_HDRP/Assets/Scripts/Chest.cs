@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Switch : MonoBehaviour
+public class Chest : MonoBehaviour
 {
+    public UnityEvent Open;
     public string Player = "Player";
     public GameObject text;
-    public bool isSwitched,hit = false;
+    public bool hit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +20,9 @@ public class Switch : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && hit)
-        {
-            if (!isSwitched)
-                isSwitched = true;
-            else if (isSwitched)
-                isSwitched = false;
-        }
+            Open.Invoke();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(Player))

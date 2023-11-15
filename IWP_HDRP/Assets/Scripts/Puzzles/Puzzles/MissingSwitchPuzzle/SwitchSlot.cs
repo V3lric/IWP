@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour
+public class SwitchSlot : MonoBehaviour
 {
     public string Player = "Player";
-    public GameObject text;
-    public bool isSwitched,hit = false;
+    public GameObject text, switches;
+    public bool isSwitched, hit, done = false;
+    MissingSwitchManager manager;
+    GameManager game;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.FindGameObjectWithTag("SwitchPuzzle").GetComponent<MissingSwitchManager>();
+        game = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -19,10 +22,21 @@ public class Switch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
-            if (!isSwitched)
-                isSwitched = true;
-            else if (isSwitched)
-                isSwitched = false;
+            if (manager.pickedUp)
+            {
+                switches.SetActive(true);
+                manager.switches++;
+                manager.pickedUp = false;
+                done = true;
+                game.CPIncrease();
+            }
+            if (done)
+            {
+                if (!isSwitched)
+                    isSwitched = true;
+                else if (isSwitched)
+                    isSwitched = false;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

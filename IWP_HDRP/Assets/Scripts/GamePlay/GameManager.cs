@@ -7,10 +7,11 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public UnityEvent Stages;
     [Header("Gameplay")]
-    public bool puzzle1 = false;
-    public bool puzzle2 = false;
+    public UnityEvent Stages;
+    public bool puzzle1, puzzle2 = false;
+    PlayerData data;
+
     [Header("Objective UI")]
     [SerializeField] private GameObject[] cpTrigger;
     [SerializeField] private int checkPoints, uiBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
@@ -40,6 +41,14 @@ public class GameManager : MonoBehaviour
     public void Stage2()
     {
 
+    }
+
+    public void ChestOpen()
+    {
+        PlayerData data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
+        data.Stage1 = true;
+        //cutscene
+        SceneManager.LoadScene("HubScene");
     }
 
     public void CPIncrease()

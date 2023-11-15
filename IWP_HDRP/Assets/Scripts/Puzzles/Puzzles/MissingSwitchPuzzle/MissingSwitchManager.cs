@@ -1,13 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using System.Collections;
+using System.Linq;
 
-public class SwitchManager : MonoBehaviour
+public class MissingSwitchManager : MonoBehaviour
 {
-    public GameObject[] Switch;
-    private int numberOfSwitches = 3; 
-    public List<bool> switchOrder = new List<bool>();
+    public GameObject[] Switches;
+    private int numberOfSwitches = 3;
+    public List<bool> missingSwitchOrder = new List<bool>();
     public string tags = "";
     public GameObject lDoor, rDoor;
     public int currentIndex = 0;
@@ -15,6 +16,8 @@ public class SwitchManager : MonoBehaviour
     // Start is called before the first frame update
     GameManager manager;
     private float elapsedTime;
+    public int switches = 0;
+    public bool pickedUp = false;
 
     void Start()
     {
@@ -28,34 +31,37 @@ public class SwitchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if the switches are activated in the correct order
-        if (currentIndex < switchOrder.Count)
+        if (switches == 3)
         {
-            Switch switchScript = Switch[currentIndex].GetComponent<Switch>();
-            if (switchScript != null)
+            // Check if the switches are activated in the correct order
+            if (currentIndex < missingSwitchOrder.Count)
             {
-                if (switchOrder[currentIndex] == switchScript.isSwitched)
+                SwitchSlot switchScript = Switches[currentIndex].GetComponent<SwitchSlot>();
+                if (switchScript != null)
                 {
-                    currentIndex++;
-                }
-                else
-                {
-                    // Reset currentIndex to 0 when the wrong switch is flipped
-                    currentIndex = 0;
+                    if (missingSwitchOrder[currentIndex] == switchScript.isSwitched)
+                    {
+                        currentIndex++;
+                    }
+                    else
+                    {
+                        // Reset currentIndex to 0 when the wrong switch is flipped
+                        currentIndex = 0;
+                    }
                 }
             }
-        }
 
-        if (currentIndex == switchOrder.Count)
-        {
-            // Puzzle solved
-            Debug.Log("Puzzle Solved!");
-            Solved = true;
-            lDoor.SetActive(false);
-            rDoor.SetActive(false);
-            currentIndex++;
-            manager.CPIncrease();
-        }   
+            if (currentIndex == missingSwitchOrder.Count)
+            {
+                // Puzzle solved
+                Debug.Log("Puzzle Solved!");
+                Solved = true;
+                lDoor.SetActive(false);
+                rDoor.SetActive(false);
+                currentIndex++;
+                manager.CPIncrease();
+            }
+        }
     }
 
     void LocateSwitches(Transform parent)
@@ -72,22 +78,22 @@ public class SwitchManager : MonoBehaviour
         }
 
         // Assign the switches to the public Switch array
-        Switch = switchList.ToArray();
+        Switches = switchList.ToArray();
     }
 
     void GenerateSwitchOrder()
     {
-        switchOrder.Clear();
+        missingSwitchOrder.Clear();
         bool atLeastOneTrue = false;
 
         do
         {
-            switchOrder.Clear(); // Clear the list at the beginning of each iteration
+            missingSwitchOrder.Clear(); // Clear the list at the beginning of each iteration
 
             for (int i = 0; i < numberOfSwitches; i++)
             {
                 bool isSwitched = Random.Range(0, 2) == 0; // Randomly set switches to true or false
-                switchOrder.Add(isSwitched);
+                missingSwitchOrder.Add(isSwitched);
 
                 if (isSwitched)
                 {

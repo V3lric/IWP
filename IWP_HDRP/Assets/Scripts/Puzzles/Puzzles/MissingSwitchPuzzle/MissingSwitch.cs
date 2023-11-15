@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour
+public class MissingSwitch : MonoBehaviour
 {
     public string Player = "Player";
-    public GameObject text;
-    public bool isSwitched,hit = false;
-
+    public GameObject text, switches;
+    public bool isSwitched, hit = false;
+    MissingSwitchManager manager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.FindGameObjectWithTag("SwitchPuzzle").GetComponent<MissingSwitchManager>();
     }
 
     // Update is called once per frame
@@ -19,12 +19,18 @@ public class Switch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
-            if (!isSwitched)
-                isSwitched = true;
-            else if (isSwitched)
-                isSwitched = false;
+            if (!manager.pickedUp)
+            {
+                switches.SetActive(false);
+                manager.pickedUp = true;
+            }
+            else
+            {
+                //companion say can only pick up one at a time
+            }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(Player))

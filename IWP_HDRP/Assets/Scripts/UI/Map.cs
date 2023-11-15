@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Map : MonoBehaviour
 {
-    private int currentScene;
+    PlayerData data;
     // Start is called before the first frame update
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
+        data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
     }
 
     // Update is called once per frame
@@ -19,12 +19,24 @@ public class Map : MonoBehaviour
 
     public void HubScene()
     {
-        if (currentScene != 1)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("HubScene"))
             SceneManager.LoadScene("HubScene");
     }
     public void Scene1()
     {
-        if (currentScene != 2)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene1"))
             SceneManager.LoadScene("Scene1");
+    }
+
+    public void Scene2()
+    {
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene2") && !data.Stage1)
+            SceneManager.LoadScene("Scene2");
+    }
+
+    public void Scene3()
+    {
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("SceneBoss") && !data.Stage2)
+            SceneManager.LoadScene("SceneBoss");
     }
 }

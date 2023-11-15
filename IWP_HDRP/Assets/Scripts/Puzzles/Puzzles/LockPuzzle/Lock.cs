@@ -63,13 +63,19 @@ public class Lock : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        hit = true;
-        vCamera.SetActive(true);
+        if (other.gameObject.layer == LayerMask.NameToLayer(Player))
+        {
+            hit = true;
+            vCamera.SetActive(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        text.SetActive(false);
-        hit = false;
-        vCamera.SetActive(false);
+        if (other.gameObject.layer == LayerMask.NameToLayer(Player))
+        {
+            text.SetActive(false);
+            hit = false;
+            vCamera.SetActive(false);
+        }
     }
 }

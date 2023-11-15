@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] int talentPt, coins = 1;
     [SerializeField] string savedDate = "";
     [SerializeField] int difficulty = 0;
+    public bool Stage1, Stage2, StageBoss = false;
     // Start is called before the first frame update
     void Start()
     {
