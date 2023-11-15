@@ -87,6 +87,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushCircles.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Checkpoints.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Assets\Scripts\Puzzles\Puzzles\SwitchPuzzle\SwitchManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Graphy - Ultimate Stats Monitor\Scene - Customization\Color Picker\G_CUIColorPicker.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\Puzzles\Rotating Platform\Platform.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Assets\Scripts\Puzzles\PushBlocks.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\UpdateTextWithSliderValue.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\Puzzles\Rotating Platform\RotatePlatform.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Saves\Saves.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
