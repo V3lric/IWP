@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerData pData;
+    public bool disabled = false;
+
     [Header("Player Stats")]
     [SerializeField] int walkSpeed;
     [SerializeField] int talentPt,coins;
@@ -45,9 +47,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Gravity();
-        CheckGrounded();
+        if (!disabled)
+        {
+            {
+                Movement();
+                Gravity();
+                CheckGrounded();
+            }
+        }
     }
 
     public void Movement()//WASD
@@ -113,6 +120,7 @@ public class PlayerController : MonoBehaviour
         // Calculate move delta.
         characterController.Move(directSpeed * (speed * Time.deltaTime) + new Vector3(0.0f, moveDelta.y, 0.0f) * Time.deltaTime);
     }
+
     public void Gravity()//set gravity on player
     {
         //Check if player is grounded.

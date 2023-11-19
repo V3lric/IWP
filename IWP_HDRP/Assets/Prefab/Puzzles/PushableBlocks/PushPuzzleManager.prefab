@@ -545,12 +545,12 @@ PrefabInstance:
     - target: {fileID: 6868162033990738981, guid: d5b533b6b3234564394e4751d966cb82,
         type: 3}
       propertyPath: m_Drag
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6868162033990738981, guid: d5b533b6b3234564394e4751d966cb82,
         type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6868162033990738981, guid: d5b533b6b3234564394e4751d966cb82,
         type: 3}
@@ -561,6 +561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PushCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868162033990738982, guid: d5b533b6b3234564394e4751d966cb82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

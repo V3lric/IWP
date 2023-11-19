@@ -11,24 +11,22 @@ public class GameManager : MonoBehaviour
     public UnityEvent Stages;
     public bool puzzle1, puzzle2 = false;
     PlayerData data;
+    GameObject Spawn,Player;
 
     [Header("Objective UI")]
-    [SerializeField] private GameObject[] cpTrigger;
+    [SerializeField] private List<GameObject> cpList = new List<GameObject>();
     [SerializeField] private int checkPoints, uiBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
     public TextMeshProUGUI header, text;
     public string[] uiHeader, uiText;
-
+    PlayerController pc;
     private void Start()
     {
-        cpTrigger = GameObject.FindGameObjectsWithTag("CP");
-        Transform[] cpList;
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Spawn = GameObject.FindGameObjectWithTag("Spawn");
 
-        cpList = new Transform[cpTrigger.Length];
+        cpList.Add(Spawn);
 
-        for (int i = 0; i < cpTrigger.Length; i++)//find and store all cp inside list to ref pos ltr
-        {
-            cpList[i] = cpTrigger[i].transform;
-        }
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
     }
@@ -53,21 +51,36 @@ public class GameManager : MonoBehaviour
 
     public void CPIncrease()
     {
-        checkPoints++;
         uiBubbleCP++;
+        checkPoints++;
 
-        Debug.Log(CheckPoint());
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
     }
 
-    public Vector3 CheckPoint()
+    public Vector3 GetCheckPoint()
     {
-        return cpTrigger[checkPoints].transform.position;
+        return cpList[checkPoints].transform.position;
     }
-    public void death()
+
+    public void AddCheckPoint(GameObject pos)
     {
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.transform.position = cpTrigger[checkPoints].transform.position;
+        cpList.Add(pos);
+    }
+    public void SetDeath()
+    {
+        StartCoroutine(DeathSequence());
+        Debug.Log("Death");
+    }
+
+    IEnumerator DeathSequence()
+    {
+        Vector3 checkpointPosition = GetCheckPoint();
+
+        pc.disabled = true;//disable player controller if not player can't tp
+        Player.transform.position = checkpointPosition;//overwrite player's pos if not cannot tp as player is still moving to intended pos
+        yield return new WaitForSeconds(0.5f);
+        Player.transform.position = checkpointPosition;
+        pc.disabled = false;
     }
 }

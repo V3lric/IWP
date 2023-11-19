@@ -16,6 +16,7 @@ public class Checkpoints : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !hit)
         {
             gm.CPIncrease();
+            gm.AddCheckPoint(gameObject);
             hit = true;
         }
     }

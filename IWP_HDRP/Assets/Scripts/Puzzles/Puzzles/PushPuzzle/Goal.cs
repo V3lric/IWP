@@ -5,8 +5,8 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public bool touched;
-    private string Tag = "PBlocks";
-
+    private string Tag1 = "PBlocks";
+    private string Tag2 = "PCircles";
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameObject hit = other.gameObject;
-        if (hit.gameObject.CompareTag(Tag))
+        if (hit.gameObject.CompareTag(Tag1) || hit.gameObject.CompareTag(Tag2))
         {
             touched = true;
         }

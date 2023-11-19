@@ -15,6 +15,7 @@ TagManager:
   - CP
   - Puzzles
   - SwitchPuzzle
+  - Spawn
   layers:
   - Default
   - TransparentFX

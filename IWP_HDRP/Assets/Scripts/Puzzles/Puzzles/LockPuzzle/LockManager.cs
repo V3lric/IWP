@@ -65,7 +65,7 @@ public class LockManager : MonoBehaviour
         Lock = lockList.ToArray();
     }
 
-    void GenerateLockOrder()
+    void GenerateLockOrder()//havent fix yet
     {
         lockOrder.Clear();
         for (int i = 0; i < numberOfLock; i++)
