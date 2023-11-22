@@ -950,8 +950,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264753941757660873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.084280275, y: 0.000012471369, z: -0.0000010548432, w: 0.99644214}
-  m_LocalPosition: {x: -4.0261374, y: 2.43, z: -3.44247}
+  m_LocalRotation: {x: 0.08428028, y: 0.0000124670805, z: -0.0000010544807, w: 0.99644214}
+  m_LocalPosition: {x: -4.0261374, y: 2.43, z: -3.4424624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1003,7 +1003,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1062,17 +1062,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearColorMode: 1
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 0
+  antialiasing: 1
   SMAAQuality: 2
-  dithering: 0
-  stopNaNs: 0
+  dithering: 1
+  stopNaNs: 1
   taaSharpenStrength: 0.5
   TAAQuality: 1
   taaHistorySharpening: 0.35
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   flipYMode: 0
   xrRendering: 1
   fullscreenPassthrough: 0
-  allowDynamicResolution: 0
+  allowDynamicResolution: 1
   customRenderingSettings: 0
   invertFaceCulling: 0
   probeLayerMask:
@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c318780bad88b3449b59f11b9ca4a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: 1
+  forceMagnitude: 2
   Tag: IBlocks
 --- !u!114 &5717872773297153655
 MonoBehaviour:
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059a067735cfdaf45b5a9fe9c57296a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: 1
+  forceMagnitude: 2
   Tag: PCircles
 --- !u!114 &2391436021267331005
 MonoBehaviour:
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f79196d4f4be9d43ae6daa2af77ff82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: 1
+  forceMagnitude: 2
   Tag: PBlocks
 --- !u!114 &385656907763551517
 MonoBehaviour:
@@ -1298,6 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef3056d79c259c4a966fae0861101b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   walkSpeed: 0
   talentPt: 0
   coins: 0
@@ -1529,7 +1530,7 @@ GameObject:
   - component: {fileID: 2627488658947424803}
   m_Layer: 6
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1952,8 +1953,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8751592328413903038}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.084280275, y: 0.000012471369, z: -0.0000010548432, w: 0.99644214}
-  m_LocalPosition: {x: -4.0261374, y: 2.43, z: -3.44247}
+  m_LocalRotation: {x: 0.08428028, y: 0.0000124670805, z: -0.0000010544807, w: 0.99644214}
+  m_LocalPosition: {x: -4.0261374, y: 2.43, z: -3.4424624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
