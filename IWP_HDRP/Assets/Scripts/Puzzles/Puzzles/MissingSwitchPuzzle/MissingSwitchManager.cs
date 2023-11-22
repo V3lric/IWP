@@ -9,7 +9,7 @@ public class MissingSwitchManager : MonoBehaviour
     private int numberOfSwitches = 3;
     public List<bool> missingSwitchOrder = new List<bool>();
     public string tags = "";
-    public GameObject lDoor, rDoor;
+    public GameObject lDoor, rDoor,cp;
     public int currentIndex = 0;
     public bool Solved = false;
     // Start is called before the first frame update
