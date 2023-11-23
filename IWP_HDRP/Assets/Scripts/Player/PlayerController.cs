@@ -18,14 +18,13 @@ public class PlayerController : MonoBehaviour
     public Transform Cam;
 
     [Header("Jump Stats")]
-    public bool airborne;
     protected float airborneTime;
-    protected int jumpsInAir;
-    protected int maxJumpsInAir = 1;
+    public int jumpsInAir;
+    protected int maxJumpsInAir = 3;
     public float jumpSpeed = 20f;
     public float jumpDelay = 0.1f;
     public float jumpheight;
-    Vector3 Velocity;
+    public Vector3 Velocity;
     public float gravity = 80f;
     CharacterController characterController;
 
@@ -79,53 +78,26 @@ public class PlayerController : MonoBehaviour
     {
         //new jump code
         if (Grounded)
-            Velocity.y = -1;
-
-        if (Input.GetButtonDown("Jump") && Grounded)
         {
-            Velocity.y += Mathf.Sqrt((jumpSpeed * 10) * -2f * gravity);
+            Velocity.y = 0;
+            jumpsInAir = maxJumpsInAir;
         }
-        if (Velocity.y > -20)
+        else
+        {
             Velocity.y += (gravity * 10) * Time.deltaTime;
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (jumpsInAir > 0)
+            {
+                Velocity.y += Mathf.Sqrt((jumpSpeed * 10) * -2f * gravity);
+                jumpsInAir--;
+            }
+        }
+        //if (Velocity.y > -20 || Velocity.y < -100)
+        //    Velocity.y += (gravity * 10) * Time.deltaTime;
 
         characterController.Move(Velocity * Time.deltaTime);
-
-        //// Check if player is grounded.
-        //if (Grounded)
-        //{
-        //    jumpsInAir = maxJumpsInAir;
-        //}
-        //else
-        //{
-        //    moveDelta.y -= gravity * Time.deltaTime;
-        //}
-
-        //// Check if player is jumping.
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    if (!airborne || jumpsInAir > 0)
-        //    {
-        //        if (airborne)
-        //        {
-        //            jumpsInAir--;
-        //        }
-
-        //        moveDelta.y = jumpSpeed;
-
-        //        airborne = true;
-        //        airborneTime = jumpDelay;
-        //    }
-        //}
-
-        //// Apply airborne time
-        //if (airborneTime > 0)
-        //{
-        //    airborneTime -= Time.deltaTime;
-        //}
-        //else
-        //{
-        //    airborne = false;
-        //}
     }
     private void CheckGrounded()
     {
