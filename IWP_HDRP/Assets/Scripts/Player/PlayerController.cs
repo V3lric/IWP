@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Stats")]
     protected float airborneTime;
     public int jumpsInAir;
-    protected int maxJumpsInAir = 3;
+    public int maxJumpsInAir = 1;
     public float jumpSpeed = 20f;
     public float jumpDelay = 0.1f;
     public float jumpheight;
