@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
         Spawn = GameObject.FindGameObjectWithTag("Spawn");
+        data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
 
         cpList.Add(Spawn);
 
@@ -33,7 +34,21 @@ public class GameManager : MonoBehaviour
 
     public void Stage1()
     {
-
+        int diff = data.GetDifficulty();
+        switch (diff)
+        {
+            case 0:
+                Debug.Log("Ez");
+                break;
+            case 1:
+                Debug.Log("Mid");
+                break;
+            case 2:
+                Debug.Log("Hard");
+                break;
+            default:
+                break;
+        }
     }
 
     public void Stage2()
@@ -43,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void ChestOpen()
     {
-        PlayerData data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
+        
         data.Stage1 = true;
         //cutscene
         SceneManager.LoadScene("HubScene");

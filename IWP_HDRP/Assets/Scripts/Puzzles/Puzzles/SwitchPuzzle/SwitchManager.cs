@@ -97,4 +97,9 @@ public class SwitchManager : MonoBehaviour
             }
         } while (!atLeastOneTrue);
     }
+
+    public bool GetSwitchOrder(int order)
+    {
+        return switchOrder[order];
+    }
 }

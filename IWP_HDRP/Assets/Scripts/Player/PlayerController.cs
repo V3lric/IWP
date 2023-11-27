@@ -45,15 +45,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         if (!disabled)
         {
-            {
-                Movement();
-                Gravity();
-                CheckGrounded();
-            }
+            Movement();
+            Gravity();
+            CheckGrounded();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        if (disabled)//to do, ensure map disable don't override the esc disbale
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

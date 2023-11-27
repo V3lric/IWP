@@ -74,4 +74,9 @@ public class LockManager : MonoBehaviour
             lockOrder.Add(ranInt);
         }
     }
+
+    public int GetLockOrder(int order)
+    {
+        return lockOrder[order];
+    }
 }

@@ -101,4 +101,10 @@ public class MissingSwitchManager : MonoBehaviour
             }
         } while (!atLeastOneTrue);
     }
+
+    public bool GetSwitchOrder(int order)
+    {
+        return missingSwitchOrder[order];
+    }
+
 }

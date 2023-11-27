@@ -6,10 +6,11 @@ public class UIManager : MonoBehaviour
 {
     public GameObject map;
     private bool bmap = false;
+    PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -21,11 +22,15 @@ public class UIManager : MonoBehaviour
             {
                 map.SetActive(true);
                 bmap = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else if (bmap)
             {
                 map.SetActive(false);
                 bmap = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }
