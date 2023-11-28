@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1514.4484, g: 1022.8048, b: 687.9864, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6726,11 +6726,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f6eeb51a885514fa012b4459cbf08b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkspeed: 100
+  walkspeed: 10
   talentPt: 0
   coins: 0
   savedDate: Nil
   difficulty: 0
+  Stage1: 0
+  Stage2: 0
+  StageBoss: 0
 --- !u!1001 &846849415
 PrefabInstance:
   m_ObjectHideFlags: 0
