@@ -6,10 +6,10 @@ using System.Linq;
 public class MissingSwitchManager : MonoBehaviour
 {
     public GameObject[] Switches;
-    public GameObject bPillar, pillar;
+    public GameObject[] bPillar, pillar;
     private int numberOfSwitches = 3;
     public List<bool> missingSwitchOrder = new List<bool>();
-    public string tags = "";
+    public string SwitchTags,bColumn, column = "";
     public GameObject lDoor, rDoor,cp;
     public int currentIndex = 0;
     public bool Solved = false;
@@ -19,12 +19,15 @@ public class MissingSwitchManager : MonoBehaviour
     public int switches = 0;
     public bool pickedUp = false;
     List<GameObject> switchList = new List<GameObject>();
+    List<GameObject> columnList = new List<GameObject>();
+    List<GameObject> pColumnList = new List<GameObject>();
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
         Transform parent = transform;
         //numberOfSwitches = Switch.Length;// Define the number of switches
         LocateSwitches(parent);
+        LocatePillars(parent);
         GenerateSwitchOrder();
     }
 
@@ -68,10 +71,9 @@ public class MissingSwitchManager : MonoBehaviour
     {
         Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
 
-
         foreach (Transform child in allChildren)
         {
-            if (child.CompareTag(tags))
+            if (child.CompareTag(SwitchTags))
             {
                 switchList.Add(child.gameObject);
             }
@@ -80,12 +82,31 @@ public class MissingSwitchManager : MonoBehaviour
         // Assign the switches to the public Switch array
         Switches = switchList.ToArray();
     }
+    void LocatePillars(Transform parent)
+    {
+        Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
 
+        foreach (Transform child in allChildren)
+        {
+            if (child.CompareTag(bColumn))
+            {
+                pColumnList.Add(child.gameObject);
+            }
+
+            if (child.CompareTag(column))
+            {
+                columnList.Add(child.gameObject);
+            }
+        }
+
+        // Assign the switches to the public Switch array
+        pillar = columnList.ToArray();
+        bPillar = pColumnList.ToArray();
+    }  
     void GenerateSwitchOrder()
     {
         missingSwitchOrder.Clear();
         bool atLeastOneTrue = false;
-        GameObject spawned;
         do
         {
             missingSwitchOrder.Clear(); // Clear the list at the beginning of each iteration
@@ -101,10 +122,14 @@ public class MissingSwitchManager : MonoBehaviour
                 if (isSwitched)
                 {
                     atLeastOneTrue = true;
-                    spawned = Instantiate(pillar,switchList[i].transform.position - new Vector3(2,-2,0), switchList[i].transform.rotation);
+                    pillar[i].SetActive(true);
+                    bPillar[i].SetActive(false);
                 }
                 if (!isSwitched)
-                    spawned = Instantiate(bPillar, switchList[i].transform.position - new Vector3(2, -1, 0), switchList[i].transform.rotation);
+                {
+                    pillar[i].SetActive(false);
+                    bPillar[i].SetActive(true);
+                }
             }
         } while (!atLeastOneTrue);
     }
