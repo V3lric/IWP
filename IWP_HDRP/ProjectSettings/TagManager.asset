@@ -16,6 +16,7 @@ TagManager:
   - Puzzles
   - SwitchPuzzle
   - Spawn
+  - LeverSpawn
   layers:
   - Default
   - TransparentFX

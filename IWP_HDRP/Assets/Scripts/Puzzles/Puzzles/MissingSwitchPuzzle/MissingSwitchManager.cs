@@ -6,6 +6,7 @@ using System.Linq;
 public class MissingSwitchManager : MonoBehaviour
 {
     public GameObject[] Switches;
+    public GameObject bPillar, pillar;
     private int numberOfSwitches = 3;
     public List<bool> missingSwitchOrder = new List<bool>();
     public string tags = "";
@@ -17,7 +18,7 @@ public class MissingSwitchManager : MonoBehaviour
     private float elapsedTime;
     public int switches = 0;
     public bool pickedUp = false;
-
+    List<GameObject> switchList = new List<GameObject>();
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
@@ -66,7 +67,7 @@ public class MissingSwitchManager : MonoBehaviour
     void LocateSwitches(Transform parent)
     {
         Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
-        List<GameObject> switchList = new List<GameObject>();
+
 
         foreach (Transform child in allChildren)
         {
@@ -84,11 +85,14 @@ public class MissingSwitchManager : MonoBehaviour
     {
         missingSwitchOrder.Clear();
         bool atLeastOneTrue = false;
-
+        GameObject spawned;
         do
         {
             missingSwitchOrder.Clear(); // Clear the list at the beginning of each iteration
-
+            for(int i = 0; i < missingSwitchOrder.Count; i++)
+            {
+                //Destroy(spawned);
+            }
             for (int i = 0; i < numberOfSwitches; i++)
             {
                 bool isSwitched = Random.Range(0, 2) == 0; // Randomly set switches to true or false
@@ -97,7 +101,10 @@ public class MissingSwitchManager : MonoBehaviour
                 if (isSwitched)
                 {
                     atLeastOneTrue = true;
+                    spawned = Instantiate(pillar,switchList[i].transform.position - new Vector3(2,-2,0), switchList[i].transform.rotation);
                 }
+                if (!isSwitched)
+                    spawned = Instantiate(bPillar, switchList[i].transform.position - new Vector3(2, -1, 0), switchList[i].transform.rotation);
             }
         } while (!atLeastOneTrue);
     }
