@@ -21,10 +21,12 @@ public class AudioManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "HubScene")
         {
             PlaySound("MainMenu");
+            StopSound("Scene1");
         }
         if (SceneManager.GetActiveScene().name == "Scene1")
         {
             PlaySound("Scene1");
+            StopSound("MainMenu");
         }
     }
     public void PlaySound(string name)
@@ -37,6 +39,19 @@ public class AudioManager : MonoBehaviour
         {
             musicSource.clip = sound.clip;
             musicSource.Play();
+        }
+    }
+
+    public void StopSound(string name)
+    {
+        Sound sound = Array.Find(musicSound, x => x.name == name);
+
+        if (sound == null)
+            Debug.LogWarning("Sound not found");
+        else
+        {
+            musicSource.clip = sound.clip;
+            musicSource.Stop();
         }
     }
 
