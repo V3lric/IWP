@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Puzzles\InteractManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\Puzzles\DeathFloor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Puzzles\MissingSwitchPuzzle\MissingSwitch.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\UI\Map.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Puzzles\PushPuzzle\Goal.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushCircles.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Checkpoints.cs" />
@@ -100,7 +102,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\Scripts\Player\UI.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Puzzles\PushPuzzle\ResetButton.cs" />
     <Compile Include="Assets\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\ForceSliderToMultipleOf3.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />

@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
 
         cpList.Add(Spawn);
-
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
     }
