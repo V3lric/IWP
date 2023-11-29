@@ -17,17 +17,17 @@ public class AudioManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
-
-        if (SceneManager.GetActiveScene().name == "HubScene")
-        {
-            PlaySound("MainMenu");
-            StopSound("Scene1");
-        }
-        if (SceneManager.GetActiveScene().name == "Scene1")
-        {
-            PlaySound("Scene1");
-            StopSound("MainMenu");
-        }
+        PlaySound("MainMenu");
+        //if (SceneManager.GetActiveScene().name == "HubScene")
+        //{
+        //    PlaySound("MainMenu");
+        //    StopSound("Scene1");
+        //}
+        //if (SceneManager.GetActiveScene().name == "Scene1")
+        //{
+        //    PlaySound("Scene1");
+        //    StopSound("MainMenu");
+        //}
     }
     public void PlaySound(string name)
     {
