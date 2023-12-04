@@ -7,7 +7,7 @@ public class SwitchManager : MonoBehaviour
 {
     public GameObject[] Switch;
     public GameObject[] bPillar, pillar;
-    private int numberOfSwitches = 3; 
+    private int numberOfSwitches = 0; 
     public List<bool> switchOrder = new List<bool>();
     public string SwitchTags, bColumn, column = "";
     public GameObject lDoor, rDoor,cp;
@@ -72,6 +72,7 @@ public class SwitchManager : MonoBehaviour
             if (child.CompareTag(SwitchTags))
             {
                 switchList.Add(child.gameObject);
+                numberOfSwitches++;
             }
         }
 

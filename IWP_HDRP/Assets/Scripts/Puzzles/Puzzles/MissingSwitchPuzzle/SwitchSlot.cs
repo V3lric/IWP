@@ -28,7 +28,6 @@ public class SwitchSlot : MonoBehaviour
                 manager.switches++;
                 manager.pickedUp = false;
                 done = true;
-                game.CPIncrease();
             }
             if (done)
             {

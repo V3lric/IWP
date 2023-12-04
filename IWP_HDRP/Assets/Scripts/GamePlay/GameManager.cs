@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent Stages;
     public bool puzzle1, puzzle2 = false;
     PlayerData data;
-    GameObject Spawn,Player;
+    GameObject Spawn, Player;
+    public GameObject switchPuzzle_mid, switchPuzzle_hard, missingPuzzle_mid, missingPuzzle_hard;
 
     [Header("Objective UI")]
     [SerializeField] private List<GameObject> cpList = new List<GameObject>();
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         cpList.Add(Spawn);
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
+        Stages.Invoke();
     }
 
     public void Stage1()
@@ -38,12 +40,18 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 Debug.Log("Ez");
+                switchPuzzle_mid.SetActive(true);
+                missingPuzzle_mid.SetActive(true);
                 break;
             case 1:
                 Debug.Log("Mid");
+                switchPuzzle_mid.SetActive(true);
+                missingPuzzle_mid.SetActive(true);
                 break;
             case 2:
                 Debug.Log("Hard");
+                switchPuzzle_hard.SetActive(true);
+                missingPuzzle_hard.SetActive(true);
                 break;
             default:
                 break;

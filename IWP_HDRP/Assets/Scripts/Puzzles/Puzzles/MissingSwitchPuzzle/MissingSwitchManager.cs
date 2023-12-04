@@ -7,7 +7,7 @@ public class MissingSwitchManager : MonoBehaviour
 {
     public GameObject[] Switches;
     public GameObject[] bPillar, pillar;
-    private int numberOfSwitches = 3;
+    private int numberOfSwitches = 0;
     public List<bool> missingSwitchOrder = new List<bool>();
     public string SwitchTags,bColumn, column = "";
     public GameObject lDoor, rDoor,cp;
@@ -16,14 +16,18 @@ public class MissingSwitchManager : MonoBehaviour
     // Start is called before the first frame update
     GameManager manager;
     private float elapsedTime;
-    public int switches = 0;
-    public bool pickedUp = false;
+    public int switches,diff = 0;
+    public bool pickedUp,completed = false;
     List<GameObject> switchList = new List<GameObject>();
     List<GameObject> columnList = new List<GameObject>();
     List<GameObject> pColumnList = new List<GameObject>();
+    PlayerData data;
+
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
+        data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
+        diff = data.GetDifficulty();
         Transform parent = transform;
         //numberOfSwitches = Switch.Length;// Define the number of switches
         LocateSwitches(parent);
@@ -34,7 +38,8 @@ public class MissingSwitchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (switches == 3)
+        Difficulty();
+        if (completed)
         {
             // Check if the switches are activated in the correct order
             if (currentIndex < missingSwitchOrder.Count)
@@ -66,7 +71,19 @@ public class MissingSwitchManager : MonoBehaviour
             }
         }
     }
-
+    void Difficulty()
+    {
+        if (diff == 1 && switches == 3 && !completed)
+        {
+            manager.CPIncrease();
+            completed = true;
+        }
+        else if (diff == 2 && switches == 4 && !completed)
+        {
+            manager.CPIncrease();
+            completed = true;
+        }
+    }
     void LocateSwitches(Transform parent)
     {
         Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
@@ -76,6 +93,7 @@ public class MissingSwitchManager : MonoBehaviour
             if (child.CompareTag(SwitchTags))
             {
                 switchList.Add(child.gameObject);
+                numberOfSwitches++;
             }
         }
 
