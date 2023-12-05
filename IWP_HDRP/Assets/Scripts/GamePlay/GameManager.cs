@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Objective UI")]
     [SerializeField] private List<GameObject> cpList = new List<GameObject>();
-    [SerializeField] private int checkPoints, uiBubbleCP = -1;//no choice. default is 0 so will get out of bounds error if try to ref last cp
+    [SerializeField] private int checkPoints;//no choice. default is 0 so will get out of bounds error if try to ref last cp
+    public int uiBubbleCP = -1;
     public TextMeshProUGUI header, text;
     public string[] uiHeader, uiText;
     PlayerController pc;
