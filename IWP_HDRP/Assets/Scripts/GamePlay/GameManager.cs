@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public bool puzzle1, puzzle2 = false;
     PlayerData data;
     GameObject Spawn, Player;
-    public GameObject switchPuzzle_mid, switchPuzzle_hard, missingPuzzle_mid, missingPuzzle_hard;
+    public GameObject switchPuzzle_mid, switchPuzzle_hard, missingPuzzle_mid, missingPuzzle_hard;//Switch Puzzles
+    public GameObject jumpPuzzle_easy, jumpPuzzle_mid, jumpPuzzle_hard;//jumping puzzles
 
     [Header("Objective UI")]
     [SerializeField] private List<GameObject> cpList = new List<GameObject>();
@@ -43,16 +44,19 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Ez");
                 switchPuzzle_mid.SetActive(true);
                 missingPuzzle_mid.SetActive(true);
+                jumpPuzzle_easy.SetActive(true);
                 break;
             case 1:
                 Debug.Log("Mid");
                 switchPuzzle_mid.SetActive(true);
                 missingPuzzle_mid.SetActive(true);
+                jumpPuzzle_mid.SetActive(true);
                 break;
             case 2:
                 Debug.Log("Hard");
                 switchPuzzle_hard.SetActive(true);
                 missingPuzzle_hard.SetActive(true);
+                jumpPuzzle_hard.SetActive(true);
                 break;
             default:
                 break;

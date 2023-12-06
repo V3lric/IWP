@@ -12,6 +12,5 @@ public class Platform : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         other.transform.SetParent(null);
-        other.transform.rotation.Set(0f, 0f, 0f, 0f);
     }
 }
