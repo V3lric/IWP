@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        MusicSlider.value = AudioManager.Instance.musicSource.volume;
+        SFXSlider.value = AudioManager.Instance.sfxSource.volume;
     }
 
     // Update is called once per frame
