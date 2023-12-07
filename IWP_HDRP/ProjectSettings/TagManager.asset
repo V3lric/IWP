@@ -19,6 +19,7 @@ TagManager:
   - LeverSpawn
   - bPillar
   - Pillar
+  - ChatBubble
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - UI
   - Player
   - UIDiff
-  - 
+  - AI
   - 
   - 
   - 

@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI header, text;
     public string[] uiHeader, uiText;
     PlayerController pc;
+    ChatBubbleScript pet;
     private void Start()
     {
+        pet = GameObject.FindGameObjectWithTag("ChatBubble").GetComponent<ChatBubbleScript>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
         Spawn = GameObject.FindGameObjectWithTag("Spawn");
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         uiBubbleCP++;
         checkPoints++;
-
+        pet.triggered = true;
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
     }

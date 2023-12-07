@@ -10,23 +10,36 @@ public class PetScript : MonoBehaviour
     public Animator aiAnim;
     Vector3 dest;
 
-    void Update()
+    void FixedUpdate()
     {
         dest = player.position;
-        ai.destination = dest;
-        if ((transform.position - player.position).sqrMagnitude < ai.stoppingDistance * ai.stoppingDistance * 1f)//if pet is too close to player
+        float distanceToPlayer = (transform.position - player.position).magnitude;
+
+        if (distanceToPlayer < ai.stoppingDistance)
         {
-            ai.destination = transform.position + (transform.position - player.position).normalized;
-            ai.stoppingDistance = 3;
-            transform.forward = Vector3.Lerp(transform.forward, (player.position - transform.position).normalized, Time.deltaTime * 4);
-            //ai.destination = enemy.position + (transform.position - enemy.position).normalized * desiredDistance;
-            //aiAnim.ResetTrigger("jog");
-            //aiAnim.SetTrigger("idle");
+            // Player is too close, make the pet walk backward
+            Vector3 reverseDirection = transform.position - player.position;
+            Vector3 backwardDestination = transform.position + reverseDirection.normalized * 5; // Adjust the distance as needed
+
+            // Move the pet backward gradually
+            ai.destination = Vector3.Lerp(ai.destination, backwardDestination, Time.deltaTime * 4); // Adjust the factor for smoother movement
+
+            // Rotate the pet to face away from the player
+            transform.forward = Vector3.Lerp(transform.forward, -reverseDirection.normalized, Time.deltaTime * 4);
+
+            // aiAnim.ResetTrigger("jog");
+            // aiAnim.SetTrigger("walkBackward");
         }
         else
         {
-            //aiAnim.ResetTrigger("idle");
-            //aiAnim.SetTrigger("jog");
+            // Player is at a normal distance, move toward the player
+            ai.destination = dest;
+
+            // Rotate the pet to face the player
+            transform.forward = Vector3.Lerp(transform.forward, (player.position - transform.position).normalized, Time.deltaTime * 4);
+
+            // aiAnim.ResetTrigger("walkBackward");
+            // aiAnim.SetTrigger("jog");
         }
     }
 }
