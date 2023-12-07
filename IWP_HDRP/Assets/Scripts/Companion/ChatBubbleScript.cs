@@ -12,13 +12,13 @@ public class ChatBubbleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
+        //manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.LookAt(target);
-        bubbleText.text = chatText[manager.uiBubbleCP];
+        //bubbleText.text = chatText[manager.uiBubbleCP];
     }
 }

@@ -14,8 +14,11 @@ public class PetScript : MonoBehaviour
     {
         dest = player.position;
         ai.destination = dest;
-        if (ai.remainingDistance <= ai.stoppingDistance)
+        if ((transform.position - player.position).sqrMagnitude < ai.stoppingDistance * ai.stoppingDistance * 1f)//if pet is too close to player
         {
+            ai.destination = transform.position + (transform.position - player.position).normalized;
+            ai.stoppingDistance = 3;
+            transform.forward = Vector3.Lerp(transform.forward, (player.position - transform.position).normalized, Time.deltaTime * 4);
             //ai.destination = enemy.position + (transform.position - enemy.position).normalized * desiredDistance;
             //aiAnim.ResetTrigger("jog");
             //aiAnim.SetTrigger("idle");
