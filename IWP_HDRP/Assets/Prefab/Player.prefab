@@ -1407,7 +1407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3934819126168434457}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.013579128, y: -0.000012361251, z: 0.000001933781, w: 0.9999078}
+  m_LocalRotation: {x: -0.013579128, y: -0.000012352752, z: 0.0000019324516, w: 0.9999078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2630,8 +2630,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264753941757660873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07074169, y: -0.0000000042907193, z: 3.0429512e-10, w: 0.9974947}
-  m_LocalPosition: {x: -4.049119, y: 1.9404752, z: -8.0437355}
+  m_LocalRotation: {x: 0.07074169, y: 0.000000008581818, z: -6.08617e-10, w: 0.9974947}
+  m_LocalPosition: {x: 89.35088, y: 4.6931467, z: 369.33624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2879,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2517152727974170919
 Transform:
   m_ObjectHideFlags: 0
@@ -4524,7 +4524,7 @@ GameObject:
   - component: {fileID: 6822217796222825936}
   m_Layer: 6
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: VCam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

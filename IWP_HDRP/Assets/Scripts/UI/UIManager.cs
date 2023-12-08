@@ -28,12 +28,14 @@ public class UIManager : MonoBehaviour
             if (!bmap)
             {
                 Enabled();
+                Time.timeScale = 0;
                 map.SetActive(true);
                 bmap = true;
             }
             else if (bmap)
             {
                 Disabled();
+                Time.timeScale = 1;
                 map.SetActive(false);
                 bmap = false;
             }
@@ -43,6 +45,7 @@ public class UIManager : MonoBehaviour
             if (!bEscape)
             {
                 Enabled();
+                Time.timeScale = 0;
                 bEscape = true;
                 escape.SetActive(true);
                 escapehud.SetActive(false);
@@ -50,6 +53,7 @@ public class UIManager : MonoBehaviour
             else if (bEscape)
             {
                 Disabled();
+                Time.timeScale = 1;
                 bEscape = false;
                 escape.SetActive(false);
                 escapehud.SetActive(true);

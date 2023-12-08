@@ -19,7 +19,7 @@ public class PetScript : MonoBehaviour
         {
             // Player is too close, make the pet walk backward
             Vector3 reverseDirection = transform.position - player.position;
-            Vector3 backwardDestination = transform.position + reverseDirection.normalized * 5; // Adjust the distance as needed
+            Vector3 backwardDestination = transform.position + reverseDirection.normalized * 4; // Adjust the distance as needed
 
             // Move the pet backward gradually
             ai.destination = Vector3.Lerp(ai.destination, backwardDestination, Time.deltaTime * 4); // Adjust the factor for smoother movement
@@ -30,7 +30,7 @@ public class PetScript : MonoBehaviour
             // aiAnim.ResetTrigger("jog");
             // aiAnim.SetTrigger("walkBackward");
         }
-        else
+        else if (distanceToPlayer > (ai.stoppingDistance) + 1)
         {
             // Player is at a normal distance, move toward the player
             ai.destination = dest;

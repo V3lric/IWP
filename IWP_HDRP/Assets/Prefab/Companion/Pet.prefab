@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 7209997843073951923}
   m_Layer: 8
   m_Name: ChatBubble
-  m_TagString: Untagged
+  m_TagString: ChatBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6c3093c6590cf4eadc917f88593f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  vCamTransform: {fileID: 0}
   bubbleText: {fileID: 5010377807431579296}
   BubbleGO: {fileID: 1037450471168257059}
   triggered: 0
@@ -335,8 +335,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hello! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ef9734a04e32884cab469575081da4f, type: 2}
+  m_sharedMaterial: {fileID: 1512666923304222154, guid: 9ef9734a04e32884cab469575081da4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -5,7 +5,7 @@ using TMPro;
 
 public class ChatBubbleScript : MonoBehaviour
 {
-    public Transform target;
+    [SerializeField] Transform vCamTransform;
     public TextMeshProUGUI bubbleText;
     public GameObject BubbleGO;
     public bool triggered;
@@ -21,7 +21,7 @@ public class ChatBubbleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(target);
+        transform.LookAt(vCamTransform);
         if (triggered)
             StartCoroutine(SpeechBubble());
     }

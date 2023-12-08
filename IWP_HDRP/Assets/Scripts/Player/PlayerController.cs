@@ -50,13 +50,11 @@ public class PlayerController : MonoBehaviour
             Movement();
             Gravity();
             CheckGrounded();
-            Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         if (disabled)//to do, ensure map disable don't override the esc disbale
         {
-            Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
