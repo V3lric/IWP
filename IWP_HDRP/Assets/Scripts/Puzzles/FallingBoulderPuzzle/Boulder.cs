@@ -2,30 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathFloor : MonoBehaviour
+public class Boulder : MonoBehaviour
 {
     GameManager manager;
-    public GameObject respawn,Player;
+    public GameObject respawn, Player,shaking;
     PlayerController pc;
+    float timer = 20f;
+    AudioSource Sfx;
 
     private void Start()
     {
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
+        respawn = GameObject.FindGameObjectWithTag("RespawnCube");
+        //Sfx.outputAudioMixerGroup = AudioManager.Instance.sfxSource.outputAudioMixerGroup;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        timer -= Time.deltaTime * 1f;
+        if (timer < 0)
+            Destroy(gameObject);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            //manager.SetDeath();
+        {
             StartCoroutine(DeathSequence());
+        }
     }
 
     IEnumerator DeathSequence()

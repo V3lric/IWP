@@ -29,6 +29,11 @@ public class SwitchSlot : MonoBehaviour
                 manager.pickedUp = false;
                 done = true;
             }
+            else
+            {
+                //play sound
+            }
+
             if (done)
             {
                 if (!isSwitched)

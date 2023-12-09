@@ -62,6 +62,7 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Mainmenu.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Shake.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\Puzzles\PushPuzzle\Goal.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\SwitchManager.cs" />
+    <Compile Include="Assets\Scripts\CineMachineShakeEffect.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractUI.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\Switch.cs" />
@@ -123,12 +125,14 @@
     <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\UpdateTextWithSliderValue.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Boulder.cs" />
     <Compile Include="Assets\Scripts\Companion\PetScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushPuzzle\PuzzleManager.cs" />
     <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\ForceSliderToPowerOf2.cs" />
     <Compile Include="Assets\Scripts\MoveCursor.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushBlocks.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\EndPoint.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\LockPuzzle\LockManager.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -136,6 +140,7 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\SwitchSlot.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Saves\Saves.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\SpawnBoulder.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
   </ItemGroup>
   <ItemGroup>

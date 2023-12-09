@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     GameObject Spawn, Player;
 
     [Header("Puzzle GameObject")]
+    public GameObject HardGate,boulderPuzzle;
     public GameObject switchPuzzle_mid, switchPuzzle_hard, missingPuzzle_mid, missingPuzzle_hard;//Switch puzzles
     public GameObject jumpPuzzle_easy, jumpPuzzle_mid, jumpPuzzle_hard;//jumping puzzles
     public GameObject circlePuzzle_easy, circlePuzzle_mid, circlePuzzle_hard;//circle puzzles
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     public string[] uiHeader, uiText;
     PlayerController pc;
     ChatBubbleScript pet;
+
     private void Start()
     {
         pet = GameObject.FindGameObjectWithTag("ChatBubble").GetComponent<ChatBubbleScript>();
@@ -65,6 +67,8 @@ public class GameManager : MonoBehaviour
                 missingPuzzle_hard.SetActive(true);
                 jumpPuzzle_hard.SetActive(true);
                 circlePuzzle_hard.SetActive(true);
+                boulderPuzzle.SetActive(true);
+                HardGate.SetActive(false);
                 break;
             default:
                 break;

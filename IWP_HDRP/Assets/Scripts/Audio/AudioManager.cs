@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] musicSound, sfxSound;
     public AudioSource musicSource, sfxSource;
+    public AudioMixer music, sfx;
     public static AudioManager Instance;
     private void Awake()
     {
@@ -80,10 +82,12 @@ public class AudioManager : MonoBehaviour
     public void MusicVol(float volume)
     {
         musicSource.volume = volume;
+        music.SetFloat("Music", Mathf.Log10(volume) * 20);
     }
 
     public void SFXVol(float volume)
     {
         sfxSource.volume = volume;
+        sfx.SetFloat("SFX", Mathf.Log10(volume) * 20);
     }
 }

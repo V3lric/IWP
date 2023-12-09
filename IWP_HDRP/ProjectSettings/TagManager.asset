@@ -21,6 +21,7 @@ TagManager:
   - Pillar
   - ChatBubble
   - VCam
+  - RespawnCube
   layers:
   - Default
   - TransparentFX
