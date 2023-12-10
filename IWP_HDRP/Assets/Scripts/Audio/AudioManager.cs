@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource, sfxSource;
     public AudioMixer music, sfx;
     public static AudioManager Instance;
+    public bool toggle, togglem = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -71,12 +73,32 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMusic()
     {
-        musicSource.mute = !musicSource.mute;
+        //musicSource.mute = !musicSource.mute;
+        if (!togglem)
+        {
+            music.SetFloat("Music", Mathf.Log10(0.0001f) * 20);
+            togglem = true;
+        }
+        else if (togglem)
+        {
+            music.SetFloat("Music", Mathf.Log10(sfxSource.volume) * 20);
+            togglem = false;
+        }
     }
 
     public void ToggleSFX()
     {
-        sfxSource.mute = !sfxSource.mute;
+        //sfxSource.mute = !sfxSource.mute;
+        if (!toggle)
+        {
+            sfx.SetFloat("SFX", Mathf.Log10(0.0001f) * 20);
+            toggle = true;
+        }
+        else if (toggle)
+        {
+            sfx.SetFloat("SFX", Mathf.Log10(sfxSource.volume) * 20);
+            toggle = false;
+        }
     }
 
     public void MusicVol(float volume)

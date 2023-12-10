@@ -9,8 +9,11 @@ public class UIManager : MonoBehaviour
     public GameObject map;
     private bool bmap = false;
     public GameObject escape, escapehud;
+    public GameObject mTrue, mFalse;//music icon
+    public GameObject eTrue, eFalse;//escape icon
+    [SerializeField] bool music,sfx = false;
     public Slider MusicSlider, SFXSlider;
-    [SerializeField] bool bEscape = false;
+    [SerializeField] bool bEscape = false;//enable if either one is active and disable if both is not active
     PlayerController player;
     // Start is called before the first frame update
     void Start()
@@ -64,21 +67,53 @@ public class UIManager : MonoBehaviour
     public void ToggleMusic()
     {
         AudioManager.Instance.ToggleMusic();
+        if (!music)
+        {
+            mTrue.SetActive(true);
+            mFalse.SetActive(false);
+            music = true;
+        }
+        else if (music)
+        {
+            mTrue.SetActive(false);
+            mFalse.SetActive(true);
+            music = false;
+        }
     }
 
     public void ToggleSFX()
     {
         AudioManager.Instance.ToggleSFX();
+        if (!sfx)
+        {
+            eTrue.SetActive(true);
+            eFalse.SetActive(false);
+            sfx = true;
+        }
+        else if (sfx)
+        {
+            eTrue.SetActive(false);
+            eFalse.SetActive(true);
+            sfx = false;
+        }
     }
 
     public void MusicVol()
     {
         AudioManager.Instance.MusicVol(MusicSlider.value);
+        mTrue.SetActive(false);
+        mFalse.SetActive(true);
+        music = false;
+        AudioManager.Instance.togglem = false;
     }
 
     public void SFXVol()
     {
         AudioManager.Instance.SFXVol(SFXSlider.value);
+        eTrue.SetActive(false);
+        eFalse.SetActive(true);
+        sfx = false;
+        AudioManager.Instance.toggle = false;
     }
 
     public void SetMusic(float Volumn)

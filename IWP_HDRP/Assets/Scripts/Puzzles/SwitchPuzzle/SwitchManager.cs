@@ -2,15 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Collections;
-
+using UnityEngine.Events;
 public class SwitchManager : MonoBehaviour
 {
+    public UnityEvent Cutscene;//invoke cutscene
     public GameObject[] Switch;
     public GameObject[] bPillar, pillar;
     private int numberOfSwitches = 0; 
     public List<bool> switchOrder = new List<bool>();
     public string SwitchTags, bColumn, column = "";
-    public GameObject lDoor, rDoor,cp;
+    public GameObject cp;
     public int currentIndex = 0;
     public bool Solved = false;
     // Start is called before the first frame update
@@ -54,11 +55,10 @@ public class SwitchManager : MonoBehaviour
             // Puzzle solved
             Debug.Log("Puzzle Solved!");
             Solved = true;
-            lDoor.SetActive(false);
-            rDoor.SetActive(false);
             currentIndex++;
             manager.CPIncrease();
             manager.AddCheckPoint(cp);
+            Cutscene.Invoke();
         }   
     }
 

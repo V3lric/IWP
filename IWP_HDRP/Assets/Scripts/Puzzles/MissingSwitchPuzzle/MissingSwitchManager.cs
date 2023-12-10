@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 public class MissingSwitchManager : MonoBehaviour
 {
+    public UnityEvent Cutscene;//invoke cutscene
     public GameObject[] Switches;
     public GameObject[] bPillar, pillar;
     private int numberOfSwitches = 0;
     public List<bool> missingSwitchOrder = new List<bool>();
     public string SwitchTags,bColumn, column = "";
-    public GameObject lDoor, rDoor,cp;
+    public GameObject cp;
     public int currentIndex = 0;
     public bool Solved = false;
     // Start is called before the first frame update
@@ -64,13 +66,13 @@ public class MissingSwitchManager : MonoBehaviour
                 // Puzzle solved
                 Debug.Log("Puzzle Solved!");
                 Solved = true;
-                lDoor.SetActive(false);
-                rDoor.SetActive(false);
                 currentIndex++;
                 manager.CPIncrease();
+                Cutscene.Invoke();
             }
         }
     }
+
     void Difficulty()
     {
         if (diff == 1 && switches == 3 && !completed)
@@ -156,5 +158,4 @@ public class MissingSwitchManager : MonoBehaviour
     {
         return missingSwitchOrder[order];
     }
-
 }
