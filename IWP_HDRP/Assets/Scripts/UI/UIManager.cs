@@ -10,16 +10,30 @@ public class UIManager : MonoBehaviour
     public GameObject escape, escapehud;
     public GameObject mTrue, mFalse;//music icon
     public GameObject eTrue, eFalse;//escape icon
+    public GameObject stage1T, stage1F;
     [SerializeField] bool music,sfx = false;
     public Slider MusicSlider, SFXSlider;
     [SerializeField] bool bEscape, bmap = false;//enable if either one is active and disable if both is not active
     PlayerController player;
+    PlayerData data;
     // Start is called before the first frame update
     void Start()
     {
+        data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         MusicSlider.value = AudioManager.Instance.musicSource.volume;
         SFXSlider.value = AudioManager.Instance.sfxSource.volume;
+
+        if (data.Stage1)
+        {
+            stage1T.SetActive(true);
+            stage1F.SetActive(false);
+        }
+        else if (!data.Stage1)
+        {
+            stage1T.SetActive(false);
+            stage1F.SetActive(true);
+        }
     }
 
     // Update is called once per frame

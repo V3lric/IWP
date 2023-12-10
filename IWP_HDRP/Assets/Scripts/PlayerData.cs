@@ -20,7 +20,6 @@ public class PlayerData : MonoBehaviour
             Debug.Log("More than 1 instance detected");
             Destroy(this.gameObject);
         }
-
         DontDestroyOnLoad(this.gameObject);
     }
 

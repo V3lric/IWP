@@ -82,10 +82,9 @@ public class GameManager : MonoBehaviour
 
     public void ChestOpen()
     {
-        
         data.Stage1 = true;
         //cutscene
-        SceneManager.LoadScene("HubScene");
+        StartCoroutine(WinGameCutScene());
     }
 
     public void CPIncrease()
@@ -121,5 +120,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Player.transform.position = checkpointPosition;
         pc.disabled = false;
+    }
+
+    IEnumerator WinGameCutScene()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("HubScene");
     }
 }
