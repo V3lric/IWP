@@ -20,23 +20,33 @@ public class Map : MonoBehaviour
     public void HubScene()
     {
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("HubScene"))
+        {
             SceneManager.LoadScene("HubScene");
+            AudioManager.Instance.PlaySound("MainMenu");
+        }
     }
     public void Scene1()
     {
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene1"))
+        {
             SceneManager.LoadScene("Scene1");
+            AudioManager.Instance.PlaySound("Scene1");
+        }
     }
 
     public void Scene2()
     {
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene2") && !data.Stage1)
+        {
             SceneManager.LoadScene("Scene2");
+        }
     }
 
     public void Scene3()
     {
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("SceneBoss") && !data.Stage2)
+        {
             SceneManager.LoadScene("SceneBoss");
+        }
     }
 }

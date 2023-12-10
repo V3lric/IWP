@@ -124,7 +124,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WinGameCutScene()
     {
+        AudioManager.Instance.StopSound("Scene1");
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("HubScene");
+        AudioManager.Instance.PlaySound("MainMenu");
     }
 }
