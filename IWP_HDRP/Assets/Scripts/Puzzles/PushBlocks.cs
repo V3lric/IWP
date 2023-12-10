@@ -40,6 +40,7 @@ public class PushBlocks : MonoBehaviour
                 directionLimit = new Vector3(0f, 0f, direction.z);
             }
 
+            AudioManager.Instance.PlaySFX("PushBlock");
             Block.AddForceAtPosition((directionLimit * forceMagnitude), transform.position, ForceMode.Impulse);
         }
     }

@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WinGameCutScene()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("HubScene");
     }
 }
