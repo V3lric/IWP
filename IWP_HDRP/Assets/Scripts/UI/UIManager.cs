@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject map;
-    private bool bmap = false;
     public GameObject escape, escapehud;
     public GameObject mTrue, mFalse;//music icon
     public GameObject eTrue, eFalse;//escape icon
     [SerializeField] bool music,sfx = false;
     public Slider MusicSlider, SFXSlider;
-    [SerializeField] bool bEscape = false;//enable if either one is active and disable if both is not active
+    [SerializeField] bool bEscape, bmap = false;//enable if either one is active and disable if both is not active
     PlayerController player;
     // Start is called before the first frame update
     void Start()
@@ -30,15 +29,11 @@ public class UIManager : MonoBehaviour
         {
             if (!bmap)
             {
-                Enabled();
-                Time.timeScale = 0;
                 map.SetActive(true);
                 bmap = true;
             }
             else if (bmap)
             {
-                Disabled();
-                Time.timeScale = 1;
                 map.SetActive(false);
                 bmap = false;
             }
@@ -47,20 +42,28 @@ public class UIManager : MonoBehaviour
         {
             if (!bEscape)
             {
-                Enabled();
-                Time.timeScale = 0;
                 bEscape = true;
                 escape.SetActive(true);
                 escapehud.SetActive(false);
             }
             else if (bEscape)
             {
-                Disabled();
-                Time.timeScale = 1;
                 bEscape = false;
                 escape.SetActive(false);
                 escapehud.SetActive(true);
             }
+        }
+
+        //enable or disable enoki
+        if (bEscape || bmap)
+        {
+            player.disabled = true;
+            Time.timeScale = 0;
+        }
+        else if (!bEscape && !bmap)
+        {
+            player.disabled = false;
+            Time.timeScale = 1;
         }
     }
 
@@ -127,16 +130,7 @@ public class UIManager : MonoBehaviour
         SFXSlider.value = Volumn;
         AudioManager.Instance.SFXVol(SFXSlider.value);
     }
-    public void Enabled()
-    {
-        if (!bEscape || !bmap)
-            player.disabled = true;
-    }
-    public void Disabled()
-    {
-        if (bEscape || bmap)
-            player.disabled = false;
-    }
+
     public void SaveExit()
     {
 
