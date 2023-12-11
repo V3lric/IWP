@@ -5,7 +5,6 @@ using UnityEngine;
 public class DestructableObj : MonoBehaviour
 {
     public GameObject Gate;
-    bool destroyed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,6 @@ public class DestructableObj : MonoBehaviour
         if (other.CompareTag("PCircles"))
         {
             Destroy(Gate);
-            destroyed = true;
             //anim
         }
     }

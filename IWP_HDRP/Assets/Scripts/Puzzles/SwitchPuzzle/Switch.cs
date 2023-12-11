@@ -7,7 +7,9 @@ public class Switch : MonoBehaviour
     public string Player = "Player";
     public GameObject text;
     public bool isSwitched,hit = false;
-
+    public Animator animator;
+    public float timer = 0f;
+    public float reset = 1.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,24 @@ public class Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0)
+            timer -= Time.deltaTime * 1f;
+
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
-            if (!isSwitched)
+            
+            if (!isSwitched && timer <= 0)
+            {
                 isSwitched = true;
-            else if (isSwitched)
+                animator.SetTrigger("Up");
+                timer = reset;
+            }
+            else if (isSwitched && timer <= 0)
+            {
                 isSwitched = false;
+                animator.SetTrigger("Down");
+                timer = reset;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

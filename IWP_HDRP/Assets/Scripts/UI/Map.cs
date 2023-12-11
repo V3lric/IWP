@@ -24,6 +24,10 @@ public class Map : MonoBehaviour
             SceneManager.LoadScene("HubScene");
             AudioManager.Instance.PlaySound("MainMenu");
         }
+        else
+        {
+            //play error sound
+        }
     }
     public void Scene1()
     {
@@ -31,6 +35,10 @@ public class Map : MonoBehaviour
         {
             SceneManager.LoadScene("Scene1");
             AudioManager.Instance.PlaySound("Scene1");
+        }
+        else
+        {
+            //play error sound
         }
     }
 
@@ -40,6 +48,10 @@ public class Map : MonoBehaviour
         {
             SceneManager.LoadScene("Scene2");
         }
+        else
+        {
+            //play error sound
+        }
     }
 
     public void Scene3()
@@ -47,6 +59,10 @@ public class Map : MonoBehaviour
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("SceneBoss") && !data.Stage2)
         {
             SceneManager.LoadScene("SceneBoss");
+        }
+        else
+        {
+            //play error sound
         }
     }
 }

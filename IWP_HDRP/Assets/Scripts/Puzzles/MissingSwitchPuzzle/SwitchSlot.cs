@@ -8,13 +8,13 @@ public class SwitchSlot : MonoBehaviour
     public GameObject text, switches;
     public bool isSwitched, hit, done = false;
     MissingSwitchManager manager;
-    GameManager game;
-
+    public Animator animator;
+    public float timer = 0f;
+    public float reset = 1.2f;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("SwitchPuzzle").GetComponent<MissingSwitchManager>();
-        game = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -36,10 +36,25 @@ public class SwitchSlot : MonoBehaviour
 
             if (done)
             {
-                if (!isSwitched)
-                    isSwitched = true;
-                else if (isSwitched)
-                    isSwitched = false;
+                if (timer > 0)
+                    timer -= Time.deltaTime * 1f;
+
+                if (Input.GetKeyDown(KeyCode.E) && hit)
+                {
+
+                    if (!isSwitched && timer <= 0)
+                    {
+                        isSwitched = true;
+                        animator.SetTrigger("Up");
+                        timer = reset;
+                    }
+                    else if (isSwitched && timer <= 0)
+                    {
+                        isSwitched = false;
+                        animator.SetTrigger("Down");
+                        timer = reset;
+                    }
+                }
             }
         }
     }
