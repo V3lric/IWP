@@ -34,4 +34,13 @@ public class ChatBubbleScript : MonoBehaviour
         BubbleGO.SetActive(false);
         triggered = false;
     }
+
+    public IEnumerator SpeechBubbleText(string text)
+    {
+        bubbleText.text = text;
+        BubbleGO.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        BubbleGO.SetActive(false);
+        triggered = false;
+    }
 }

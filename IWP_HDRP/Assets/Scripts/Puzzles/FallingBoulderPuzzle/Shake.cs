@@ -8,7 +8,7 @@ public class Shake : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            CineMachineShakeEffect.Instance.CameraShake(4f, 0.5f);
+            CineMachineShakeEffect.Instance.CameraShake(2f, 0.5f);
         }
     }
 }

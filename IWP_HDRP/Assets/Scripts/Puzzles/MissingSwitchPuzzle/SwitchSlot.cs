@@ -20,8 +20,27 @@ public class SwitchSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0)
+            timer -= Time.deltaTime * 1f;
+
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
+            if (done)
+            {
+                if (!isSwitched && timer <= 0)
+                {
+                    isSwitched = true;
+                    animator.SetTrigger("Up");
+                    timer = reset;
+                }
+                else if (isSwitched && timer <= 0)
+                {
+                    isSwitched = false;
+                    animator.SetTrigger("Down");
+                    timer = reset;
+                }
+            }
+
             if (manager.pickedUp)
             {
                 switches.SetActive(true);
@@ -32,29 +51,6 @@ public class SwitchSlot : MonoBehaviour
             else
             {
                 //play sound
-            }
-
-            if (done)
-            {
-                if (timer > 0)
-                    timer -= Time.deltaTime * 1f;
-
-                if (Input.GetKeyDown(KeyCode.E) && hit)
-                {
-
-                    if (!isSwitched && timer <= 0)
-                    {
-                        isSwitched = true;
-                        animator.SetTrigger("Up");
-                        timer = reset;
-                    }
-                    else if (isSwitched && timer <= 0)
-                    {
-                        isSwitched = false;
-                        animator.SetTrigger("Down");
-                        timer = reset;
-                    }
-                }
             }
         }
     }
