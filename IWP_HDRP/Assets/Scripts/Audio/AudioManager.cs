@@ -20,7 +20,10 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         }
         else
+        {
+            Debug.Log("More than 1 instance detected");
             Destroy(gameObject);
+        }
 
         PlaySound("MainMenu");
     }

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerData pData;
     public bool disabled = false;
+    public Animator animator;
 
     [Header("Player Stats")]
     public float speed = 10f;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+            
         if (disabled)//to do, ensure map disable don't override the esc disbale
         {
             Cursor.lockState = CursorLockMode.None;
@@ -62,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
     public void Movement()//WASD
     {
-
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector3 direction = new Vector3(movement.x, 0f, movement.y).normalized;
 
@@ -73,8 +74,12 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            animator.Play("Player");
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+
+        if (direction == Vector3.zero)
+            animator.Play("Idle");
     }
 
     public void Gravity()//set gravity on player
