@@ -75,7 +75,12 @@ public class MissingSwitchManager : MonoBehaviour
 
     void Difficulty()
     {
-        if (diff == 1 && switches == 3 && !completed)
+        if (diff == 0 && switches == 3 && !completed)
+        {
+            manager.CPIncrease();
+            completed = true;
+        }
+        else if (diff == 1 && switches == 3 && !completed)
         {
             manager.CPIncrease();
             completed = true;

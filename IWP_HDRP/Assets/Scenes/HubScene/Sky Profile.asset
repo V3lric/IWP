@@ -37,8 +37,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   earthCurvature:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.841
   cloudTiling:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1}
@@ -260,7 +260,7 @@ MonoBehaviour:
       additiveValue: 0
       multiplyValue: 1
   orientation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
       mode: 1
       customValue: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
     m_Value: 1850
   ambientProbeDimmer:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.96
 --- !u!114 &4792029741434803872
 MonoBehaviour:
   m_ObjectHideFlags: 3
