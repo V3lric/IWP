@@ -41,11 +41,11 @@ public class SwitchSlot : MonoBehaviour
                 }
             }
 
-            if (manager.pickedUp)
+            if (manager.iSwitchesPicked > 0)
             {
                 switches.SetActive(true);
                 manager.switches++;
-                manager.pickedUp = false;
+                manager.iSwitchesPicked--;
                 done = true;
             }
             else

@@ -19,15 +19,8 @@ public class MissingSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
-            if (!manager.pickedUp)
-            {
-                switches.SetActive(false);
-                manager.pickedUp = true;
-            }
-            else
-            {
-                //companion say can only pick up one at a time
-            }
+            switches.SetActive(false);
+            manager.iSwitchesPicked++;
         }
     }
 

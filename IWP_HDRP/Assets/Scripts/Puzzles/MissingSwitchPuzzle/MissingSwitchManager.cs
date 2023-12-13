@@ -9,20 +9,16 @@ public class MissingSwitchManager : MonoBehaviour
     public UnityEvent Cutscene;//invoke cutscene
     public GameObject[] Switches;
     public GameObject[] bPillar, pillar;
-    private int numberOfSwitches = 0;
-    public List<bool> missingSwitchOrder = new List<bool>();
     public string SwitchTags,bColumn, column = "";
     public GameObject cp;
-    public int currentIndex = 0;
-    public bool Solved = false;
-    // Start is called before the first frame update
-    GameManager manager;
-    private float elapsedTime;
-    public int switches,diff = 0;
-    public bool pickedUp,completed = false;
+    public int currentIndex, numberOfSwitches = 0;
+    public int switches,diff, iSwitchesPicked = 0;
+    public bool completed, Solved = false;
+    public List<bool> missingSwitchOrder = new List<bool>();
     List<GameObject> switchList = new List<GameObject>();
     List<GameObject> columnList = new List<GameObject>();
     List<GameObject> pColumnList = new List<GameObject>();
+    GameManager manager;
     PlayerData data;
 
     void Start()
