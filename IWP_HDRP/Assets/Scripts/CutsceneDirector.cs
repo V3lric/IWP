@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CutsceneDirector : MonoBehaviour
 {
@@ -10,5 +11,10 @@ public class CutsceneDirector : MonoBehaviour
     public void Play()
     {
         director.Play();
+    }
+
+    public void Trigger()
+    {
+        SceneManager.LoadScene("HubScene");
     }
 }

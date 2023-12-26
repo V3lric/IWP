@@ -51,19 +51,19 @@ public class Mainmenu : MonoBehaviour
     {
         pData.SetDifficulty(0);
         pData.SetDate();
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("PreTutCutscene");
     }
     public void SetMed()
     {
         pData.SetDifficulty(1);
         pData.SetDate();
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("PreTutCutscene");
     }
 
     public void SetHard()
     {
         pData.SetDifficulty(2);
         pData.SetDate();
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("PreTutCutscene");
     }
 }
