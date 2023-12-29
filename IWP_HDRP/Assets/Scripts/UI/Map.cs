@@ -56,9 +56,9 @@ public class Map : MonoBehaviour
 
     public void Scene3()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("SceneBoss") && !data.Stage2)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("BossScene") && !data.Stage2)
         {
-            SceneManager.LoadScene("SceneBoss");
+            SceneManager.LoadScene("BossScene");
         }
         else
         {
