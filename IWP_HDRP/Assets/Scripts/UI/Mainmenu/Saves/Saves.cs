@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class Saves : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class Saves : MonoBehaviour
 
     public void LoadData()
     {
-        SceneManager.LoadScene("HubScene");
+        if (pData.GetDate() != null)
+        {
+            pData.LoadFromJSON();
+            SceneManager.LoadScene("HubScene");
+        }
+        else
+        {
+            //play sound
+        }
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Mainmenu : MonoBehaviour
 {
     public GameObject setCam, dCam, saveCam;
-    private GameObject data;
     private PlayerData pData;
     // Start is called before the first frame update
     void Start()

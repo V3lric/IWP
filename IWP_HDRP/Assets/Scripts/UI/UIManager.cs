@@ -147,11 +147,12 @@ public class UIManager : MonoBehaviour
 
     public void SaveExit()
     {
-
+        Application.Quit();
     }
 
     public void MainMenu()
     {
+        data.SaveToJSON();
         SceneManager.LoadScene("MainMenu");
     }
 }

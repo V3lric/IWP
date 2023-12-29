@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using System.IO;
 
+[System.Serializable]
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] int walkspeed = 100;
+    public Stats stats = new Stats();
     [SerializeField] int talentPt, coins = 1;
-    [SerializeField] string savedDate = "";
+    [SerializeField] string savedDate;
     [SerializeField] int difficulty = 0;
     public bool Stage1, Stage2, StageBoss = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +25,6 @@ public class PlayerData : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SetDifficulty(int set)
@@ -49,8 +47,48 @@ public class PlayerData : MonoBehaviour
         return savedDate;
     }
 
-    public int GetWalkSpeed()
+    public void SavingData()
     {
-        return walkspeed;
+        stats.Stage1 = Stage1;
+        stats.Stage2 = Stage2;
+        stats.StageBoss = StageBoss;
+        stats.difficulty = GetDifficulty();
+        stats.date = GetDate();
     }
+
+    public void LoadData()
+    {
+        savedDate = stats.date;
+        Stage1 = stats.Stage1;
+        Stage1 = stats.Stage2;
+        StageBoss = stats.StageBoss;
+        difficulty = stats.difficulty;
+    }
+    public void SaveToJSON()
+    {
+        SavingData();
+        string statsData = JsonUtility.ToJson(stats);
+        string filePath = "Assets/SaveFiles/StatsData.json";
+        Debug.Log(filePath);
+        System.IO.File.WriteAllText(filePath, statsData);
+        Debug.Log("Save Created");
+    }
+
+    public void LoadFromJSON()//check if save file exists
+    {
+        string filePath = "Assets/SaveFiles/StatsData.json";
+        string statsData = System.IO.File.ReadAllText(filePath);
+        stats = JsonUtility.FromJson<Stats>(statsData);
+        LoadData();
+    }
+}
+
+[System.Serializable]
+public class Stats
+{
+    public bool Stage1;
+    public bool Stage2;
+    public bool StageBoss;
+    public int difficulty;
+    public string date;
 }

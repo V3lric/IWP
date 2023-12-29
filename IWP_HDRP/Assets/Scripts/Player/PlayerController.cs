@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-        speed = pData.GetWalkSpeed();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
