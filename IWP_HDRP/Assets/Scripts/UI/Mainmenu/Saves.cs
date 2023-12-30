@@ -14,7 +14,8 @@ public class Saves : MonoBehaviour
     void Start()
     {
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-        saveDate.text = pData.GetDate().ToString();
+        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
+            saveDate.text = pData.stats.date.ToString();
     }
 
     // Update is called once per frame
@@ -25,13 +26,15 @@ public class Saves : MonoBehaviour
 
     public void LoadData()
     {
-        if (pData.GetDate() != null)
+        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
         {
+            Debug.Log("save");
             pData.LoadFromJSON();
             SceneManager.LoadScene("HubScene");
         }
         else
         {
+            Debug.Log("No File Found");
             //play sound
         }
     }
