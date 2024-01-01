@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Puzzles\InteractUI.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\Switch.cs" />
+    <Compile Include="Assets\Scripts\Boss\PhaseStart.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractManager.cs" />
@@ -125,9 +126,9 @@
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\MissingSwitch.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\Packages\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractBlocks.cs" />
     <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\UpdateTextWithSliderValue.cs" />
+    <Compile Include="Assets\Scripts\Boss\BossHitBox.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Boulder.cs" />

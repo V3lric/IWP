@@ -22,6 +22,7 @@ TagManager:
   - ChatBubble
   - VCam
   - RespawnCube
+  - Boss
   layers:
   - Default
   - TransparentFX
