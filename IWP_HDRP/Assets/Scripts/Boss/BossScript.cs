@@ -67,8 +67,8 @@ public class BossScript : MonoBehaviour
         {
             for (int j = 0; j < boulderCount; j++)
             {
-                float randx = Random.Range(-10f, 10f);
-                float randz = Random.Range(-10f, 10f);
+                float randx = Random.Range(-8f, 8f);
+                float randz = Random.Range(-8f, 8f);
 
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.7f, randz);
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
