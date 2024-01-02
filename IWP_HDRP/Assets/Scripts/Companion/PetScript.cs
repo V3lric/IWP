@@ -25,7 +25,7 @@ public class PetScript : MonoBehaviour
             ai.destination = Vector3.Lerp(ai.destination, backwardDestination, Time.deltaTime * 4); // Adjust the factor for smoother movement
 
             // Rotate the pet to face away from the player
-            transform.forward = Vector3.Lerp(transform.forward, -reverseDirection.normalized, Time.deltaTime * 4);
+            //transform.forward = Vector3.Lerp(transform.forward, -reverseDirection.normalized, Time.deltaTime * 4);
 
             // aiAnim.ResetTrigger("jog");
             // aiAnim.SetTrigger("walkBackward");

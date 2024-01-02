@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 public class BossScript : MonoBehaviour
 {
+    public static BossScript instance;
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
     public bool phaseStart = false;
     [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
@@ -12,13 +13,14 @@ public class BossScript : MonoBehaviour
     [SerializeField] int phase = 0;
 
     [Header("Boss Stats")]
+    [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
     [SerializeField] float timer,resetTimer = 60f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class BossScript : MonoBehaviour
                         {
                             intervalTimer = resetIntervalTimer;
                             //play slam anim
-                            SpawnBoulder();
+                            StartCoroutine(SpawnBoulder());
                         }
                         break;
                     }
@@ -46,7 +48,7 @@ public class BossScript : MonoBehaviour
                         {
                             intervalTimer = resetIntervalTimer;
                             //play slam anim
-                            SpawnBoulder();
+                            StartCoroutine(SpawnBoulder());
                         }
                         break;
                     }
@@ -58,21 +60,28 @@ public class BossScript : MonoBehaviour
                 default:
                     break;
             }
+            if (lifes < 0)
+            {
+                //gameover
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
-    public void SpawnBoulder()
+    private IEnumerator SpawnBoulder()
     {
-        for (int i = 0; i < boulderSpawn.Count; i++)
+        for (int j = 0; j < boulderCount; j++)
         {
-            for (int j = 0; j < boulderCount; j++)
+            for (int i = 0; i < boulderSpawn.Count; i++)
             {
-                float randx = Random.Range(-8f, 8f);
-                float randz = Random.Range(-8f, 8f);
+                float randx = Random.Range(-6f, 6f);
+                float randz = Random.Range(-6f, 6f);
 
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.7f, randz);
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
+                VCamShake.instance.CameraShakeVCam(1f,2f);
+                yield return new WaitForSeconds(0.3f);
             }
         }
     }

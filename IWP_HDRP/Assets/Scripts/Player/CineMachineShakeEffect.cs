@@ -6,21 +6,22 @@ using Cinemachine;
 public class CineMachineShakeEffect : MonoBehaviour
 {
     public static CineMachineShakeEffect Instance { get; private set; }
-    private CinemachineFreeLook virtualCamera;
+    private CinemachineFreeLook freelookCamera;
+    private CinemachineVirtualCamera virtualCamera;
     private CinemachineBasicMultiChannelPerlin[] perlinComponents;
     public float shakeTimer;
 
     void Start()
     {
         Instance = this;
-        virtualCamera = GetComponent<CinemachineFreeLook>();
+        freelookCamera = GetComponent<CinemachineFreeLook>();
 
         // Assuming you have 3 rigs, adjust the size accordingly
         perlinComponents = new CinemachineBasicMultiChannelPerlin[3];
 
         for (int i = 0; i < perlinComponents.Length; i++)
         {
-            perlinComponents[i] = virtualCamera.GetRig(i).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            perlinComponents[i] = freelookCamera.GetRig(i).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         }
     }
 
