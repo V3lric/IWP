@@ -8,6 +8,7 @@ using System.IO;
 [System.Serializable]
 public class PlayerData : MonoBehaviour
 {
+    public static PlayerData instance;
     public Stats stats = new Stats();
     [SerializeField] int talentPt, coins = 1;
     [SerializeField] string savedDate;
@@ -24,6 +25,7 @@ public class PlayerData : MonoBehaviour
             Debug.Log("More than 1 instance detected");
             Destroy(this.gameObject);
         }
+        instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject map;
+    public GameObject map,maphud;
     public GameObject escape, escapehud;
     public GameObject mTrue, mFalse;//music icon
     public GameObject eTrue, eFalse;//escape icon
@@ -44,11 +44,13 @@ public class UIManager : MonoBehaviour
             if (!bmap)
             {
                 map.SetActive(true);
+                maphud.SetActive(false);
                 bmap = true;
             }
             else if (bmap)
             {
                 map.SetActive(false);
+                maphud.SetActive(true);
                 bmap = false;
             }
         }
@@ -145,8 +147,9 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.SFXVol(SFXSlider.value);
     }
 
-    public void SaveExit()
+    public void Quit()
     {
+        data.SaveToJSON();
         Application.Quit();
     }
 

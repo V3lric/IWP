@@ -7,20 +7,26 @@ public class BossScript : MonoBehaviour
 {
     public static BossScript instance;
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
-    public bool phaseStart = false;
     [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
-    [SerializeField] int phase = 0;
 
     [Header("Boss Stats")]
+    [SerializeField] bool phaseStart = false;
+    [SerializeField] int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
     [SerializeField] float timer,resetTimer = 60f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
+
+    [Header("Boss Run Stats")]
+    public UnityEvent WinCutscene;
+    public GameObject bossModel, entPt;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        if (PlayerData.instance.GetDifficulty() == 0)
+            lifes = 3;
     }
 
     // Update is called once per frame
@@ -41,7 +47,7 @@ public class BossScript : MonoBehaviour
                         }
                         break;
                     }
-                case 1://slam attack
+                case 1://slam attack(falling boulder + boss slam)
                     {
                         Timer();
                         if (intervalTimer < 0)
@@ -54,7 +60,8 @@ public class BossScript : MonoBehaviour
                     }
                 case 2://running away
                     {
-                        Timer();
+                        Cutscene2.Invoke();
+                        SceneManager.LoadScene("BossRunScene");
                         break;
                     }
                 default:
@@ -62,9 +69,14 @@ public class BossScript : MonoBehaviour
             }
             if (lifes < 0)
             {
-                //gameover
+                //gameover ui
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+        }
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
+        {
+            bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
         }
     }
 
@@ -97,9 +109,19 @@ public class BossScript : MonoBehaviour
             phase++;
         }
     }
+
+    public void WinGame()
+    {
+        Debug.Log("win");
+        WinCutscene.Invoke();
+    }
+
+    public void StartPhase()
+    {
+        phaseStart = true;
+    }
     public void PhaseBegin()
     {
         Cutscene.Invoke();
-        phaseStart = true;
     }
 }
