@@ -7,12 +7,15 @@ public class TriggerShake : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-            VCamShake.instance.CameraShakeVCam(4f, 1f);
+            VCamShake.instance.CameraShakeVCam(2f, 2f);
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-            VCamShake.instance.CameraShakeVCam(4f, 1f);
+        {
+            VCamShake.instance.CameraShakeVCam(2f, 2f);
+            Debug.Log("hi");
+        }
     }
 }

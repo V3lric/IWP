@@ -8,12 +8,15 @@ public class VCamShake : MonoBehaviour
     public static VCamShake instance;
     private CinemachineVirtualCamera virtualCamera;
     public float shakeTimer;
+    CinemachineBasicMultiChannelPerlin cinemachine;
 
     // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        cinemachine = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        cinemachine.m_AmplitudeGain = 0f;
     }
 
     // Update is called once per frame
@@ -24,7 +27,8 @@ public class VCamShake : MonoBehaviour
             shakeTimer -= Time.deltaTime * 1f;
             if (shakeTimer <= 0)
             {
-                CinemachineBasicMultiChannelPerlin cinemachine = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                Debug.Log("hi");
+                cinemachine = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
                 cinemachine.m_AmplitudeGain = 0f;
             }
         }

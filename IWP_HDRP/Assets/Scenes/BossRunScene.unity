@@ -1089,7 +1089,7 @@ Transform:
   m_GameObject: {fileID: 1355235867}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9}
+  m_LocalPosition: {x: 0, y: 0, z: 17.4}
   m_LocalScale: {x: 100, y: 10, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1703,7 +1703,7 @@ GameObject:
   - component: {fileID: 8247752112400363589}
   - component: {fileID: 8663954432141924038}
   - component: {fileID: 8730870348874668661}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2236,7 +2236,7 @@ GameObject:
   - component: {fileID: 8775825928384078921}
   - component: {fileID: 7005067636066229499}
   - component: {fileID: 2026349240142799900}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scene2UnlockButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2274,7 +2274,7 @@ GameObject:
   - component: {fileID: 1012852976532807213}
   - component: {fileID: 7880023379233241001}
   - component: {fileID: 4089820077120394284}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BossButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ GameObject:
   - component: {fileID: 371692464927323717}
   - component: {fileID: 454700685956979851}
   - component: {fileID: 78027026819639628}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2952,7 +2952,7 @@ GameObject:
   - component: {fileID: 4874208238371688591}
   - component: {fileID: 3477338728548999701}
   - component: {fileID: 1801519710750229689}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3466,7 +3466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382491178741745525}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Pinpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3509,7 +3509,7 @@ GameObject:
   - component: {fileID: 3249940448691055649}
   - component: {fileID: 109306567173527918}
   - component: {fileID: 4543089378970525827}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HubButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3821,7 +3821,7 @@ GameObject:
   - component: {fileID: 3268608032114694723}
   - component: {fileID: 262532704927937656}
   - component: {fileID: 4940579057772040054}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4117,7 +4117,7 @@ GameObject:
   - component: {fileID: 7943243326089448864}
   - component: {fileID: 8566330517564075534}
   - component: {fileID: 614874684164770727}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4164,7 +4164,7 @@ GameObject:
   - component: {fileID: 9045309301832929360}
   - component: {fileID: 2514422665696523626}
   - component: {fileID: 5415375833814178650}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4254,7 +4254,7 @@ GameObject:
   - component: {fileID: 2384763422761773378}
   - component: {fileID: 1858758006913508856}
   - component: {fileID: 7404048393049348276}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scene2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4408,7 +4408,7 @@ GameObject:
   - component: {fileID: 6637841722783419416}
   - component: {fileID: 7686443946093393429}
   - component: {fileID: 8029638220872346381}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scene1UnlockButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4768,7 +4768,7 @@ GameObject:
   - component: {fileID: 3221465825384093680}
   - component: {fileID: 5910675229592595223}
   - component: {fileID: 646128810241011996}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scene1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5227,7 +5227,7 @@ GameObject:
   - component: {fileID: 7805688962033247718}
   - component: {fileID: 3137441053870563537}
   - component: {fileID: 3009866150907133381}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5521,7 +5521,7 @@ GameObject:
   - component: {fileID: 99858719753748420}
   - component: {fileID: 6041389487425983519}
   - component: {fileID: 6725549140300689953}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6156,7 +6156,7 @@ GameObject:
   - component: {fileID: 393509205730818536}
   - component: {fileID: 7629198174403174046}
   - component: {fileID: 1649075912148542812}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6380,7 +6380,7 @@ GameObject:
   - component: {fileID: 1674815462096584554}
   - component: {fileID: 3300931994855818688}
   - component: {fileID: 4797922426659274446}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

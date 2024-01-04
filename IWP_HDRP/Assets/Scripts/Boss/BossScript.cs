@@ -95,7 +95,7 @@ public class BossScript : MonoBehaviour
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.7f, randz);
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
-                //VCamShake.instance.CameraShakeVCam(1f,2f);
+                VCamShake.instance.CameraShakeVCam(1f,2f);
                 yield return new WaitForSeconds(0.3f);
             }
         }
@@ -125,6 +125,7 @@ public class BossScript : MonoBehaviour
     }
     public void PhaseBegin()
     {
+        phaseStart = true;
         Cutscene.Invoke();
     }
 }
