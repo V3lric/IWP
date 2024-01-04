@@ -32,49 +32,52 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (phaseStart)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossScene"))
         {
-            switch (phase)//diff phases of boss
+            if (phaseStart)
             {
-                case 0://falling boulder (1 min, 10 boulder with 5s intervals)
-                    {
-                        Timer();
-                        if (intervalTimer < 0)
+                switch (phase)//diff phases of boss
+                {
+                    case 0://falling boulder (1 min, 10 boulder with 5s intervals)
                         {
-                            intervalTimer = resetIntervalTimer;
-                            //play slam anim
-                            StartCoroutine(SpawnBoulder());
+                            Timer();
+                            if (intervalTimer < 0)
+                            {
+                                intervalTimer = resetIntervalTimer;
+                                //play slam anim
+                                StartCoroutine(SpawnBoulder());
+                            }
+                            break;
                         }
-                        break;
-                    }
-                case 1://slam attack(falling boulder + boss slam)
-                    {
-                        Timer();
-                        if (intervalTimer < 0)
+                    case 1://slam attack(falling boulder + boss slam)
                         {
-                            intervalTimer = resetIntervalTimer;
-                            //play slam anim
-                            StartCoroutine(SpawnBoulder());
+                            Timer();
+                            if (intervalTimer < 0)
+                            {
+                                intervalTimer = resetIntervalTimer;
+                                //play slam anim
+                                StartCoroutine(SpawnBoulder());
+                            }
+                            break;
                         }
+                    case 2://running away
+                        {
+                            Cutscene2.Invoke();
+                            SceneManager.LoadScene("BossRunScene");
+                            break;
+                        }
+                    default:
                         break;
-                    }
-                case 2://running away
-                    {
-                        Cutscene2.Invoke();
-                        SceneManager.LoadScene("BossRunScene");
-                        break;
-                    }
-                default:
-                    break;
-            }
-            if (lifes < 0)
-            {
-                //gameover ui
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+                if (lifes < 0)
+                {
+                    //gameover ui
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
         {
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
         }
@@ -92,7 +95,7 @@ public class BossScript : MonoBehaviour
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.7f, randz);
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
-                VCamShake.instance.CameraShakeVCam(1f,2f);
+                //VCamShake.instance.CameraShakeVCam(1f,2f);
                 yield return new WaitForSeconds(0.3f);
             }
         }
