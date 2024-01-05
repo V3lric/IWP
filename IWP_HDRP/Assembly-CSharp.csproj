@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\GamePlay\GameManager.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Boss\FallingBoulder.cs" />
+    <Compile Include="Assets\Scripts\Player\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Rotating Platform\Platform.cs" />
