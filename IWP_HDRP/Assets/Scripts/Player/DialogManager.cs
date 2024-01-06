@@ -13,7 +13,6 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator DialogSpeech()
     {
-        DialogText.text = chatText[manager.uiBubbleCP];
+        //DialogText.text = chatText[manager.uiBubbleCP];
         dialog.SetActive(true);
         yield return new WaitForSeconds(4f);
         dialog.SetActive(false);
