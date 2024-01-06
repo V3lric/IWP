@@ -5,22 +5,48 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
+    public static DialogManager instance;
     public GameObject dialog;
     public TextMeshProUGUI DialogPerson, DialogText;
-    [SerializeField] string[] chatText;
+    [SerializeField] string[] chatText,bossIntro;
     GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BossIntro()
     {
-        
+        StartCoroutine(BossIntroSpeech());
     }
-
+    IEnumerator BossIntroSpeech()
+    {
+        int speech = 0;
+        DialogPerson.text = "Slug";
+        DialogText.text = bossIntro[speech];
+        dialog.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        DialogPerson.text = "Slug";
+        speech++;
+        DialogText.text = bossIntro[speech];
+        yield return new WaitForSeconds(4f);
+        DialogPerson.text = "Slug";
+        speech++;
+        DialogText.text = bossIntro[speech];
+        yield return new WaitForSeconds(4f);
+        DialogPerson.text = "Enoki";
+        speech++;
+        DialogText.text = bossIntro[speech];
+        yield return new WaitForSeconds(4f);
+        DialogPerson.text = "Slug";
+        speech++;
+        DialogText.text = bossIntro[speech];
+        yield return new WaitForSeconds(4f);
+        dialog.SetActive(false);
+        DialogText.text = "";
+    }
     IEnumerator DialogSpeech()
     {
         //DialogText.text = chatText[manager.uiBubbleCP];

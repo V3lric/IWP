@@ -121,11 +121,11 @@ public class BossScript : MonoBehaviour
 
     public void StartPhase()
     {
-        phaseStart = true;
+        phaseStart = true; 
     }
     public void PhaseBegin()
     {
-        phaseStart = true;
+        DialogManager.instance.BossIntro();
         Cutscene.Invoke();
     }
 }
