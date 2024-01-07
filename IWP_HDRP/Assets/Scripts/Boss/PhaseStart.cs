@@ -6,6 +6,7 @@ public class PhaseStart : MonoBehaviour
 {
     BossScript boss;
     public GameObject gate, player, pos;
+    bool once = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class PhaseStart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        bool once = false;
+
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !once)
         {
             boss.PhaseBegin();
