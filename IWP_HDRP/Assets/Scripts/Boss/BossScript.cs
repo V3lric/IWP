@@ -7,6 +7,7 @@ public class BossScript : MonoBehaviour
 {
     public static BossScript instance;
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
+    public GameObject vcam;
     [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
 
@@ -121,7 +122,8 @@ public class BossScript : MonoBehaviour
 
     public void StartPhase()
     {
-        phaseStart = true; 
+        phaseStart = true;
+        vcam.SetActive(true);
     }
     public void PhaseBegin()
     {
