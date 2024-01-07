@@ -26,7 +26,7 @@ public class PetScript : MonoBehaviour
 
             // Rotate the pet to face away from the player
             //transform.forward = Vector3.Lerp(transform.forward, -reverseDirection.normalized, Time.deltaTime * 4);
-
+            transform.LookAt(player);
             // aiAnim.ResetTrigger("jog");
             // aiAnim.SetTrigger("walkBackward");
         }
