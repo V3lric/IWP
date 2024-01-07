@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerData pData;
+    public static PlayerController Instance;
     public bool disabled = false;
     public Animator animator;
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         characterController = GetComponent<CharacterController>();
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
         Cursor.lockState = CursorLockMode.Locked;

@@ -40,7 +40,7 @@ public class DialogManager : MonoBehaviour
         DialogPerson.text = "Enoki";
         speech++;
         DialogText.text = bossIntro[speech];
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(4.5f);
         DialogPerson.text = "Slug";
         speech++;
         DialogText.text = bossIntro[speech];
