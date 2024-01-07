@@ -73,7 +73,8 @@ public class BossScript : MonoBehaviour
                 if (lifes < 0)
                 {
                     //gameover ui
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    //disabled to hide from suen
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
         }
