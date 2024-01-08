@@ -18,7 +18,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] int boulderCount;
     [SerializeField] float timer,resetTimer = 60f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
-
+    bool once = false;
     [Header("Boss Run Stats")]
     public UnityEvent WinCutscene;
     public GameObject bossModel, entPt;
@@ -52,6 +52,12 @@ public class BossScript : MonoBehaviour
                         }
                     case 1://slam attack(falling boulder + boss slam)
                         {
+                            if (!once)
+                            {
+                                DialogManager.instance.CustomText("Argghhh you're dead!");
+                                once = true;
+                            }
+
                             Timer();
                             if (intervalTimer < 0)
                             {
@@ -91,8 +97,8 @@ public class BossScript : MonoBehaviour
         {
             for (int i = 0; i < boulderSpawn.Count; i++)
             {
-                float randx = Random.Range(-5f, 5f);
-                float randz = Random.Range(-5f, 5f);
+                float randx = Random.Range(-4.5f, 4.5f);
+                float randz = Random.Range(-4.5f, 4.5f);
 
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.5f, randz);
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);

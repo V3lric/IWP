@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI DialogPerson, DialogText;
     [SerializeField] string[] chatText,bossIntro;
     GameManager manager;
-
+    bool once = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,10 @@ public class DialogManager : MonoBehaviour
     public void BossIntro()
     {
         StartCoroutine(BossIntroSpeech());
+    }
+    public void CustomText(string text)
+    {
+        StartCoroutine(DialogSpeechText(text));
     }
     IEnumerator BossIntroSpeech()
     {
@@ -48,6 +52,15 @@ public class DialogManager : MonoBehaviour
         dialog.SetActive(false);
         DialogText.text = "";
     }
+    IEnumerator DialogSpeechText(string text)
+    {
+        DialogText.text = text;
+        dialog.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        dialog.SetActive(false);
+        DialogText.text = "";
+    }
+
     IEnumerator DialogSpeech()
     {
         //DialogText.text = chatText[manager.uiBubbleCP];
