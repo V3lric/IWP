@@ -27,7 +27,6 @@ public class VCamShake : MonoBehaviour
             shakeTimer -= Time.deltaTime * 1f;
             if (shakeTimer <= 0)
             {
-                Debug.Log("hi");
                 cinemachine = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
                 cinemachine.m_AmplitudeGain = 0f;
             }

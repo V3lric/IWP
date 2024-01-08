@@ -69,8 +69,8 @@ public class BossScript : MonoBehaviour
                         }
                     case 2://running away
                         {
-                            Cutscene2.Invoke();
-                            SceneManager.LoadScene("BossRunScene");
+                            Cutscene2.Invoke();//disabled to hide from suen
+                            //SceneManager.LoadScene("BossRunScene");
                             break;
                         }
                     default:
@@ -79,8 +79,7 @@ public class BossScript : MonoBehaviour
                 if (lifes < 0)
                 {
                     //gameover ui
-                    //disabled to hide from suen
-                    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
         }
