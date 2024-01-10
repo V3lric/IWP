@@ -13405,17 +13405,17 @@ PrefabInstance:
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.051766846
+      value: -0.051766843
       objectReference: {fileID: 0}
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000021088375
+      value: -0.000000018661792
       objectReference: {fileID: 0}
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000010931446
+      value: -9.673592e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -13425,17 +13425,17 @@ PrefabInstance:
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.05570607
+      value: -0.05570608
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 6.0568933e-33
+      value: 3.2480017e-26
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.5641953e-34
+      value: -6.1065846e-29
       objectReference: {fileID: 0}
     - target: {fileID: 4085043832954864249, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -13505,7 +13505,7 @@ PrefabInstance:
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.05570607
+      value: -0.05570608
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -13542,6 +13542,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bbbf210573b404d9ff5c51acd49ac8, type: 3}
+--- !u!114 &1322368917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4085043832954864249, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1322368916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540628692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e809f9f0ecf11db4e874907aa13f355d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1333048390
 GameObject:
   m_ObjectHideFlags: 0
@@ -13658,6 +13670,7 @@ GameObject:
   - component: {fileID: 1358295171}
   - component: {fileID: 1358295172}
   - component: {fileID: 1358295173}
+  - component: {fileID: 1358295174}
   m_Layer: 0
   m_Name: CutscenePuzzle2
   m_TagString: Untagged
@@ -13710,6 +13723,8 @@ PlayableDirector:
     value: {fileID: 1540628692}
   - key: {fileID: -485114878039983840, guid: 996d3ca6da4423c4abfaf0db9be2aa38, type: 2}
     value: {fileID: 1917933556}
+  - key: {fileID: -1656689991123238452, guid: 996d3ca6da4423c4abfaf0db9be2aa38, type: 2}
+    value: {fileID: 1358295174}
   m_ExposedReferences:
     m_References:
     - 98d1aa50e13c4ab4592714cf762b1b96: {fileID: 0}
@@ -13727,6 +13742,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1358295172}
+--- !u!114 &1358295174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358295170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ef004453b596f4946b8aecdbf4d811bd, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1322368917}
+          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+          m_MethodName: OffDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1360147276
 GameObject:
   m_ObjectHideFlags: 0
@@ -18286,6 +18331,7 @@ GameObject:
   - component: {fileID: 1878589056}
   - component: {fileID: 1878589057}
   - component: {fileID: 1878589058}
+  - component: {fileID: 1878589059}
   m_Layer: 0
   m_Name: CutscenePuzzle1
   m_TagString: Untagged
@@ -18340,6 +18386,8 @@ PlayableDirector:
     value: {fileID: 1540628692}
   - key: {fileID: -7575748832010466267, guid: 5871da9f8da4c294fa9b90dac0dc61bf, type: 2}
     value: {fileID: 1917933556}
+  - key: {fileID: 7417116121968260150, guid: 5871da9f8da4c294fa9b90dac0dc61bf, type: 2}
+    value: {fileID: 1878589059}
   m_ExposedReferences:
     m_References:
     - c5a982646a780c94ab0397407117b1d3: {fileID: 2071293998}
@@ -18356,6 +18404,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1878589057}
+--- !u!114 &1878589059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878589055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ef004453b596f4946b8aecdbf4d811bd, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1322368917}
+          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+          m_MethodName: OffDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!65 &1902496239
 BoxCollider:
   m_ObjectHideFlags: 0

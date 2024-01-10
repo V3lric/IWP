@@ -25,6 +25,9 @@ public class DialogManager : MonoBehaviour
     {
         StartCoroutine(BossIntroSpeech());
     }
+    public void OffDialog(){
+        dialog.SetActive(false);
+    }
     public void CustomText(string text)
     {
         StartCoroutine(DialogSpeechText(text));
