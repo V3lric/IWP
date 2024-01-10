@@ -4003,7 +4003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 80000
+  m_Intensity: 33000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -4125,7 +4125,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 80000
+  m_Intensity: 33000
   m_Range: 73.1244
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6830,20 +6830,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 322031647199936879, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061801470008783498, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 4238866606815579079, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
       propertyPath: m_Intensity
-      value: 400000
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 4238866606815579079, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
       propertyPath: m_UseColorTemperature
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4574990973490458634, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 4998682645513746383, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
       propertyPath: m_Intensity
-      value: 400000
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884152393565690558, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7887204429835146541, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
@@ -17478,12 +17498,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1232076066}
+  - {fileID: 1614275960}
   - {fileID: 43889489}
   - {fileID: 1945652734}
   - {fileID: 2046362029}
   - {fileID: 610728874}
   - {fileID: 791834199}
-  - {fileID: 1614275960}
   - {fileID: 8698191820723253283}
   - {fileID: 40930399}
   - {fileID: 131130457}

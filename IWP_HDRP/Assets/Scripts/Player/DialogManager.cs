@@ -17,6 +17,10 @@ public class DialogManager : MonoBehaviour
         instance = this;
     }
 
+    public void Dialog()
+    {
+            StartCoroutine(DialogSpeech());
+    }
     public void BossIntro()
     {
         StartCoroutine(BossIntroSpeech());
@@ -63,7 +67,7 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator DialogSpeech()
     {
-        //DialogText.text = chatText[manager.uiBubbleCP];
+        DialogText.text = chatText[GameManager.Instance.uiBubbleCP];
         dialog.SetActive(true);
         yield return new WaitForSeconds(4f);
         dialog.SetActive(false);

@@ -7,6 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     [Header("Gameplay")]
     public UnityEvent Stages;
     public bool puzzle1, puzzle2 = false;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
         pet = GameObject.FindGameObjectWithTag("ChatBubble").GetComponent<ChatBubbleScript>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
         pet.triggered = true;
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
+        DialogManager.instance.Dialog();
     }
 
     public Vector3 GetCheckPoint()
