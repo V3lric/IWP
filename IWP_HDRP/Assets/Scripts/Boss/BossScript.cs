@@ -7,9 +7,13 @@ public class BossScript : MonoBehaviour
 {
     public static BossScript instance;
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
-    public GameObject vcam;
+    public GameObject vcam, bossIndicator;
+    public Transform bossSlamPos;
     [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
+    [SerializeField] Vector3 bossOGPos;
+    [SerializeField]Animator animator;
+    private bool doneSmashing;
 
     [Header("Boss Stats")]
     [SerializeField] bool phaseStart = false;
@@ -26,6 +30,7 @@ public class BossScript : MonoBehaviour
     void Start()
     {
         instance = this;
+        bossOGPos = bossModel.transform.position;
         if (PlayerData.instance.GetDifficulty() == 0)
             lifes = 3;
     }
@@ -58,10 +63,24 @@ public class BossScript : MonoBehaviour
                                 once = true;
                             }
 
+                            if (doneSmashing)
+                            {
+                                var step = 6f * Time.deltaTime; // calculate distance to move
+                                bossModel.transform.position = Vector3.MoveTowards(bossModel.transform.position, bossOGPos, step);
+
+                                if (bossModel.transform.position == bossOGPos)
+                                {
+                                    doneSmashing = false;
+                                }
+                            }
+
+
                             Timer();
                             if (intervalTimer < 0)
                             {
                                 intervalTimer = resetIntervalTimer;
+                                animator.Play("BossSlam");
+                                StartCoroutine(BossSlam());
                                 //play slam anim
                                 StartCoroutine(SpawnBoulder());
                             }
@@ -70,7 +89,7 @@ public class BossScript : MonoBehaviour
                     case 2://running away
                         {
                             Cutscene2.Invoke();//disabled to hide from suen
-                            //SceneManager.LoadScene("BossRunScene");
+                            SceneManager.LoadScene("BossRunScene");
                             break;
                         }
                     default:
@@ -88,6 +107,33 @@ public class BossScript : MonoBehaviour
         {
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
         }
+    }
+
+    private IEnumerator BossSlam()
+    {
+        float randx = Random.Range(-10f, 10f);
+        Vector3 spawnPosition = bossSlamPos.transform.position + new Vector3(randx, 0, 0);
+        bossIndicator.transform.position = spawnPosition;
+        bossIndicator.SetActive(true);
+
+        // Wait for the current frame to finish
+        yield return null;
+
+        yield return new WaitForSeconds(2f);
+
+        bossModel.transform.position = spawnPosition;
+        animator.PlayInFixedTime("Smashing");
+        bossIndicator.SetActive(false);
+
+        // Wait for the current frame to finish
+        yield return null;
+
+        // Waits for anim to play fin before shaking vcam
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - 0.01f);
+
+        VCamShake.instance.CameraShakeVCam(10f, 1f);
+        animator.Play("Walking");
+        doneSmashing = true;
     }
 
     private IEnumerator SpawnBoulder()

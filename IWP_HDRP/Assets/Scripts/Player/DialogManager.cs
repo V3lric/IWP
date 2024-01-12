@@ -35,7 +35,7 @@ public class DialogManager : MonoBehaviour
     IEnumerator BossIntroSpeech()
     {
         int speech = 0;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         DialogPerson.text = "Slug";
         DialogText.text = bossIntro[speech];
         dialog.SetActive(true);

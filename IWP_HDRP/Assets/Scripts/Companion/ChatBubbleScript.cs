@@ -29,6 +29,11 @@ public class ChatBubbleScript : MonoBehaviour
         }
     }
 
+    public void DotBubble()
+    {
+        StartCoroutine(SpeechBubble());
+        StartCoroutine(SpeechBubbleDot());
+    }
     IEnumerator SpeechBubble()
     {
         //bubbleText.text = chatText[manager.uiBubbleCP];
