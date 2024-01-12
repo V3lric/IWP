@@ -115,21 +115,14 @@ public class BossScript : MonoBehaviour
         Vector3 spawnPosition = bossSlamPos.transform.position + new Vector3(randx, 0, 0);
         bossIndicator.transform.position = spawnPosition;
         bossIndicator.SetActive(true);
-
-        // Wait for the current frame to finish
-        yield return null;
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(1.5f);
 
         bossModel.transform.position = spawnPosition;
         animator.PlayInFixedTime("Smashing");
         bossIndicator.SetActive(false);
 
-        // Wait for the current frame to finish
-        yield return null;
-
         // Waits for anim to play fin before shaking vcam
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - 0.01f);
+        yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorStateInfo(0).length - 2.5f);
 
         VCamShake.instance.CameraShakeVCam(10f, 1f);
         animator.Play("Walking");
