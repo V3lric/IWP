@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public GameObject map;
+    public UIManager manager;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            map.SetActive(true);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            map.SetActive(false);
+            manager.Portal();
     }
 }

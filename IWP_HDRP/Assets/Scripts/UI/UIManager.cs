@@ -70,12 +70,13 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        //enable or disable enoki
+        //disable enoki
         if (bEscape || bmap)
         {
             player.disabled = true;
             Time.timeScale = 0;
         }
+        //enable enoki
         else if (!bEscape && !bmap)
         {
             player.disabled = false;
@@ -83,6 +84,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void Portal()
+    {
+        map.SetActive(true);
+        maphud.SetActive(false);
+        bmap = true;
+    }
     public void ToggleMusic()
     {
         AudioManager.Instance.ToggleMusic();
