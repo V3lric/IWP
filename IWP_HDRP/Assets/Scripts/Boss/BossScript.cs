@@ -105,6 +105,7 @@ public class BossScript : MonoBehaviour
 
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
         {
+            animator.Play("Walking");
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
         }
     }

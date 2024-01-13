@@ -73,14 +73,13 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            animator.SetFloat("Player", 1f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            animator.Play("Player");
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        if (direction == Vector3.zero)
-            animator.Play("Idle");
+        if (direction == new Vector3(0, direction.y,0))
+            animator.SetFloat("Player",0f + 0.01f, 0.1f, 1f * Time.deltaTime);
     }
 
     public void Gravity()//set gravity on player
@@ -102,6 +101,7 @@ public class PlayerController : MonoBehaviour
                 Velocity.y += Mathf.Sqrt((jumpSpeed * 10) * -2f * gravity);
                 jumpsInAir--;
             }
+            animator.PlayInFixedTime("Jump");
         }
         //if (Velocity.y > -20 || Velocity.y < -100)
         //    Velocity.y += (gravity * 10) * Time.deltaTime;

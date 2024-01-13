@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 using UnityEngine.SceneManagement;
+
 public class AudioManager : MonoBehaviour
 {
     public Sound[] musicSound, sfxSound;
@@ -11,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer music, sfx;
     public static AudioManager Instance;
     public bool toggle, togglem = false;
+    Scene activeScene,prevScene;
 
     private void Awake()
     {
@@ -24,8 +26,47 @@ public class AudioManager : MonoBehaviour
             Debug.Log("More than 1 instance detected");
             Destroy(gameObject);
         }
+        SceneManager.sceneLoaded += OnSceneWasLoaded;
+    }
+    void OnSceneWasLoaded(Scene scene, LoadSceneMode loadMode)
+    {
+        StopBGM();
+        PlayBGM();
+    }
 
-        PlaySound("MainMenu");
+    private void PlayBGM()
+    {
+        if (activeScene != SceneManager.GetActiveScene())
+        {
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
+                PlaySound("MainMenu");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("HubScene"))
+                PlaySound("MainMenu");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Scene1"))
+                PlaySound("Scene1");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossScene"))
+                PlaySound("Scene1");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
+                PlaySound("MainMenu");
+
+            prevScene = activeScene;
+        }
+    }
+
+    private void StopBGM()
+    {
+        if (prevScene == SceneManager.GetSceneByName("MainMenu"))
+            StopSound("MainMenu");
+        else if (prevScene == SceneManager.GetSceneByName("PreTutCutscene"))
+            StopSound("MainMenu");
+        else if (prevScene == SceneManager.GetSceneByName("HubScene"))
+            StopSound("MainMenu");
+        else if (prevScene == SceneManager.GetSceneByName("Scene1"))
+            StopSound("Scene1");
+        else if (prevScene == SceneManager.GetSceneByName("BossScene"))
+            StopSound("Scene1");
+        else if (prevScene == SceneManager.GetSceneByName("BossRunScene"))
+            StopSound("MainMenu");
     }
     public void PlaySound(string name)
     {
