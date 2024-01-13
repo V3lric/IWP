@@ -5,16 +5,12 @@ using UnityEngine;
 public class FallingBoulder : MonoBehaviour
 {
     public GameObject boulder;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerData.instance.GetDifficulty() == 2)
+            gameObject.GetComponent<Rigidbody>().velocity += new Vector3(0,-10f,0) * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

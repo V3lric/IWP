@@ -9,7 +9,7 @@ public class BossScript : MonoBehaviour
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
     public GameObject vcam, bossIndicator;
     public Transform bossSlamPos;
-    [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
+    [SerializeField] GameObject boulder,hardBoulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
     [SerializeField] Vector3 bossOGPos;
     [SerializeField]Animator animator;
@@ -140,7 +140,7 @@ public class BossScript : MonoBehaviour
                 float randz = Random.Range(-4.5f, 4.5f);
 
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.5f, randz);
-                GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
+                GameObject go = Instantiate(hardBoulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
                 VCamShake.instance.CameraShakeVCam(1f,2f);
                 yield return new WaitForSeconds(0.3f);
@@ -168,6 +168,7 @@ public class BossScript : MonoBehaviour
 
     public void StartPhase()
     {
+        bossModel.SetActive(true);
         phaseStart = true;
         vcam.SetActive(true);
     }

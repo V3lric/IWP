@@ -9,8 +9,7 @@ public class DialogManager : MonoBehaviour
     public GameObject dialog;
     public TextMeshProUGUI DialogPerson, DialogText;
     [SerializeField] string[] chatText,bossIntro;
-    GameManager manager;
-    bool once = false;
+
     // Start is called before the first frame update
     void Start()
     {
