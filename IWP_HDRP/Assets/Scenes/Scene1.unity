@@ -13121,6 +13121,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2391436021267331005, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1322368918}
     - target: {fileID: 2517152727974170919, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13193,6 +13198,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e809f9f0ecf11db4e874907aa13f355d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1322368918 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1488176261893098570, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1322368916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333048390
 GameObject:
   m_ObjectHideFlags: 0

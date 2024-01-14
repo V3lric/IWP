@@ -50,7 +50,7 @@ public class BossScript : MonoBehaviour
                             if (intervalTimer < 0)
                             {
                                 intervalTimer = resetIntervalTimer;
-                                //play slam anim
+                                animator.SetTrigger("SmashingGround");
                                 StartCoroutine(SpawnBoulder());
                             }
                             break;

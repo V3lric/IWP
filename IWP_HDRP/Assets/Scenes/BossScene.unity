@@ -9931,6 +9931,11 @@ PrefabInstance:
       propertyPath: m_YAxis.Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2391436021267331005, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1452671375}
     - target: {fileID: 2517152727974170919, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18754,6 +18759,12 @@ Transform:
   - {fileID: 1142937233}
   m_Father: {fileID: 1527198479}
   m_LocalEulerAnglesHint: {x: -0.0011799306, y: -0.000000106386764, z: -0.000010788778}
+--- !u!95 &1452671375 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1488176261893098570, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 804190843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459269000
 GameObject:
   m_ObjectHideFlags: 0

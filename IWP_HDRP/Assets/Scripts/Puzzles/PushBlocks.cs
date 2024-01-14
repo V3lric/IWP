@@ -7,6 +7,7 @@ public class PushBlocks : MonoBehaviour
     private Rigidbody Block;
     public float forceMagnitude;
     public string Tag = "PBlocks";
+    public Animator animator;
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -32,6 +33,7 @@ public class PushBlocks : MonoBehaviour
 
             AudioManager.Instance.PlaySFX("PushBlock");
             Block.AddForceAtPosition((directionLimit * forceMagnitude * Time.fixedUnscaledDeltaTime), transform.position, ForceMode.Impulse);
+            animator.SetFloat("Player", 2f, 0.01f, Time.fixedUnscaledDeltaTime);
         }
     }
 }
