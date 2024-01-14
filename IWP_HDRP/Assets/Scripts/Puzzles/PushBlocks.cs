@@ -7,17 +7,7 @@ public class PushBlocks : MonoBehaviour
     private Rigidbody Block;
     public float forceMagnitude;
     public string Tag = "PBlocks";
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Block = hit.collider.attachedRigidbody;
@@ -41,7 +31,7 @@ public class PushBlocks : MonoBehaviour
             }
 
             AudioManager.Instance.PlaySFX("PushBlock");
-            Block.AddForceAtPosition((directionLimit * forceMagnitude), transform.position, ForceMode.Impulse);
+            Block.AddForceAtPosition((directionLimit * forceMagnitude * Time.fixedUnscaledDeltaTime), transform.position, ForceMode.Impulse);
         }
     }
 }

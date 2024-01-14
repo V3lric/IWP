@@ -8,7 +8,7 @@ public class BossHitBox : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            //restart
+            BossScript.instance.lifes--;
             Debug.Log("hit");
         }
     }

@@ -9,7 +9,7 @@ public class BossScript : MonoBehaviour
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
     public GameObject vcam, bossIndicator;
     public Transform bossSlamPos;
-    [SerializeField] GameObject boulder,hardBoulder;//rand 3 local points and spawn 4 in each point using localpos
+    [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
     [SerializeField] Vector3 bossOGPos;
     [SerializeField]Animator animator;
@@ -20,7 +20,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
-    [SerializeField] float timer,resetTimer = 60f;
+    [SerializeField] float timer,resetTimer,slamTimer = 60f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
     bool once = false;
     [Header("Boss Run Stats")]
@@ -79,10 +79,16 @@ public class BossScript : MonoBehaviour
                             if (intervalTimer < 0)
                             {
                                 intervalTimer = resetIntervalTimer;
-                                animator.Play("BossSlam");
-                                StartCoroutine(BossSlam());
                                 //play slam anim
                                 StartCoroutine(SpawnBoulder());
+                            }
+
+                            slamTimer -= 1f * Time.fixedUnscaledDeltaTime;
+                            if (slamTimer < 0)
+                            {
+                                animator.Play("BossSlam");
+                                StartCoroutine(BossSlam());
+                                slamTimer = 5f;
                             }
                             break;
                         }
@@ -112,7 +118,7 @@ public class BossScript : MonoBehaviour
 
     private IEnumerator BossSlam()
     {
-        float randx = Random.Range(-10f, 10f);
+        float randx = Random.Range(-8f, 8f);
         Vector3 spawnPosition = bossSlamPos.transform.position + new Vector3(randx, 0, 0);
         bossIndicator.transform.position = spawnPosition;
         bossIndicator.SetActive(true);
@@ -140,7 +146,7 @@ public class BossScript : MonoBehaviour
                 float randz = Random.Range(-4.5f, 4.5f);
 
                 Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.5f, randz);
-                GameObject go = Instantiate(hardBoulder, spawnPosition, Quaternion.identity);
+                GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
                 VCamShake.instance.CameraShakeVCam(1f,2f);
                 yield return new WaitForSeconds(0.3f);

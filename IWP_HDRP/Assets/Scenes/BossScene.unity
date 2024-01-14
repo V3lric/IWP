@@ -4099,8 +4099,6 @@ MonoBehaviour:
   bossIndicator: {fileID: 2035276740}
   bossSlamPos: {fileID: 871405628}
   boulder: {fileID: 7345382034226517701, guid: aa648f59db51a534e8bad124b76248fc, type: 3}
-  hardBoulder: {fileID: 7255681643228779571, guid: 12ec96131bdf0ba4990f767829b1b997,
-    type: 3}
   boulderSpawn:
   - {fileID: 2034743064}
   - {fileID: 1556845486}
@@ -4118,6 +4116,7 @@ MonoBehaviour:
   boulderCount: 4
   timer: 40
   resetTimer: 60
+  slamTimer: 5
   intervalTimer: 0
   resetIntervalTimer: 13
   WinCutscene:
@@ -11449,11 +11448,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerData
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384989450147540732, guid: 07b360731742b4b47b6ed3b50248ed3b,
-        type: 3}
-      propertyPath: stats.difficulty
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28235,7 +28229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1965083824
 Transform:
   m_ObjectHideFlags: 0
