@@ -12,7 +12,7 @@ public class PetScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        dest = player.position;
+        dest = new Vector3(player.position.x + 2, player.position.y, player.position.z);
         float distanceToPlayer = (transform.position - player.position).magnitude;
 
         if (distanceToPlayer < ai.stoppingDistance)
@@ -30,7 +30,7 @@ public class PetScript : MonoBehaviour
             // aiAnim.ResetTrigger("jog");
             // aiAnim.SetTrigger("walkBackward");
         }
-        else if (distanceToPlayer > (ai.stoppingDistance) + 1)
+        if (distanceToPlayer > (ai.stoppingDistance))
         {
             // Player is at a normal distance, move toward the player
             ai.destination = dest;
@@ -41,5 +41,7 @@ public class PetScript : MonoBehaviour
             // aiAnim.ResetTrigger("walkBackward");
             // aiAnim.SetTrigger("jog");
         }
+        else if (distanceToPlayer > 10)
+            transform.position = dest;
     }
 }

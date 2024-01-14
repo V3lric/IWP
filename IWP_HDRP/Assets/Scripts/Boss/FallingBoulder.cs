@@ -10,7 +10,7 @@ public class FallingBoulder : MonoBehaviour
     void Update()
     {
         if (PlayerData.instance.GetDifficulty() == 2)
-            gameObject.GetComponent<Rigidbody>().velocity += new Vector3(0,-10f,0) * Time.fixedDeltaTime;
+            gameObject.GetComponent<Rigidbody>().velocity += new Vector3(0,-10f,0) * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

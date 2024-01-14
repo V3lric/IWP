@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     public bool disabled = false;
     public Animator animator;
-
+    [SerializeField] float idleTimer = 10f;
+    [SerializeField] float animTimer;
+    [SerializeField] bool bIdleAnim = false;
     [Header("Player Stats")]
     public float speed = 10f;
     [SerializeField] int talentPt,coins;
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-            
+
         if (disabled)//to do, ensure map disable don't override the esc disbale
         {
             Cursor.lockState = CursorLockMode.None;
@@ -67,19 +69,41 @@ public class PlayerController : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector3 direction = new Vector3(movement.x, 0f, movement.y).normalized;
-
         if (direction.magnitude >= 0.1f)
         {
+            idleTimer = 10f;
+            animTimer = 2.117f;
+            bIdleAnim = false;
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            animator.SetFloat("Player", 1f);
+            animator.SetFloat("Player", 2f, 0.01f, 1f * Time.deltaTime);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        if (direction == new Vector3(0, direction.y,0))
-            animator.SetFloat("Player",0f + 0.01f, 0.1f, 1f * Time.deltaTime);
+        if (direction == new Vector3(0, direction.y,0) && !bIdleAnim)
+        {
+            animator.SetFloat("Player", 0f);
+            idleTimer -= Time.deltaTime;
+        }
+
+        if (idleTimer < 0)
+        {
+            bIdleAnim = true;
+
+        }
+        if (bIdleAnim)
+        {
+            animator.SetFloat("Player", 1f,0,Time.deltaTime);
+            animTimer -= Time.deltaTime;
+            if (animTimer < 0)
+            {
+                bIdleAnim = false;
+                animTimer = 2.117f;
+                idleTimer = 10f;
+            }
+        }
     }
 
     public void Gravity()//set gravity on player

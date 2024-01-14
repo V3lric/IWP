@@ -83,12 +83,12 @@ public class BossScript : MonoBehaviour
                                 StartCoroutine(SpawnBoulder());
                             }
 
-                            slamTimer -= 1f * Time.fixedUnscaledDeltaTime;
+                            slamTimer -= 1f * Time.deltaTime;
                             if (slamTimer < 0)
                             {
                                 animator.Play("BossSlam");
                                 StartCoroutine(BossSlam());
-                                slamTimer = 5f;
+                                slamTimer = 7f;
                             }
                             break;
                         }

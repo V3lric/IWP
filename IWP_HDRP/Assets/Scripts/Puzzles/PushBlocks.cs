@@ -32,8 +32,8 @@ public class PushBlocks : MonoBehaviour
             }
 
             AudioManager.Instance.PlaySFX("PushBlock");
-            Block.AddForceAtPosition((directionLimit * forceMagnitude * Time.fixedUnscaledDeltaTime), transform.position, ForceMode.Impulse);
-            animator.SetFloat("Player", 2f, 0.01f, Time.fixedUnscaledDeltaTime);
+            Block.AddForceAtPosition((directionLimit * forceMagnitude), transform.position, ForceMode.Force);
+            animator.SetFloat("Player", 3f + 0.1f, 3f, Time.deltaTime);
         }
     }
 }

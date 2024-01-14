@@ -4116,7 +4116,7 @@ MonoBehaviour:
   boulderCount: 4
   timer: 40
   resetTimer: 60
-  slamTimer: 5
+  slamTimer: 7
   intervalTimer: 0
   resetIntervalTimer: 13
   WinCutscene:
@@ -31473,8 +31473,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264753941787272876}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005890271, y: -0.29040173, z: -0.001248499, w: 0.9568859}
-  m_LocalPosition: {x: 5.053563, y: 3.8069167, z: 20.888905}
+  m_LocalRotation: {x: 0.000008109871, y: 0.012850592, z: 0.00056129706, w: 0.99991727}
+  m_LocalPosition: {x: -3.049119, y: 2.4, z: 6.3656125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

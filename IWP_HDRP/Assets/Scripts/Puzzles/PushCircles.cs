@@ -7,17 +7,8 @@ public class PushCircles : MonoBehaviour
     private Rigidbody Circle;
     public float forceMagnitude;
     public string Tag = "PCircles";
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Animator animator;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Circle = hit.collider.attachedRigidbody;
@@ -25,7 +16,8 @@ public class PushCircles : MonoBehaviour
         {
             Vector3 direction = hit.gameObject.transform.position - transform.position;
             direction.Normalize();
-            Circle.AddForceAtPosition(direction * forceMagnitude, transform.position, ForceMode.Impulse);
+            Circle.AddForceAtPosition(direction * forceMagnitude, transform.position, ForceMode.Force);
+            animator.SetFloat("Player", 3f, 0.01f, Time.deltaTime);
         }
     }
 }
