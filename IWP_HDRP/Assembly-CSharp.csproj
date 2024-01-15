@@ -133,6 +133,7 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractBlocks.cs" />
     <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\UpdateTextWithSliderValue.cs" />
+    <Compile Include="Assets\Scripts\Companion\DialogTrigger.cs" />
     <Compile Include="Assets\Scripts\Boss\BossHitBox.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />

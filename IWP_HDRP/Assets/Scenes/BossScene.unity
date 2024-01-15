@@ -4114,7 +4114,7 @@ MonoBehaviour:
   phase: 0
   lifes: 0
   boulderCount: 4
-  timer: 40
+  timer: 25
   resetTimer: 60
   slamTimer: 7
   intervalTimer: 0
@@ -10049,7 +10049,7 @@ PrefabInstance:
     - target: {fileID: 6495159142058343446, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0491548
+      value: -1.2591547
       objectReference: {fileID: 0}
     - target: {fileID: 6495159142058343446, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -10074,7 +10074,7 @@ PrefabInstance:
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.102998495
+      value: -0.31299847
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -10108,6 +10108,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837523857269764183, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837523857269764183, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837523857269764183, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -10119,7 +10129,7 @@ PrefabInstance:
     - target: {fileID: 8837523857269764183, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8837523857269764183, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -22051,17 +22061,6 @@ MonoBehaviour:
   bubbleText: {fileID: 1513854292}
   BubbleGO: {fileID: 1913119430}
   triggered: 0
-  chatText:
-  - ',nmnbm,'
-  - What this block do?
-  - Maybe these pillars represent something?
-  - Yay you did it!!!
-  - Lets go find the missing switches!
-  - Same as last time! You got this!!!
-  - Treasure time!!!
-  - 
-  - qwes
-  - 
 --- !u!1 &1606054876
 GameObject:
   m_ObjectHideFlags: 0

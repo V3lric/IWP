@@ -9,7 +9,6 @@ public class ChatBubbleScript : MonoBehaviour
     public TextMeshProUGUI bubbleText;
     public GameObject BubbleGO;
     public bool triggered;
-    [SerializeField] string[] chatText;
 
     // Start is called before the first frame update
     void Start()
