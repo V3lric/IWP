@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1641.7092, g: 1953.427, b: 2271.047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1698,6 +1698,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757862307608684038, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b74570d5bf87a742b9937a32e1d71a7, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: sfxSound.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: sfxSound.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f342b263dde55e542bf84e2bd25a59ca, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: sfxSound.Array.data[1].name
+      value: FallingRocks
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e94b5b0014005724abdf0841db03efb7, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[1].name
+      value: HubScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d2b2b452df4c204b8d316ed8dc012c3, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[2].name
+      value: Scene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7bd3a5169e57a74ab2990079b25535a, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[3].name
+      value: BossScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 24b2c017adf2d9f4c9eb37248f54c862, type: 3}
+    - target: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
+        type: 3}
+      propertyPath: musicSound.Array.data[4].name
+      value: BossRunScene
       objectReference: {fileID: 0}
     - target: {fileID: 6578283910658685496, guid: bb340ca5f28b0c547825faefa8803356,
         type: 3}

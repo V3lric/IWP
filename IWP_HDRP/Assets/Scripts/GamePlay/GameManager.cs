@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     GameObject Spawn, Player;
 
     [Header("Puzzle GameObject")]
+    public GameObject hardGateEntrance;
     public GameObject HardGate,boulderPuzzle;
     public GameObject switchPuzzle_mid, switchPuzzle_hard, missingPuzzle_mid, missingPuzzle_hard;//Switch puzzles
     public GameObject jumpPuzzle_easy, jumpPuzzle_mid, jumpPuzzle_hard;//jumping puzzles
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
                 missingPuzzle_mid.SetActive(true);
                 jumpPuzzle_easy.SetActive(true);
                 circlePuzzle_easy.SetActive(true);
+                HardGate.SetActive(true);
+                hardGateEntrance.SetActive(false);
                 break;
             case 1:
                 Debug.Log("Mid");
@@ -62,6 +65,8 @@ public class GameManager : MonoBehaviour
                 missingPuzzle_mid.SetActive(true);
                 jumpPuzzle_mid.SetActive(true);
                 circlePuzzle_mid.SetActive(true);
+                HardGate.SetActive(true);
+                hardGateEntrance.SetActive(false);
                 break;
             case 2:
                 Debug.Log("Hard");
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
                 circlePuzzle_hard.SetActive(true);
                 boulderPuzzle.SetActive(true);
                 HardGate.SetActive(false);
+                hardGateEntrance.SetActive(true);
                 break;
             default:
                 break;

@@ -14,14 +14,14 @@ public class Saves : MonoBehaviour
     void Start()
     {
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
-            saveDate.text = pData.stats.date.ToString();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
+            saveDate.text = pData.stats.date.ToString();
     }
 
     public void LoadData()

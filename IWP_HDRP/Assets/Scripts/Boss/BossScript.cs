@@ -125,7 +125,6 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
 
         bossModel.transform.position = spawnPosition;
-        animator.PlayInFixedTime("Smashing");
         bossIndicator.SetActive(false);
 
         // Waits for anim to play fin before shaking vcam
@@ -174,12 +173,14 @@ public class BossScript : MonoBehaviour
 
     public void StartPhase()
     {
+        AudioManager.Instance.PlaySFX("FallingRocks");
         bossModel.SetActive(true);
         phaseStart = true;
         vcam.SetActive(true);
     }
     public void PhaseBegin()
     {
+        AudioManager.Instance.StopSound("BossScene");
         DialogManager.instance.BossIntro();
         Cutscene.Invoke();
     }
