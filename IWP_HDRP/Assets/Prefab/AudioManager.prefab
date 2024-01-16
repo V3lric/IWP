@@ -172,7 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6516435652645189229, guid: ee1db96eb93299142993a3563457889c,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b74570d5bf87a742b9937a32e1d71a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -307,11 +307,19 @@ MonoBehaviour:
   musicSound:
   - name: MainMenu
     clip: {fileID: 8300000, guid: 3893f8548b61d744bb72692cecaaa5c0, type: 3}
+  - name: HubScene
+    clip: {fileID: 8300000, guid: e94b5b0014005724abdf0841db03efb7, type: 3}
   - name: Scene1
     clip: {fileID: 8300000, guid: 1d2b2b452df4c204b8d316ed8dc012c3, type: 3}
+  - name: BossScene
+    clip: {fileID: 8300000, guid: f7bd3a5169e57a74ab2990079b25535a, type: 3}
+  - name: BossRunScene
+    clip: {fileID: 8300000, guid: 24b2c017adf2d9f4c9eb37248f54c862, type: 3}
   sfxSound:
   - name: PushBlock
     clip: {fileID: 8300000, guid: e7aadbff565df784599cdd7736aa7912, type: 3}
+  - name: FallingRocks
+    clip: {fileID: 8300000, guid: c95febe50e8ef9e4ba5644a06c451d7b, type: 3}
   musicSource: {fileID: 3425633722769799907}
   sfxSource: {fileID: 757862307608684038}
   music: {fileID: 24100000, guid: ee1db96eb93299142993a3563457889c, type: 2}

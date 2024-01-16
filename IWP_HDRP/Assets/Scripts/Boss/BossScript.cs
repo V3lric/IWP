@@ -49,6 +49,7 @@ public class BossScript : MonoBehaviour
                             Timer();
                             if (intervalTimer < 0)
                             {
+                                AudioManager.Instance.PlaySFX("FallingRocks");
                                 intervalTimer = resetIntervalTimer;
                                 animator.SetTrigger("SmashingGround");
                                 StartCoroutine(SpawnBoulder());
@@ -74,10 +75,10 @@ public class BossScript : MonoBehaviour
                                 }
                             }
 
-
                             Timer();
                             if (intervalTimer < 0)
                             {
+                                AudioManager.Instance.PlaySFX("FallingRocks");
                                 intervalTimer = resetIntervalTimer;
                                 //play slam anim
                                 StartCoroutine(SpawnBoulder());
@@ -94,7 +95,7 @@ public class BossScript : MonoBehaviour
                         }
                     case 2://running away
                         {
-                            Cutscene2.Invoke();//disabled to hide from suen
+                            Cutscene2.Invoke();
                             SceneManager.LoadScene("BossRunScene");
                             break;
                         }
@@ -105,6 +106,7 @@ public class BossScript : MonoBehaviour
                 {
                     //gameover ui
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    AudioManager.Instance.StopSound("FallingRocks");
                 }
             }
         }
@@ -115,6 +117,47 @@ public class BossScript : MonoBehaviour
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
         }
     }
+    private void Timer()
+    {
+        timer -= 1f * Time.deltaTime;
+        intervalTimer -= 1f * Time.deltaTime;
+
+        if (timer < 0)
+        {
+            timer = resetTimer;
+            phase++;
+        }
+    }
+
+    public void StartPhase()
+    {
+        AudioManager.Instance.PlaySFX("FallingRocks");
+        bossModel.SetActive(true);
+        phaseStart = true;
+        vcam.SetActive(true);
+    }
+
+    public void PhaseBegin()
+    {
+        AudioManager.Instance.StopSound("BossScene");
+        DialogManager.instance.BossIntro();
+        Cutscene.Invoke();
+    }
+
+    public void WinGame()
+    {
+        PlayerData.instance.StageBoss = true;
+        AudioManager.Instance.StopSound("BossRunScene");
+        //cutscene
+        WinCutscene.Invoke();
+        StartCoroutine(WinGameCutScene());
+    }
+
+    IEnumerator WinGameCutScene()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("HubScene");
+    }
 
     private IEnumerator BossSlam()
     {
@@ -122,13 +165,13 @@ public class BossScript : MonoBehaviour
         Vector3 spawnPosition = bossSlamPos.transform.position + new Vector3(randx, 0, 0);
         bossIndicator.transform.position = spawnPosition;
         bossIndicator.SetActive(true);
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSeconds(1.5f);
 
         bossModel.transform.position = spawnPosition;
         bossIndicator.SetActive(false);
 
         // Waits for anim to play fin before shaking vcam
-        yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorStateInfo(0).length - 2.5f);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - 2.5f);
 
         VCamShake.instance.CameraShakeVCam(10f, 1f);
         animator.Play("Walking");
@@ -153,35 +196,4 @@ public class BossScript : MonoBehaviour
         }
     }
 
-    private void Timer()
-    {
-        timer -= 1f * Time.deltaTime;
-        intervalTimer -= 1f * Time.deltaTime;
-
-        if (timer < 0)
-        {
-            timer = resetTimer;
-            phase++;
-        }
-    }
-
-    public void WinGame()
-    {
-        Debug.Log("win");
-        WinCutscene.Invoke();
-    }
-
-    public void StartPhase()
-    {
-        AudioManager.Instance.PlaySFX("FallingRocks");
-        bossModel.SetActive(true);
-        phaseStart = true;
-        vcam.SetActive(true);
-    }
-    public void PhaseBegin()
-    {
-        AudioManager.Instance.StopSound("BossScene");
-        DialogManager.instance.BossIntro();
-        Cutscene.Invoke();
-    }
 }

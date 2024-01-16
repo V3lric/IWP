@@ -106,6 +106,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayDSFX(string name)
+    {
+        Sound sound = Array.Find(sfxSound, x => x.name == name);
+
+        if (sound == null)
+            Debug.LogWarning("Sound not found");
+        else
+        {
+            sfxSource.PlayOneShot(sound.clip);
+            sfxSource.PlayDelayed(2f);
+        }
+    }
     public void ToggleMusic()
     {
         //musicSource.mute = !musicSource.mute;

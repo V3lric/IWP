@@ -30,10 +30,16 @@ public class PushBlocks : MonoBehaviour
                 // Player is on the front or back side, move the block along the Z-axis
                 directionLimit = new Vector3(0f, 0f, direction.z);
             }
+            StartCoroutine(Sound());
 
-            AudioManager.Instance.PlaySFX("PushBlock");
             Block.AddForceAtPosition((directionLimit * forceMagnitude), transform.position, ForceMode.Force);
             animator.SetFloat("Player", 3f + 0.1f, 3f, Time.deltaTime);
         }
+    }
+
+    IEnumerator Sound()
+    {
+        AudioManager.Instance.PlayDSFX("PushBlock");
+        yield return new WaitForSeconds(0.9f);
     }
 }

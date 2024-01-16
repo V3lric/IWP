@@ -12,7 +12,6 @@ public class DeathFloor : MonoBehaviour
     {
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
 
     // Update is called once per frame

@@ -6,7 +6,7 @@ public class SwitchSlot : MonoBehaviour
 {
     public string Player = "Player";
     public GameObject text, switches;
-    public bool isSwitched, hit, done = false;
+    public bool isSwitched, hit, done, once = false;
     MissingSwitchManager manager;
     public Animator animator;
     public float timer = 0f;
@@ -41,12 +41,13 @@ public class SwitchSlot : MonoBehaviour
                 }
             }
 
-            if (manager.iSwitchesPicked > 0)
+            if (manager.iSwitchesPicked > 0 && !once)
             {
                 switches.SetActive(true);
                 manager.switches++;
                 manager.iSwitchesPicked--;
                 done = true;
+                once = true;
             }
             else
             {
