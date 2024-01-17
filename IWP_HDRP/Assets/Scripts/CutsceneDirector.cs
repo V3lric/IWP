@@ -17,4 +17,9 @@ public class CutsceneDirector : MonoBehaviour
     {
         SceneManager.LoadScene("HubScene");
     }
+
+    public void Skip()
+    {
+        director.time = director.playableAsset.duration;
+    }
 }
