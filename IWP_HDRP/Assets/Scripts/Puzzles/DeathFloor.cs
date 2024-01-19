@@ -33,7 +33,7 @@ public class DeathFloor : MonoBehaviour
 
         pc.disabled = true;//disable player controller if not player can't tp
         Player.transform.position = checkpointPosition;//overwrite player's pos if not cannot tp as player is still moving to intended pos
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         Player.transform.position = checkpointPosition;
         pc.disabled = false;
     }

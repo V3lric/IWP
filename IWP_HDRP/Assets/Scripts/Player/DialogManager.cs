@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
     public GameObject dialog;
     public TextMeshProUGUI DialogPerson, DialogText;
     [SerializeField] string[] chatText,bossIntro;
+    public bool cutscene1, cutscene2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,12 @@ public class DialogManager : MonoBehaviour
     {
         StartCoroutine(DialogSpeechText(text));
     }
+
     IEnumerator BossIntroSpeech()
     {
+        if (cutscene1)
+            yield break;
+
         int speech = 0;
         yield return new WaitForSeconds(4f);
         DialogPerson.text = "Slug";

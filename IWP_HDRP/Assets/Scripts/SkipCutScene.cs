@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-
+using UnityEngine.SceneManagement;
 public class SkipCutScene : MonoBehaviour
 {
     private PlayableDirector _currentDirector;
@@ -22,6 +22,8 @@ public class SkipCutScene : MonoBehaviour
         {
             _currentDirector.time = _timeToSkipTo;
             _sceneSkipped = true;
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossScene"))
+                DialogManager.instance.cutscene1 = true;
         }
     }
     public void GetDirector(PlayableDirector director)
