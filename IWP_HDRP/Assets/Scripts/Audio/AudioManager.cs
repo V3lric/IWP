@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] musicSound, sfxSound;
     public AudioSource musicSource, sfxSource;
-    public AudioMixer music, sfx;
+    public AudioMixer music;
     public static AudioManager Instance;
     public bool toggle, togglem = false;
     Scene activeScene,prevScene;
@@ -102,7 +102,10 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound not found");
         else
         {
-            sfxSource.PlayOneShot(sound.clip);
+            if (!sfxSource.isPlaying)
+            {
+                sfxSource.PlayOneShot(sound.clip);
+            }
         }
     }
 
@@ -138,12 +141,12 @@ public class AudioManager : MonoBehaviour
         //sfxSource.mute = !sfxSource.mute;
         if (!toggle)
         {
-            sfx.SetFloat("SFX", Mathf.Log10(0.0001f) * 20);
+            music.SetFloat("SFX", Mathf.Log10(0.0001f) * 20);
             toggle = true;
         }
         else if (toggle)
         {
-            sfx.SetFloat("SFX", Mathf.Log10(sfxSource.volume) * 20);
+            music.SetFloat("SFX", Mathf.Log10(sfxSource.volume) * 20);
             toggle = false;
         }
     }
@@ -157,6 +160,6 @@ public class AudioManager : MonoBehaviour
     public void SFXVol(float volume)
     {
         sfxSource.volume = volume;
-        sfx.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        music.SetFloat("SFX", Mathf.Log10(volume) * 20);
     }
 }

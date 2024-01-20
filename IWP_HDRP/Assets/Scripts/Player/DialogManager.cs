@@ -28,44 +28,51 @@ public class DialogManager : MonoBehaviour
     public void OffDialog(){
         dialog.SetActive(false);
     }
-    public void CustomText(string text)
+    public void CustomText(string text, string person)
     {
-        StartCoroutine(DialogSpeechText(text));
+        StartCoroutine(DialogSpeechText(text, person));
     }
 
     IEnumerator BossIntroSpeech()
     {
         if (cutscene1)
+        {
+            DialogPerson.text = "";
+            DialogText.text = "";
             yield break;
-
-        int speech = 0;
-        yield return new WaitForSeconds(4f);
-        DialogPerson.text = "Slug";
-        DialogText.text = bossIntro[speech];
-        dialog.SetActive(true);
-        yield return new WaitForSeconds(6f);
-        DialogPerson.text = "Slug";
-        speech++;
-        DialogText.text = bossIntro[speech];
-        yield return new WaitForSeconds(4f);
-        DialogPerson.text = "Slug";
-        speech++;
-        DialogText.text = bossIntro[speech];
-        yield return new WaitForSeconds(4f);
-        DialogPerson.text = "Enoki";
-        speech++;
-        DialogText.text = bossIntro[speech];
-        yield return new WaitForSeconds(4.5f);
-        DialogPerson.text = "Slug";
-        speech++;
-        DialogText.text = bossIntro[speech];
-        yield return new WaitForSeconds(4f);
-        dialog.SetActive(false);
-        DialogText.text = "";
+        }
+        else
+        {
+            int speech = 0;
+            yield return new WaitForSeconds(4f);
+            DialogPerson.text = "Slug";
+            DialogText.text = bossIntro[speech];
+            dialog.SetActive(true);
+            yield return new WaitForSeconds(6f);
+            DialogPerson.text = "Slug";
+            speech++;
+            DialogText.text = bossIntro[speech];
+            yield return new WaitForSeconds(4f);
+            DialogPerson.text = "Slug";
+            speech++;
+            DialogText.text = bossIntro[speech];
+            yield return new WaitForSeconds(4f);
+            DialogPerson.text = "Enoki";
+            speech++;
+            DialogText.text = bossIntro[speech];
+            yield return new WaitForSeconds(4.5f);
+            DialogPerson.text = "Slug";
+            speech++;
+            DialogText.text = bossIntro[speech];
+            yield return new WaitForSeconds(4f);
+            dialog.SetActive(false);
+            DialogText.text = "";
+        }
     }
-    IEnumerator DialogSpeechText(string text)
+    IEnumerator DialogSpeechText(string text,string person)
     {
         DialogText.text = text;
+        DialogPerson.text = person;
         dialog.SetActive(true);
         yield return new WaitForSeconds(4f);
         dialog.SetActive(false);

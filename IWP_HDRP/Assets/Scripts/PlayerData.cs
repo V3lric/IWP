@@ -62,7 +62,7 @@ public class PlayerData : MonoBehaviour
     {
         savedDate = stats.date;
         Stage1 = stats.Stage1;
-        Stage1 = stats.Stage2;
+        Stage2 = stats.Stage2;
         StageBoss = stats.StageBoss;
         difficulty = stats.difficulty;
     }

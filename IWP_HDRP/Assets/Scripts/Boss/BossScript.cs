@@ -60,7 +60,7 @@ public class BossScript : MonoBehaviour
                         {
                             if (!once)
                             {
-                                DialogManager.instance.CustomText("Argghhh you're dead!");
+                                DialogManager.instance.CustomText("Argghhh you're dead!","Slug");
                                 once = true;
                             }
 
@@ -135,6 +135,7 @@ public class BossScript : MonoBehaviour
         bossModel.SetActive(true);
         phaseStart = true;
         vcam.SetActive(true);
+        DialogManager.instance.CustomText("Watch out for the falling boulders!","Truffle");
     }
 
     public void PhaseBegin()

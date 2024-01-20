@@ -10,7 +10,7 @@ public class DialogTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !once)
         {
-            DialogManager.instance.CustomText(Text);
+            DialogManager.instance.CustomText(Text,"Truffle");
             once = true;
         }
     }
