@@ -14,8 +14,9 @@ public class PetScript : MonoBehaviour
     {
         dest = new Vector3(player.position.x + 2, player.position.y, player.position.z);
         float distanceToPlayer = (transform.position - player.position).magnitude;
-
         if (distanceToPlayer < ai.stoppingDistance)
+            aiAnim.SetFloat("Pet", 0f);
+        if (distanceToPlayer < ai.stoppingDistance -1)
         {
             // Player is too close, make the pet walk backward
             Vector3 reverseDirection = transform.position - player.position;
@@ -27,21 +28,22 @@ public class PetScript : MonoBehaviour
             // Rotate the pet to face away from the player
             //transform.forward = Vector3.Lerp(transform.forward, -reverseDirection.normalized, Time.deltaTime * 4);
             transform.LookAt(player);
+            aiAnim.SetFloat("Pet", 0f,0.1f,Time.deltaTime);
             // aiAnim.ResetTrigger("jog");
             // aiAnim.SetTrigger("walkBackward");
         }
-        if (distanceToPlayer > (ai.stoppingDistance))
+        else if (distanceToPlayer >= (ai.stoppingDistance))
         {
             // Player is at a normal distance, move toward the player
             ai.destination = dest;
 
             // Rotate the pet to face the player
             transform.forward = Vector3.Lerp(transform.forward, (player.position - transform.position).normalized, Time.deltaTime * 4);
-
+            aiAnim.SetFloat("Pet",1f, 0.1f, Time.deltaTime);
             // aiAnim.ResetTrigger("walkBackward");
             // aiAnim.SetTrigger("jog");
         }
-        else if (distanceToPlayer > 10)
+        else if (distanceToPlayer > 6)
             transform.position = dest;
     }
 }

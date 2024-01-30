@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1243.607, g: 1479.9171, b: 1720.7717, a: 1}
+  m_IndirectSpecularColor: {r: 1988.9622, g: 2366.8997, b: 2751.6643, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3998,7 +3998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 25000
+  m_Intensity: 40000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -4120,7 +4120,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 25000
+  m_Intensity: 40000
   m_Range: 73.1244
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6506,7 +6506,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 3b28e9361ac6aef4aaf22c3b7167140b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f4598315ae6edd94a9d8039fb7229fc7, type: 2}
 --- !u!1 &718198612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,6 +6842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4238866606815579079, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238866606815579079, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
       propertyPath: m_UseColorTemperature
       value: 1
       objectReference: {fileID: 0}
@@ -6850,10 +6855,20 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 100000
       objectReference: {fileID: 0}
+    - target: {fileID: 4574990973490458634, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4998682645513746383, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
       propertyPath: m_Intensity
       value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998682645513746383, guid: 823efc05673a17c428aca608a03977db,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7884152393565690558, guid: 823efc05673a17c428aca608a03977db,
         type: 3}
