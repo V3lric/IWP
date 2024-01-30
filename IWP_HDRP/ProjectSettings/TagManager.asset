@@ -23,6 +23,7 @@ TagManager:
   - VCam
   - RespawnCube
   - Boss
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - UIDiff
   - AI
   - BoulderEndPt
-  - 
+  - Boss
   - 
   - 
   - 

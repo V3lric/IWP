@@ -115,6 +115,11 @@ public class BossScript : MonoBehaviour
         {
             animator.Play("Walking");
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
+            if (lifes < 0)
+            {
+                //gameover ui
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
     private void Timer()
@@ -145,6 +150,10 @@ public class BossScript : MonoBehaviour
         Cutscene.Invoke();
     }
 
+    public void ChangeYPos(float y)
+    {
+        bossModel.transform.position += new Vector3(0, y, 0);
+    }
     public void WinGame()
     {
         PlayerData.instance.StageBoss = true;

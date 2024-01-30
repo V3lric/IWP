@@ -7,10 +7,11 @@ public class Platform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-            other.transform.SetParent(transform);
+            other.transform.parent = transform;
     }
     private void OnTriggerExit(Collider other)
     {
-        other.transform.SetParent(null);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            other.transform.parent = null;
     }
 }

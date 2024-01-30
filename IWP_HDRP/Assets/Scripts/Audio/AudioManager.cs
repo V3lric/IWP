@@ -24,13 +24,19 @@ public class AudioManager : MonoBehaviour
         else
         {
             Debug.Log("More than 1 instance detected");
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
-        SceneManager.sceneLoaded += OnSceneWasLoaded;
+
+
+    }
+    private void Start()
+    {
+        if (gameObject != null)
+            SceneManager.sceneLoaded += OnSceneWasLoaded;
     }
     void OnSceneWasLoaded(Scene scene, LoadSceneMode loadMode)
     {
-        StopBGM();
+        //StopBGM();
         PlayBGM();
     }
 
@@ -65,8 +71,6 @@ public class AudioManager : MonoBehaviour
             StopSound("HubScene");
         else if (prevScene == SceneManager.GetSceneByName("BossScene"))
             StopSound("Scene1");
-        else if (prevScene == SceneManager.GetSceneByName("BossRunScene"))
-            StopSound("BossScene");
     }
     public void PlaySound(string name)
     {

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using System.IO;
 
 [System.Serializable]
@@ -10,7 +9,6 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
     public Stats stats = new Stats();
-    [SerializeField] int talentPt, coins = 1;
     [SerializeField] string savedDate;
     [SerializeField] int difficulty = 0;
     public bool Stage1, Stage2, StageBoss = false;

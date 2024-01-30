@@ -4,37 +4,26 @@ using UnityEngine;
 
 public class DeathFloor : MonoBehaviour
 {
-    GameManager manager;
     public GameObject respawn,Player;
-    PlayerController pc;
 
     private void Start()
     {
-        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-            //manager.SetDeath();
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             StartCoroutine(DeathSequence());
     }
-
     IEnumerator DeathSequence()
     {
         Vector3 checkpointPosition = respawn.transform.position;
 
-        pc.disabled = true;//disable player controller if not player can't tp
-        Player.transform.position = checkpointPosition;//overwrite player's pos if not cannot tp as player is still moving to intended pos
+        PlayerController.Instance.disabled = true;//disable player controller if not player can't tp
+        Player.transform.SetPositionAndRotation(checkpointPosition, Quaternion.identity);//overwrite player's pos if not cannot tp as player is still moving to intended pos
         yield return new WaitForSeconds(0.2f);
-        Player.transform.position = checkpointPosition;
-        pc.disabled = false;
+        Player.transform.SetPositionAndRotation(checkpointPosition,Quaternion.identity);
+        PlayerController.Instance.disabled = false;
     }
 }

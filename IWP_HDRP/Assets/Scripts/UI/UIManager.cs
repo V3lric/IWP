@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         MusicSlider.value = AudioManager.Instance.musicSource.volume;
         SFXSlider.value = AudioManager.Instance.sfxSource.volume;
 
@@ -73,13 +72,13 @@ public class UIManager : MonoBehaviour
         //disable enoki
         if (bEscape || bmap)
         {
-            player.disabled = true;
+            PlayerController.Instance.disabled = true;
             Time.timeScale = 0;
         }
         //enable enoki
         else if (!bEscape && !bmap)
         {
-            player.disabled = false;
+            PlayerController.Instance.disabled = false;
             Time.timeScale = 1;
         }
     }
