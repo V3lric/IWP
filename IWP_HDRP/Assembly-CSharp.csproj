@@ -64,7 +64,6 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Mainmenu.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\GameManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Shake.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\Switch.cs" />
     <Compile Include="Assets\Scripts\Boss\PhaseStart.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Scene1\Checkpoints.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PressurePlate\PressurePlate.cs" />
@@ -150,14 +150,15 @@
     <Compile Include="Assets\Scripts\Puzzles\PushCircles.cs" />
     <Compile Include="Assets\Scripts\Boss\MoveBossPos.cs" />
     <Compile Include="Assets\Scripts\Boss\TriggerShake.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Checkpoints.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Scene1\GameManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\SwitchSlot.cs" />
     <Compile Include="Assets\Scripts\VCamShake.cs" />
     <Compile Include="Assets\Scripts\Boss\BossScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\SpawnBoulder.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\GameManagerRun.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
