@@ -242,7 +242,7 @@ MonoBehaviour:
     m_Value: {r: 0.8820755, g: 0.92787206, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 5000
+    m_Value: 50000
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_Value: 1
   depthExtent:
     m_OverrideState: 1
-    m_Value: 64
+    m_Value: 120
   denoisingMode:
     m_OverrideState: 1
     m_Value: 2
