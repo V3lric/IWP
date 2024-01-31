@@ -152,7 +152,7 @@ public class BossScript : MonoBehaviour
 
     public void ChangeYPos(float y)
     {
-        bossModel.transform.position += new Vector3(0, y, 0);
+        bossModel.transform.position = new Vector3(bossModel.transform.position.x, y, bossModel.transform.position.z) * Time.deltaTime;
     }
     public void WinGame()
     {
