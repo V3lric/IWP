@@ -20,10 +20,10 @@ public class DeathFloor : MonoBehaviour
     {
         Vector3 checkpointPosition = respawn.transform.position;
 
-        PlayerController.Instance.disabled = true;//disable player controller if not player can't tp
+        Player.GetComponent<CharacterController>().enabled = false;//disable player controller if not player can't tp
         Player.transform.SetPositionAndRotation(checkpointPosition, Quaternion.identity);//overwrite player's pos if not cannot tp as player is still moving to intended pos
         yield return new WaitForSeconds(0.2f);
         Player.transform.SetPositionAndRotation(checkpointPosition,Quaternion.identity);
-        PlayerController.Instance.disabled = false;
+        Player.GetComponent<CharacterController>().enabled = true;
     }
 }

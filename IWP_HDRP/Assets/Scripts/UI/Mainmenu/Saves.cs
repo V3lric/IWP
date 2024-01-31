@@ -13,7 +13,6 @@ public class Saves : MonoBehaviour
     void Start()
     {
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-
     }
 
     // Update is called once per frame
