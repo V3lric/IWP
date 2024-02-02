@@ -5,11 +5,11 @@ using UnityEngine;
 public class FallingPlatform : MonoBehaviour
 {
     public GameObject platform;
-    Rigidbody rb;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        rb = platform.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,9 +23,7 @@ public class FallingPlatform : MonoBehaviour
 
     IEnumerator Falling()
     {
-        
-        //insert rumbling anim 
-        yield return new WaitForSeconds(1.5f);
-        rb.useGravity = true;
+        yield return new WaitForSeconds(0.5f);
+        animator.SetTrigger("fall");
     }
 }

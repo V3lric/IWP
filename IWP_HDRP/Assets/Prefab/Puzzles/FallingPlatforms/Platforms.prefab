@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2489390451217682861}
   - component: {fileID: 4458343281488003927}
   - component: {fileID: 1847267766907265951}
+  - component: {fileID: 990760017925137182}
   m_Layer: 3
   m_Name: FallingPlatform (3)
   m_TagString: Untagged
@@ -112,7 +113,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -120,6 +121,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &990760017925137182
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578857539179945925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1438971699173886487
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +154,6 @@ GameObject:
   - component: {fileID: 2857528794586649757}
   - component: {fileID: 1745978542385979646}
   - component: {fileID: 5529044451786884308}
-  - component: {fileID: 5755232824578073047}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -149,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 1438971699173886487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2501768, z: 0}
+  m_LocalPosition: {x: 0.103, y: -0.2501768, z: -0}
   m_LocalScale: {x: 0.48438755, y: 0.4420085, z: 0.4721606}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -226,33 +247,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &5755232824578073047
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438971699173886487}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1447386115704111142
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +260,7 @@ GameObject:
   - component: {fileID: 7318392965610953490}
   - component: {fileID: 6351760528713560909}
   - component: {fileID: 6383920917532038026}
+  - component: {fileID: 5946043467595408768}
   m_Layer: 3
   m_Name: FallingPlatform (2)
   m_TagString: Untagged
@@ -365,7 +360,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -373,6 +368,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &5946043467595408768
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447386115704111142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2083283755256888254
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +402,7 @@ GameObject:
   - component: {fileID: 3213164056763406637}
   - component: {fileID: 7406662673427529060}
   - component: {fileID: 276951970266065407}
+  - component: {fileID: 6367216261365807514}
   m_Layer: 3
   m_Name: FallingPlatform (4)
   m_TagString: Untagged
@@ -485,7 +502,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -493,6 +510,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &6367216261365807514
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083283755256888254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3462785630103846272
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +580,6 @@ GameObject:
   - component: {fileID: 6433869875432459267}
   - component: {fileID: 6530115797441243046}
   - component: {fileID: 6120110489286628250}
-  - component: {fileID: 6027978770819573956}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -636,33 +673,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &6027978770819573956
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3753898652706443514}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3896307562101531943
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +686,7 @@ GameObject:
   - component: {fileID: 7575368583288917231}
   - component: {fileID: 4009404425830289547}
   - component: {fileID: 4851006777270181895}
+  - component: {fileID: 1735607953823989938}
   m_Layer: 3
   m_Name: FallingPlatform (5)
   m_TagString: Untagged
@@ -775,7 +786,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -783,6 +794,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &1735607953823989938
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896307562101531943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4645576037738780153
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +828,7 @@ GameObject:
   - component: {fileID: 8251836455897023507}
   - component: {fileID: 1940514375481491610}
   - component: {fileID: 4685128110100730846}
+  - component: {fileID: 546808143767687478}
   m_Layer: 3
   m_Name: FallingPlatform
   m_TagString: Untagged
@@ -895,7 +928,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -903,6 +936,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &546808143767687478
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645576037738780153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5161902220992067791
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +969,6 @@ GameObject:
   - component: {fileID: 6590196300945101183}
   - component: {fileID: 3505426368481607879}
   - component: {fileID: 6088973665335239759}
-  - component: {fileID: 3426408859178943994}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -1009,33 +1062,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &3426408859178943994
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161902220992067791}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6336287680720921175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1074,6 @@ GameObject:
   - component: {fileID: 1523520501270509179}
   - component: {fileID: 7296474823120909521}
   - component: {fileID: 5199933690556392564}
-  - component: {fileID: 6219447594909534662}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -1142,33 +1167,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &6219447594909534662
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336287680720921175}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6388646925450405288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1179,6 @@ GameObject:
   - component: {fileID: 7463806614780812397}
   - component: {fileID: 5168807275905897020}
   - component: {fileID: 4153068589274333517}
-  - component: {fileID: 6554882069092590931}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -1275,33 +1272,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &6554882069092590931
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6388646925450405288}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8011493578595656063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1284,6 @@ GameObject:
   - component: {fileID: 8952939104695956431}
   - component: {fileID: 1417633256698920894}
   - component: {fileID: 1926991640962388323}
-  - component: {fileID: 7270772510421423742}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -1408,33 +1377,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.194263, y: 2.1850755, z: 2.2140841}
   m_Center: {x: -0.015071094, y: 0.009199262, z: 0.0059818025}
---- !u!54 &7270772510421423742
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8011493578595656063}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8678065865591241104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1390,7 @@ GameObject:
   - component: {fileID: 4159596022089226544}
   - component: {fileID: 1307847205559286235}
   - component: {fileID: 6684401406758013208}
+  - component: {fileID: 2894858259634086479}
   m_Layer: 3
   m_Name: FallingPlatform (1)
   m_TagString: Untagged
@@ -1547,7 +1490,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1555,3 +1498,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.6168522, z: 1}
   m_Center: {x: 0, y: 0.3084265, z: 0}
+--- !u!95 &2894858259634086479
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8678065865591241104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f43584e423167743a13459fde5f6389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
