@@ -320,6 +320,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e7aadbff565df784599cdd7736aa7912, type: 3}
   - name: FallingRocks
     clip: {fileID: 8300000, guid: c95febe50e8ef9e4ba5644a06c451d7b, type: 3}
+  - name: SwitchCorrect
+    clip: {fileID: 8300000, guid: cb207666efe0c9642a7b2aa72d73de77, type: 3}
   musicSource: {fileID: 3425633722769799907}
   sfxSource: {fileID: 757862307608684038}
   music: {fileID: 24100000, guid: ee1db96eb93299142993a3563457889c, type: 2}

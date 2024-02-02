@@ -41,6 +41,7 @@ public class SwitchManager : MonoBehaviour
                 if (switchOrder[currentIndex] == switchScript.isSwitched)
                 {
                     currentIndex++;
+                    AudioManager.Instance.PlaySFX("SwitchCorrect");
                 }
                 else
                 {

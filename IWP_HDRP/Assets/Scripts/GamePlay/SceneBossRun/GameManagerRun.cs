@@ -8,6 +8,8 @@ public class GameManagerRun : MonoBehaviour
 {
     [SerializeField] TMP_Text timerText;
     [SerializeField] float gameTimer;
+    [SerializeField] GameObject floor;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class GameManagerRun : MonoBehaviour
             default:
                 break;
         }
+        animator = floor.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,14 @@ public class GameManagerRun : MonoBehaviour
         {
             //gameover ui
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            animator.SetTrigger("Fall");
         }
     }
 }

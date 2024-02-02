@@ -112,7 +112,7 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
+    public bool audioDSFX = false;
     public void PlayDSFX(string name)
     {
         Sound sound = Array.Find(sfxSound, x => x.name == name);
@@ -121,8 +121,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound not found");
         else
         {
-            sfxSource.PlayOneShot(sound.clip);
-            sfxSource.PlayDelayed(2f);
+            if (!audioDSFX)
+            {
+                sfxSource.PlayOneShot(sound.clip);
+                audioDSFX = true;
+            }
         }
     }
     public void ToggleMusic()
