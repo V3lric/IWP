@@ -166,7 +166,22 @@ public class BossScript : MonoBehaviour
         WinCutscene.Invoke();
         StartCoroutine(WinGameCutScene());
     }
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
+    public void MainMenu()
+    {
+        PlayerData.instance.SaveToJSON();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Quit()
+    {
+        PlayerData.instance.SaveToJSON();
+        Application.Quit();
+    }
     IEnumerator WinGameCutScene()
     {
         yield return new WaitForSeconds(5f);

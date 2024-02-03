@@ -3327,8 +3327,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManagerRun, Assembly-CSharp
+      - m_Target: {fileID: 321821538}
+        m_TargetAssemblyTypeName: BossScript, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -5498,6 +5498,7 @@ MonoBehaviour:
   bossOGPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 1965083827}
   phaseStart: 0
+  lose: 0
   phase: 0
   lifes: 0
   boulderCount: 4
@@ -17813,8 +17814,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManagerRun, Assembly-CSharp
+      - m_Target: {fileID: 321821538}
+        m_TargetAssemblyTypeName: BossScript, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -33172,8 +33173,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManagerRun, Assembly-CSharp
+      - m_Target: {fileID: 321821538}
+        m_TargetAssemblyTypeName: BossScript, Assembly-CSharp
         m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:

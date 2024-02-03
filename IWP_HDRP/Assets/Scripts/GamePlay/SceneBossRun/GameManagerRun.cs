@@ -58,22 +58,6 @@ public class GameManagerRun : MonoBehaviour
             lose = true;
     }
 
-    public void TryAgain()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void MainMenu()
-    {
-        PlayerData.instance.SaveToJSON();
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void Quit()
-    {
-        PlayerData.instance.SaveToJSON();
-        Application.Quit();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
