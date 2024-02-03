@@ -8,7 +8,7 @@ public class GameManagerRun : MonoBehaviour
 {
     [SerializeField] TMP_Text timerText;
     [SerializeField] float gameTimer;
-    [SerializeField] GameObject floor;
+    [SerializeField] GameObject floor,verticalJump, verticalJumpHard;
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -17,12 +17,15 @@ public class GameManagerRun : MonoBehaviour
         {
             case 0:
                 gameTimer = 120f;
+                verticalJump.SetActive(true);
                 break;
             case 1:
                 gameTimer = 90f;
+                verticalJump.SetActive(true);
                 break;
             case 2:
                 gameTimer = 60f;
+                verticalJumpHard.SetActive(true);
                 break;
             default:
                 break;
