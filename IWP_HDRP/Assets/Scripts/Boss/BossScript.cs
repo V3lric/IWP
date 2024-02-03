@@ -117,7 +117,7 @@ public class BossScript : MonoBehaviour
             if (lifes < 0)
             {
                 //gameover ui
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                GameManagerRun.Instance.lose = true;
             }
         }
     }

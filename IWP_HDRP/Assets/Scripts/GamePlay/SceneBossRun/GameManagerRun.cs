@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerRun : MonoBehaviour
 {
+    public static GameManagerRun Instance;
     [SerializeField] TMP_Text timerText;
     [SerializeField] float gameTimer;
-    [SerializeField] GameObject floor,verticalJump, verticalJumpHard;
+    [SerializeField] GameObject floor,verticalJump, verticalJumpHard,deathUI;
+    public bool lose = false;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         switch (PlayerData.instance.GetDifficulty())
         {
             case 0:
@@ -36,16 +39,41 @@ public class GameManagerRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameTimer -= 1f * Time.deltaTime % 1f;
-        float roundedTimer = UnityEngine.Mathf.Round(gameTimer);
-        timerText.SetText("Time Left Before Collapse: "+roundedTimer.ToString()+"s");
-        if (gameTimer < 0)
+        if (!lose)
         {
-            //gameover ui
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameTimer -= 1f * Time.deltaTime % 1f;
+            float roundedTimer = UnityEngine.Mathf.Round(gameTimer);
+            timerText.SetText("Time Left Before Collapse: " + roundedTimer.ToString() + "s");
         }
+        else if (lose)
+        {
+            PlayerController.Instance.disabled = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            deathUI.SetActive(true);
+            timerText.SetText("");
+        }
+
+        if (gameTimer < 0)
+            lose = true;
     }
 
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        PlayerData.instance.SaveToJSON();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Quit()
+    {
+        PlayerData.instance.SaveToJSON();
+        Application.Quit();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
