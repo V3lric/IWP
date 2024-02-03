@@ -7,7 +7,7 @@ public class BossScript : MonoBehaviour
 {
     public static BossScript instance;
     public UnityEvent Cutscene,Cutscene2;//invoke cutscene
-    public GameObject vcam, bossIndicator;
+    public GameObject vcam, bossIndicator,deathUI;
     public Transform bossSlamPos;
     [SerializeField] GameObject boulder;//rand 3 local points and spawn 4 in each point using localpos
     public List<GameObject> boulderSpawn = new List<GameObject>();
@@ -16,7 +16,7 @@ public class BossScript : MonoBehaviour
     private bool doneSmashing;
 
     [Header("Boss Stats")]
-    [SerializeField] bool phaseStart = false;
+    [SerializeField] bool phaseStart,lose = false;
     [SerializeField] public int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
@@ -40,7 +40,7 @@ public class BossScript : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossScene"))
         {
-            if (phaseStart)
+            if (phaseStart && !lose)
             {
                 switch (phase)//diff phases of boss
                 {
@@ -103,9 +103,9 @@ public class BossScript : MonoBehaviour
                 }
                 if (lifes < 0)
                 {
-                    //gameover ui
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     AudioManager.Instance.StopSound("FallingRocks");
+                    lose = true;
+                    deathUI.SetActive(true);
                 }
             }
         }
