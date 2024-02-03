@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnBoulder : MonoBehaviour
 {
-    public GameObject Boulder,Shake;
+    public GameObject Boulder,Shake,rLight,gLight;
     public Transform[] array = new Transform[6];
     float timer = 2f;
     int random;
@@ -36,6 +36,8 @@ public class SpawnBoulder : MonoBehaviour
             done = true;
             CineMachineShakeEffect.Instance.CameraShakeReset();
             Shake.SetActive(false);
+            gLight.SetActive(true);
+            rLight.SetActive(false);
         }
     }
 }

@@ -46,6 +46,6 @@ public class VCamShake : MonoBehaviour
         CinemachineBasicMultiChannelPerlin cinemachine = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cinemachine.m_AmplitudeGain = 1f;
-        shakeTimer = 4f;
+        shakeTimer = 10f;
     }
 }

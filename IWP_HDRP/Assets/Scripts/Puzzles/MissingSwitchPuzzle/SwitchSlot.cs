@@ -11,6 +11,7 @@ public class SwitchSlot : MonoBehaviour
     public Animator animator;
     public float timer = 0f;
     public float reset = 1.2f;
+    public int switchID;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,8 @@ public class SwitchSlot : MonoBehaviour
                     animator.SetTrigger("Down");
                     timer = reset;
                 }
+                if (MissingSwitchManager.Instance.missingSwitchOrder[switchID] == isSwitched)
+                    AudioManager.Instance.PlaySFX("SwitchCorrect");
             }
 
             if (manager.iSwitchesPicked > 0 && !once)

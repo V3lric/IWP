@@ -31,6 +31,8 @@ public class DialogManager : MonoBehaviour
     }
     public void OffDialog(){
         dialog.SetActive(false);
+        DialogPerson.text = "";
+        DialogText.text = "";
     }
     public void CustomText(string text, string person)
     {
@@ -39,13 +41,7 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator BossIntroSpeech()
     {
-        if (cutscene1)
-        {
-            DialogPerson.text = "";
-            DialogText.text = "";
-            yield break;
-        }
-        else
+        if (BossScript.instance.phase == 0)
         {
             int speech = 0;
             yield return new WaitForSeconds(4f);
@@ -68,6 +64,23 @@ public class DialogManager : MonoBehaviour
             DialogPerson.text = "Slug";
             speech++;
             DialogText.text = bossIntro[speech];
+            yield return new WaitForSeconds(4f);
+            dialog.SetActive(false);
+            DialogText.text = "";
+        }
+        else if (BossScript.instance.phase == 2)
+        {
+            int speech = 0;
+            DialogPerson.text = "Enoki";
+            DialogText.text = bossRun[speech];
+            yield return new WaitForSeconds(4f);
+            DialogPerson.text = "Slug";
+            speech++;
+            DialogText.text = bossRun[speech];
+            yield return new WaitForSeconds(3.5f);
+            DialogPerson.text = "Truffle";
+            speech++;
+            DialogText.text = bossRun[speech];
             yield return new WaitForSeconds(4f);
             dialog.SetActive(false);
             DialogText.text = "";

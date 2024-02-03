@@ -17,7 +17,7 @@ public class BossScript : MonoBehaviour
 
     [Header("Boss Stats")]
     [SerializeField] bool phaseStart = false;
-    [SerializeField] int phase = 0;
+    [SerializeField] public int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
     [SerializeField] float timer,resetTimer,slamTimer = 60f;
@@ -96,7 +96,6 @@ public class BossScript : MonoBehaviour
                     case 2://running away
                         {
                             Cutscene2.Invoke();
-                            SceneManager.LoadScene("BossRunScene");
                             break;
                         }
                     default:
@@ -153,6 +152,11 @@ public class BossScript : MonoBehaviour
     public void ChangeYPos(float y)
     {
         bossModel.transform.position = new Vector3(bossModel.transform.position.x, y, bossModel.transform.position.z) * Time.deltaTime;
+    }
+
+    public void BossRun()
+    {
+        SceneManager.LoadScene("BossRunScene");
     }
     public void WinGame()
     {

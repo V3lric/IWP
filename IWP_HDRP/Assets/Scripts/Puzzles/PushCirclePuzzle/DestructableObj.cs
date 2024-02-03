@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestructableObj : MonoBehaviour
 {
-    public GameObject Gate;
+    public GameObject Gate,rLight, gLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,8 @@ public class DestructableObj : MonoBehaviour
         if (other.CompareTag("PCircles"))
         {
             Destroy(Gate);
-            //anim
+            gLight.SetActive(true);
+            rLight.SetActive(false);
         }
     }
 }

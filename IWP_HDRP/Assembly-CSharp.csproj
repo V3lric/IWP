@@ -118,6 +118,7 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\JumpingPuzzle\JumpingGoal.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Boulder.cs" />
     <Compile Include="Assets\Scripts\Companion\PetScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\JumpingPuzzle\MovingPlatform.cs" />

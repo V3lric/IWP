@@ -10,12 +10,8 @@ public class Switch : MonoBehaviour
     public Animator animator;
     public float timer = 0f;
     public float reset = 1.2f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public bool once = true;
+    public int switchID;
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +20,7 @@ public class Switch : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
-            
+            once = false;
             if (!isSwitched && timer <= 0)
             {
                 isSwitched = true;
@@ -37,6 +33,9 @@ public class Switch : MonoBehaviour
                 animator.SetTrigger("Down");
                 timer = reset;
             }
+
+            if (SwitchManager.Instance.switchOrder[switchID] == isSwitched)
+                AudioManager.Instance.PlaySFX("SwitchCorrect");
         }
     }
     private void OnTriggerEnter(Collider other)

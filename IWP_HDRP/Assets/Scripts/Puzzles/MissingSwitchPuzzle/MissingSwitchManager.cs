@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class MissingSwitchManager : MonoBehaviour
 {
+    public static MissingSwitchManager Instance;
     public UnityEvent Cutscene;//invoke cutscene
     public GameObject[] Switches;
     public GameObject[] bPillar, pillar;
@@ -23,6 +24,7 @@ public class MissingSwitchManager : MonoBehaviour
 
     void Start()
     {
+        Instance = this;
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
         diff = data.GetDifficulty();
@@ -96,6 +98,7 @@ public class MissingSwitchManager : MonoBehaviour
         {
             if (child.CompareTag(SwitchTags))
             {
+                child.gameObject.GetComponent<SwitchSlot>().switchID = numberOfSwitches;
                 switchList.Add(child.gameObject);
                 numberOfSwitches++;
             }

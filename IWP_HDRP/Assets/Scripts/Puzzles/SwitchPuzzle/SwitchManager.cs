@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine.Events;
 public class SwitchManager : MonoBehaviour
 {
+    public static SwitchManager Instance;
     public UnityEvent Cutscene;//invoke cutscene
     public GameObject[] Switch;
     public GameObject[] bPillar, pillar;
@@ -16,11 +17,11 @@ public class SwitchManager : MonoBehaviour
     public bool Solved = false;
     // Start is called before the first frame update
     GameManager manager;
-    private float elapsedTime;
     List<GameObject> columnList = new List<GameObject>();
     List<GameObject> pColumnList = new List<GameObject>();
     void Start()
     {
+        Instance = this;
         manager = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
         Transform parent = transform;
         //numberOfSwitches = Switch.Length;// Define the number of switches
@@ -41,7 +42,6 @@ public class SwitchManager : MonoBehaviour
                 if (switchOrder[currentIndex] == switchScript.isSwitched)
                 {
                     currentIndex++;
-                    AudioManager.Instance.PlaySFX("SwitchCorrect");
                 }
                 else
                 {
@@ -73,6 +73,7 @@ public class SwitchManager : MonoBehaviour
             if (child.CompareTag(SwitchTags))
             {
                 switchList.Add(child.gameObject);
+                child.gameObject.GetComponent<Switch>().switchID = numberOfSwitches;
                 numberOfSwitches++;
             }
         }
