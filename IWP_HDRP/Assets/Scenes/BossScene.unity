@@ -5510,6 +5510,9 @@ MonoBehaviour:
   WinCutscene:
     m_PersistentCalls:
       m_Calls: []
+  loseCutscene:
+    m_PersistentCalls:
+      m_Calls: []
   bossModel: {fileID: 1965083823}
   entPt: {fileID: 0}
 --- !u!1 &322567275
@@ -7613,6 +7616,8 @@ PlayableDirector:
     value: {fileID: 1969252392}
   - key: {fileID: 3039042198298368236, guid: e5feb9ea28f3c724ca0e93b96880986d, type: 2}
     value: {fileID: 1913119430}
+  - key: {fileID: 5013548907773898792, guid: e5feb9ea28f3c724ca0e93b96880986d, type: 2}
+    value: {fileID: 1598501965}
   m_ExposedReferences:
     m_References:
     - c5a982646a780c94ab0397407117b1d3: {fileID: 0}
@@ -14482,6 +14487,7 @@ MonoBehaviour:
   DialogPerson: {fileID: 1587397590}
   DialogText: {fileID: 58976820}
   chatText: []
+  scene1Win: []
   bossIntro:
   - Who dares disturb my slumber.
   - I thought I'd seen the last of your kind.
@@ -18977,7 +18983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You were eaten...
+  m_text: You died...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ef9734a04e32884cab469575081da4f, type: 2}
   m_sharedMaterial: {fileID: 1512666923304222154, guid: 9ef9734a04e32884cab469575081da4f,
@@ -24898,8 +24904,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364428387}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005890271, y: -0.29040173, z: -0.001248499, w: 0.9568859}
-  m_LocalPosition: {x: 3.3908815, y: 2.6799998, z: 16.215136}
+  m_LocalRotation: {x: -0, y: 0.9659258, z: -0.2588191, w: 0}
+  m_LocalPosition: {x: -2.379119, y: 8.607388, z: 30.015137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39209,6 +39215,7 @@ MonoBehaviour:
   DialogPerson: {fileID: 1514827499}
   DialogText: {fileID: 1719012260}
   chatText: []
+  scene1Win: []
   bossIntro:
   - Who dares disturb my slumber.
   - I thought I'd seen the last of your kind.
@@ -40979,8 +40986,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264753941787272876}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.035991866, y: -0.016755356, z: 0.00039201588, w: -0.99921155}
-  m_LocalPosition: {x: -2.8502483, y: 2.0678945, z: 5.7892323}
+  m_LocalRotation: {x: 0.000008109871, y: 0.012850592, z: 0.00056129706, w: 0.99991727}
+  m_LocalPosition: {x: -3.049119, y: 2.4, z: 6.3656125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

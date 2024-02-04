@@ -19,15 +19,15 @@ public class GameManagerRun : MonoBehaviour
         switch (PlayerData.instance.GetDifficulty())
         {
             case 0:
-                gameTimer = 120f;
+                gameTimer = 150f;
                 verticalJump.SetActive(true);
                 break;
             case 1:
-                gameTimer = 90f;
+                gameTimer = 120f;
                 verticalJump.SetActive(true);
                 break;
             case 2:
-                gameTimer = 60f;
+                gameTimer = 90f;
                 verticalJumpHard.SetActive(true);
                 break;
             default:
@@ -39,23 +39,23 @@ public class GameManagerRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!lose)
+        if (!BossScript.instance.lose)
         {
             gameTimer -= 1f * Time.deltaTime % 1f;
             float roundedTimer = UnityEngine.Mathf.Round(gameTimer);
             timerText.SetText("Time Left Before Collapse: " + roundedTimer.ToString() + "s");
         }
-        else if (lose)
+        else if (BossScript.instance.lose)
         {
-            PlayerController.Instance.disabled = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            deathUI.SetActive(true);
             timerText.SetText("");
         }
 
         if (gameTimer < 0)
-            lose = true;
+            BossScript.instance.lose = true;
+    }
+    public void HubScene()
+    {
+        SceneManager.LoadScene("HubScene");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,4 +65,5 @@ public class GameManagerRun : MonoBehaviour
             animator.SetTrigger("Fall");
         }
     }
+
 }

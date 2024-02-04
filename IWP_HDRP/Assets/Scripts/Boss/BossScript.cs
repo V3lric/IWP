@@ -16,15 +16,15 @@ public class BossScript : MonoBehaviour
     private bool doneSmashing;
 
     [Header("Boss Stats")]
-    [SerializeField] bool phaseStart,lose = false;
+    [SerializeField] public bool phaseStart,lose = false;
     [SerializeField] public int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
     [SerializeField] float timer,resetTimer,slamTimer = 60f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
-    bool once = false;
+     bool once = false;
     [Header("Boss Run Stats")]
-    public UnityEvent WinCutscene;
+    public UnityEvent WinCutscene,loseCutscene;
     public GameObject bossModel, entPt;
     // Start is called before the first frame update
     void Start()
@@ -101,12 +101,17 @@ public class BossScript : MonoBehaviour
                     default:
                         break;
                 }
-                if (lifes < 0)
-                {
-                    AudioManager.Instance.StopSound("FallingRocks");
-                    lose = true;
-                    deathUI.SetActive(true);
-                }
+
+            }
+            if (lifes < 0)
+            {
+                lose = true;
+                DialogManager.instance.OffDialog();
+                PlayerController.Instance.disabled = true;
+                AudioManager.Instance.StopSound("FallingRocks");
+                deathUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 
@@ -116,9 +121,23 @@ public class BossScript : MonoBehaviour
             bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
             if (lifes < 0)
             {
-                //gameover ui
+                lose = true;
                 GameManagerRun.Instance.lose = true;
             }
+        }
+
+        if (lose && !once)
+        {
+            loseCutscene.Invoke();
+            DialogManager.instance.OffDialog();
+            once = true;
+        }
+        else if (lose)
+        {
+            GameManagerRun.Instance.lose = true;
+            PlayerController.Instance.disabled = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
     private void Timer()
@@ -224,5 +243,4 @@ public class BossScript : MonoBehaviour
             }
         }
     }
-
 }

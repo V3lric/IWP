@@ -90,7 +90,10 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
+    public void HubScene()
+    {
+        SceneManager.LoadScene("HubScene");
+    }
     public void ChestOpen()
     {
         data.Stage1 = true;

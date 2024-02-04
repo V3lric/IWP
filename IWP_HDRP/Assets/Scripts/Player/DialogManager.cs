@@ -8,7 +8,7 @@ public class DialogManager : MonoBehaviour
     public static DialogManager instance;
     public GameObject dialog;
     public TextMeshProUGUI DialogPerson, DialogText;
-    [SerializeField] string[] chatText,bossIntro,bossRun;
+    [SerializeField] string[] chatText,scene1Win,bossIntro,bossRun;
     public bool cutscene1, cutscene2 = false;
 
     // Start is called before the first frame update
@@ -38,7 +38,25 @@ public class DialogManager : MonoBehaviour
     {
         StartCoroutine(DialogSpeechText(text, person));
     }
-
+    public void Scene1WinSpeech()
+    {
+        StartCoroutine(WinSpeech());
+    }
+    IEnumerator WinSpeech()
+    {
+        int speech = 0;
+        yield return new WaitForSeconds(0.5f);
+        DialogPerson.text = "Truffle";
+        DialogText.text = scene1Win[speech];
+        yield return new WaitForSeconds(5f);
+        DialogPerson.text = "Enoki";
+        speech++;
+        DialogText.text = scene1Win[speech];
+        yield return new WaitForSeconds(2f);
+        DialogPerson.text = "Truffle";
+        speech++;
+        DialogText.text = scene1Win[speech];
+    }
     IEnumerator BossIntroSpeech()
     {
         if (BossScript.instance.phase == 0)
