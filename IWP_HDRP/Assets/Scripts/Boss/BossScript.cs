@@ -16,6 +16,7 @@ public class BossScript : MonoBehaviour
     private bool doneSmashing;
 
     [Header("Boss Stats")]
+    public ParticleSystem particleBurst;
     [SerializeField] public bool phaseStart,lose = false;
     [SerializeField] public int phase = 0;
     [SerializeField] public int lifes = 0;
@@ -108,7 +109,6 @@ public class BossScript : MonoBehaviour
                 lose = true;
                 DialogManager.instance.OffDialog();
                 PlayerController.Instance.disabled = true;
-                AudioManager.Instance.StopSound("FallingRocks");
                 deathUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -136,6 +136,8 @@ public class BossScript : MonoBehaviour
 
         if (lose && !once)
         {
+            AudioManager.Instance.StopSound("FallingRocks");
+            PlayerController.Instance.PlayerDeath();
             loseCutscene.Invoke();
             DialogManager.instance.OffDialog();
             once = true;
@@ -227,7 +229,7 @@ public class BossScript : MonoBehaviour
 
         // Waits for anim to play fin before shaking vcam
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length - 2.5f);
-
+        particleBurst.Play();
         VCamShake.instance.CameraShakeVCam(10f, 1f);
         animator.Play("Walking");
         doneSmashing = true;

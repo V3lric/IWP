@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     public bool disabled = false;
     public Animator animator;
+    public ParticleSystem particleBurst,truffleBurst;
+    public GameObject body,truffle;
     [SerializeField] float idleTimer = 10f;
     [SerializeField] float animTimer;
     [SerializeField] bool bIdleAnim = false;
@@ -137,5 +139,20 @@ public class PlayerController : MonoBehaviour
         // set sphere position, with offset
         Vector3 spherePosition = new(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, Floor, QueryTriggerInteraction.Ignore);
+    }
+    public void PlayerDeath()
+    {
+        StartCoroutine(Death());
+    }
+    IEnumerator Death()
+    {
+        disabled = true;
+        yield return new WaitForSeconds(2f);
+        particleBurst.Play();
+        truffleBurst.Play();
+        yield return new WaitForSeconds(0.1f);
+        body.SetActive(false);
+        truffle.SetActive(false);
+
     }
 }
