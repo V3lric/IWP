@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\NPCs\NPCChat.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Mainmenu.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Shake.cs" />

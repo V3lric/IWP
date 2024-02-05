@@ -6,16 +6,15 @@ public class ResetButton : MonoBehaviour
 {
     public string Player = "Player";
     public GameObject text,goal;
-    public bool Reset = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public bool Reset,hit = false;
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.E) && hit)
+        {
+            Reset = true;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -27,9 +26,9 @@ public class ResetButton : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.layer == LayerMask.NameToLayer(Player))
         {
-            Reset = true;
+            hit = true;
         }
     }
     private void OnTriggerExit(Collider other)
