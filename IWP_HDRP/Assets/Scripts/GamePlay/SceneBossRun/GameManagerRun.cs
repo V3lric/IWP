@@ -10,8 +10,9 @@ public class GameManagerRun : MonoBehaviour
     [SerializeField] TMP_Text timerText;
     [SerializeField] float gameTimer;
     [SerializeField] GameObject floor,verticalJump, verticalJumpHard,deathUI;
-    public bool lose = false;
+    public bool win;
     Animator animator;
+    public Animator gate;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class GameManagerRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!BossScript.instance.lose)
+        if (!BossScript.instance.lose && !win)
         {
             gameTimer -= 1f * Time.deltaTime % 1f;
             float roundedTimer = UnityEngine.Mathf.Round(gameTimer);

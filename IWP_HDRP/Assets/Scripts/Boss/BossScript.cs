@@ -117,12 +117,20 @@ public class BossScript : MonoBehaviour
 
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
         {
-            animator.Play("Walking");
-            bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
-            if (lifes < 0)
+            if (!lose)
+            {
+                intervalTimer -= 1f * Time.deltaTime;
+                animator.Play("Walking");
+                bossModel.transform.position += (new Vector3(0, 0, 4) * Time.deltaTime);
+                if (intervalTimer < 0)
+                {
+                    intervalTimer = resetIntervalTimer;
+                    StartCoroutine(SpawnBoulderRun());
+                }
+            }
+            if (lifes < 0 || lose)
             {
                 lose = true;
-                GameManagerRun.Instance.lose = true;
             }
         }
 
@@ -134,7 +142,6 @@ public class BossScript : MonoBehaviour
         }
         else if (lose)
         {
-            GameManagerRun.Instance.lose = true;
             PlayerController.Instance.disabled = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -239,6 +246,22 @@ public class BossScript : MonoBehaviour
                 GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
                 go.transform.parent = boulderSpawn[i].transform;
                 VCamShake.instance.CameraShakeVCam(1f,2f);
+                yield return new WaitForSeconds(0.3f);
+            }
+        }
+    }
+    private IEnumerator SpawnBoulderRun()
+    {
+        for (int j = 0; j < boulderCount; j++)
+        {
+            for (int i = 0; i < boulderSpawn.Count; i++)
+            {
+                float randx = Random.Range(-4.5f, 4.5f);
+                float randz = Random.Range(-4.5f, 4.5f);
+
+                Vector3 spawnPosition = boulderSpawn[i].transform.position + new Vector3(randx, 1.5f, randz);
+                GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
+                go.transform.parent = boulderSpawn[i].transform;
                 yield return new WaitForSeconds(0.3f);
             }
         }
