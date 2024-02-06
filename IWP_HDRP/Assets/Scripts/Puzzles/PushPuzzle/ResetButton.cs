@@ -34,5 +34,6 @@ public class ResetButton : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         text.SetActive(false);
+        hit = false;
     }
 }

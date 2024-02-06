@@ -89,6 +89,18 @@ public class UIManager : MonoBehaviour
         maphud.SetActive(false);
         bmap = true;
     }
+    public void Quit()
+    {
+        Application.Quit();
+        data.SaveToJSON();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        data.SaveToJSON();
+    }
+
     public void ToggleMusic()
     {
         AudioManager.Instance.ToggleMusic();
@@ -151,17 +163,5 @@ public class UIManager : MonoBehaviour
     {
         SFXSlider.value = Volumn;
         AudioManager.Instance.SFXVol(SFXSlider.value);
-    }
-
-    public void Quit()
-    {
-        data.SaveToJSON();
-        Application.Quit();
-    }
-
-    public void MainMenu()
-    {
-        data.SaveToJSON();
-        SceneManager.LoadScene("MainMenu");
     }
 }

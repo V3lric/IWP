@@ -14,12 +14,6 @@ public class Mainmenu : MonoBehaviour
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayButton()
     {
         dCam.SetActive(true);

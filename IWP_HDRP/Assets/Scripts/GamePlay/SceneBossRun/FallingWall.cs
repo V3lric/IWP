@@ -12,6 +12,7 @@ public class FallingWall : MonoBehaviour
         {
             animator.SetTrigger("Fall");
             StartCoroutine(Slam());
+            AudioManager.Instance.PlaySFX("FallingWall");
         }
     }
 

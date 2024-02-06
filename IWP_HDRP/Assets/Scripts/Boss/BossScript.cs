@@ -205,14 +205,14 @@ public class BossScript : MonoBehaviour
 
     public void MainMenu()
     {
-        PlayerData.instance.SaveToJSON();
         SceneManager.LoadScene("MainMenu");
+        PlayerData.instance.SaveToJSON();
     }
 
     public void Quit()
     {
-        PlayerData.instance.SaveToJSON();
         Application.Quit();
+        PlayerData.instance.SaveToJSON();
     }
     IEnumerator WinGameCutScene()
     {

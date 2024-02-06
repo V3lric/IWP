@@ -16,11 +16,6 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
     }
-    private void Update()
-    {
-        if (cutscene1)
-            cutsceneDialog.SetActive(false);
-    }
     public void Dialog()
     {
             StartCoroutine(DialogSpeech());
