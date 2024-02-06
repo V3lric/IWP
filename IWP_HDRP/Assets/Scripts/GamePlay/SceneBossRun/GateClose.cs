@@ -10,7 +10,6 @@ public class GateClose : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !once)
         {
             GameManagerRun.Instance.gate.SetTrigger("Tigger");
-            GameManagerRun.Instance.win = true;
             once = true;
             DialogManager.instance.CustomText("The gate is closing!!!", "Truffle");
         }
