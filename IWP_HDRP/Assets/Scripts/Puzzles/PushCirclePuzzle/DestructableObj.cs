@@ -24,6 +24,7 @@ public class DestructableObj : MonoBehaviour
             Destroy(Gate);
             gLight.SetActive(true);
             rLight.SetActive(false);
+            DialogManager.instance.CustomText("Nice! Looks like there was a switch behind the gate.", "Truffle");
         }
     }
 }
