@@ -66,14 +66,11 @@ public class DialogManager : MonoBehaviour
         if (BossScript.instance.phase == 0)
         {
             int speech = 0;
-            if (cutscene1)
-                yield return null;
+            cutsceneDialog.SetActive(true);
             yield return new WaitForSeconds(4f);
-            if (cutscene1)
-                yield return null;
             CutsceneDialog.text = "Slug";
             CutsceneText.text = bossIntro[speech];
-            cutsceneDialog.SetActive(true);
+
             yield return new WaitForSeconds(6f);
             CutsceneDialog.text = "Slug";
             speech++;

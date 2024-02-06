@@ -40,6 +40,7 @@ public class SwitchSlot : MonoBehaviour
                     animator.SetTrigger("Down");
                     timer = reset;
                 }
+
                 if (MissingSwitchManager.Instance.missingSwitchOrder[switchID] == isSwitched)
                     AudioManager.Instance.PlaySFX("SwitchCorrect");
             }
