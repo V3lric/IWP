@@ -128,6 +128,7 @@ public class DialogManager : MonoBehaviour
     IEnumerator DialogSpeech()
     {
         DialogText.text = chatText[GameManager.Instance.uiBubbleCP];
+        DialogPerson.text = "Truffle";
         dialog.SetActive(true);
         yield return new WaitForSeconds(4f);
         dialog.SetActive(false);
