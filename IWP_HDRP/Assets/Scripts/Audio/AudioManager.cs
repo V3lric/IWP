@@ -20,14 +20,13 @@ public class AudioManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
+            PlaySound("MainMenu");
         }
         else
         {
             Debug.Log("More than 1 instance detected");
             Destroy(this.gameObject);
         }
-
-
     }
     private void Start()
     {
@@ -36,7 +35,7 @@ public class AudioManager : MonoBehaviour
     }
     void OnSceneWasLoaded(Scene scene, LoadSceneMode loadMode)
     {
-        //StopBGM();
+        StopBGM();
         PlayBGM();
     }
 

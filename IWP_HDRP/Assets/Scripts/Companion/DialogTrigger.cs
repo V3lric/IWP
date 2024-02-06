@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    [SerializeField] string text, name;
+    [SerializeField] string text, textName;
     [SerializeField] ChatBubbleScript bubble;
+    bool once = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !once)
         {
-            DialogManager.instance.CustomText(text, name);
+            DialogManager.instance.CustomText(text, textName);
             bubble.DotBubble();
+            once = true;
         }
     }
 }

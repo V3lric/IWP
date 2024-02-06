@@ -11,7 +11,7 @@ public class NPCChat : MonoBehaviour
 
     int randInt;
     [Header("NPC Chat")]
-    [SerializeField] string name;
+    [SerializeField] string textName;
     [SerializeField] string[] chat;
     // Start is called before the first frame update
     void Start()
@@ -24,12 +24,12 @@ public class NPCChat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && hit)
         {
             bubble.DotBubble();
-            DialogManager.instance.CustomText(chat[randInt],name);
+            DialogManager.instance.CustomText(chat[randInt], textName);
         }
     }
     private void RandInt()
     {
-        randInt = Random.RandomRange(0, chat.Length);
+        randInt = Random.Range(0, chat.Length);
     }
     private void OnTriggerEnter(Collider other)
     {

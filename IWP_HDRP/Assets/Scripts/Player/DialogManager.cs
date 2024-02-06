@@ -94,7 +94,7 @@ public class DialogManager : MonoBehaviour
             speech++;
             CutsceneText.text = bossIntro[speech];
             yield return new WaitForSeconds(4f);
-            dialog.SetActive(false);
+            cutsceneDialog.SetActive(false);
             CutsceneDialog.text = "";
         }
         else if (BossScript.instance.phase == 2)

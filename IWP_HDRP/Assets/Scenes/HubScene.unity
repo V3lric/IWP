@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2071.4333, g: 2422.215, b: 2751.8323, a: 1}
+  m_IndirectSpecularColor: {r: 2074.0261, g: 2425.2415, b: 2755.6565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2854,7 +2854,7 @@ MonoBehaviour:
   text: {fileID: 272035507}
   hit: 0
   bubble: {fileID: 1443121194}
-  name: Tall Shroom
+  textName: Sleepy Shroom
   chat:
   - I need a nap.
   - ZZZ
@@ -2981,7 +2981,7 @@ MonoBehaviour:
   text: {fileID: 1030356710}
   hit: 0
   bubble: {fileID: 458412481}
-  name: Ye Old Shroom
+  textName: Elder Shroom
   chat:
   - Back in my day...
   - If I was young again...
@@ -5967,7 +5967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 1073623886}
+  cutsceneDialog: {fileID: 0}
   DialogPerson: {fileID: 448847274}
+  CutsceneDialog: {fileID: 0}
+  CutsceneText: {fileID: 0}
   DialogText: {fileID: 1962344201}
   chatText:
   - You unlocked the treasure, lets get it!!!
@@ -8811,7 +8814,7 @@ MonoBehaviour:
   text: {fileID: 1632180436}
   hit: 0
   bubble: {fileID: 686470789}
-  name: Small Shroom
+  textName: Tiny Shroom
   chat:
   - I'm doing my morning jog! Wanna join me?
   - It's about drive,l it's about power!
@@ -14651,7 +14654,7 @@ MonoBehaviour:
   text: {fileID: 1558086134}
   hit: 0
   bubble: {fileID: 117752978}
-  name: Friend
+  textName: Friendly Shroom
   chat:
   - Good luck on your adventure!
   - Good morning Enoki! Today's a great day!
@@ -22768,12 +22771,12 @@ PrefabInstance:
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000002867475
+      value: 0.000000028674753
       objectReference: {fileID: 0}
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000033646077
+      value: 0.0000000033646081
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -22783,17 +22786,17 @@ PrefabInstance:
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08835955
+      value: -0.08835954
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 9.132078e-10
+      value: -0.0000000296998
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.100737e-11
+      value: -0.0000000026345652
       objectReference: {fileID: 0}
     - target: {fileID: 5417346850810791292, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -22828,17 +22831,17 @@ PrefabInstance:
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08835955
+      value: -0.08835954
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 9.132073e-10
+      value: -0.0000000296998
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.100742e-11
+      value: -0.0000000026345655
       objectReference: {fileID: 0}
     - target: {fileID: 8751592328413903038, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}

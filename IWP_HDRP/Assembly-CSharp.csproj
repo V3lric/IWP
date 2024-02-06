@@ -100,7 +100,6 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Puzzles\LockPuzzle\Lock.cs" />
     <Compile Include="Assets\Scripts\Boss\BossEndPt.cs" />
-    <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\CustomizeGraphy.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\MissingSwitch.cs" />
     <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\Npc.cs" />
@@ -115,9 +114,9 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\MissingSwitchManager.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\UpdateTextWithSliderValue.cs" />
     <Compile Include="Assets\Scripts\Companion\DialogTrigger.cs" />
     <Compile Include="Assets\Scripts\Boss\BossHitBox.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\TriggerWin.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />
@@ -127,9 +126,7 @@
     <Compile Include="Assets\Scripts\Companion\PetScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\JumpingPuzzle\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Player\CineMachineShakeEffect.cs" />
-    <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\ForceSliderToMultipleOf3.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushPuzzle\PuzzleManager.cs" />
-    <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Customization Scripts\ForceSliderToPowerOf2.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\UI\Map.cs" />
     <Compile Include="Assets\Scripts\MoveCursor.cs" />
@@ -150,7 +147,6 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PressurePlate\PPlateManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\LockPuzzle\LockManager.cs" />
-    <Compile Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Scene - Customization\Color Picker\G_CUIColorPicker.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushCircles.cs" />
     <Compile Include="Assets\Scripts\Boss\MoveBossPos.cs" />
@@ -170,12 +166,9 @@
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Changelog.txt" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Shaders\GraphMobile.shader" />
-    <None Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Font\Northwest-Bold\ERIC-TIRADO-NORTHWEST-LICENSE.txt" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -185,8 +178,6 @@
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Font\Roboto\LICENSE.txt" />
-    <None Include="Assets\Packages\Graphy - Ultimate Stats Monitor\Shaders\GraphStandard.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -1201,14 +1192,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Tayx.Graphy.csproj">
-      <Project>{5B5B03B5-594E-F53D-3D0B-9AF6514BAD33}</Project>
-      <Name>Tayx.Graphy</Name>
-    </ProjectReference>
-    <ProjectReference Include="Tayx.Graphy.Editor.csproj">
-      <Project>{A48F1A5F-9646-74BB-EA49-F637C514DCB4}</Project>
-      <Name>Tayx.Graphy.Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

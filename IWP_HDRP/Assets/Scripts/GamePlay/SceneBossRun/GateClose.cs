@@ -11,7 +11,6 @@ public class GateClose : MonoBehaviour
         {
             GameManagerRun.Instance.gate.SetTrigger("Tigger");
             once = true;
-            DialogManager.instance.CustomText("The gate is closing!!!", "Truffle");
         }
     }
 }

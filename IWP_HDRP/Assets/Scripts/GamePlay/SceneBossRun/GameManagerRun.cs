@@ -45,8 +45,9 @@ public class GameManagerRun : MonoBehaviour
             gameTimer -= 1f * Time.deltaTime % 1f;
             float roundedTimer = UnityEngine.Mathf.Round(gameTimer);
             timerText.SetText("Time Left Before Collapse: " + roundedTimer.ToString() + "s");
+            VCamShake.instance.CameraShakeVCam(1f, 1f);
         }
-        else if (BossScript.instance.lose)
+        else if (BossScript.instance.lose || win)
         {
             timerText.SetText("");
         }
