@@ -69,6 +69,8 @@ public class DialogManager : MonoBehaviour
             if (cutscene1)
                 yield return null;
             yield return new WaitForSeconds(4f);
+            if (cutscene1)
+                yield return null;
             CutsceneDialog.text = "Slug";
             CutsceneText.text = bossIntro[speech];
             cutsceneDialog.SetActive(true);
