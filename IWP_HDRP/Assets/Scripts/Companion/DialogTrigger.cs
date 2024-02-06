@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    [SerializeField] string Text;
-    bool once;
+    [SerializeField] string text, name;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !once)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            DialogManager.instance.CustomText(Text,"Truffle");
-            once = true;
+            DialogManager.instance.CustomText(text, name);
         }
     }
 }

@@ -32,6 +32,8 @@ public class BossScript : MonoBehaviour
     {
         instance = this;
         bossOGPos = bossModel.transform.position;
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
+            DialogManager.instance.CustomText("RUNN!!!","Truffle");
         if (PlayerData.instance.GetDifficulty() == 0)
             lifes = 3;
     }
@@ -106,6 +108,7 @@ public class BossScript : MonoBehaviour
             }
             if (lifes < 0)
             {
+                PlayerController.Instance.PlayerDeath();
                 lose = true;
                 DialogManager.instance.OffDialog();
                 PlayerController.Instance.disabled = true;
@@ -137,6 +140,7 @@ public class BossScript : MonoBehaviour
         if (lose && !once)
         {
             AudioManager.Instance.StopSound("FallingRocks");
+            PlayerController.Instance.PlayerDeath();
             PlayerController.Instance.PlayerDeath();
             loseCutscene.Invoke();
             DialogManager.instance.OffDialog();

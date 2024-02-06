@@ -6,8 +6,8 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance;
-    public GameObject dialog;
-    public TextMeshProUGUI DialogPerson, DialogText;
+    public GameObject dialog,cutsceneDialog;
+    public TextMeshProUGUI DialogPerson,CutsceneDialog, CutsceneText, DialogText;
     [SerializeField] string[] chatText,scene1Win,bossIntro,bossRun;
     public bool cutscene1, cutscene2 = false;
 
@@ -16,7 +16,11 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
     }
-
+    private void Update()
+    {
+        if (cutscene1)
+            cutsceneDialog.SetActive(false);
+    }
     public void Dialog()
     {
             StartCoroutine(DialogSpeech());
@@ -37,6 +41,11 @@ public class DialogManager : MonoBehaviour
     public void CustomText(string text, string person)
     {
         StartCoroutine(DialogSpeechText(text, person));
+    }
+    public void OffCutscene()
+    {
+        cutscene1 = true;
+        cutsceneDialog.SetActive(false);
     }
     public void Scene1WinSpeech()
     {
@@ -62,29 +71,31 @@ public class DialogManager : MonoBehaviour
         if (BossScript.instance.phase == 0)
         {
             int speech = 0;
+            if (cutscene1)
+                yield return null;
             yield return new WaitForSeconds(4f);
-            DialogPerson.text = "Slug";
-            DialogText.text = bossIntro[speech];
-            dialog.SetActive(true);
+            CutsceneDialog.text = "Slug";
+            CutsceneText.text = bossIntro[speech];
+            cutsceneDialog.SetActive(true);
             yield return new WaitForSeconds(6f);
-            DialogPerson.text = "Slug";
+            CutsceneDialog.text = "Slug";
             speech++;
-            DialogText.text = bossIntro[speech];
+            CutsceneText.text = bossIntro[speech];
             yield return new WaitForSeconds(4f);
-            DialogPerson.text = "Slug";
+            CutsceneDialog.text = "Slug";
             speech++;
-            DialogText.text = bossIntro[speech];
+            CutsceneText.text = bossIntro[speech];
             yield return new WaitForSeconds(4f);
-            DialogPerson.text = "Enoki";
+            CutsceneDialog.text = "Enoki";
             speech++;
-            DialogText.text = bossIntro[speech];
+            CutsceneText.text = bossIntro[speech];
             yield return new WaitForSeconds(4.5f);
-            DialogPerson.text = "Slug";
+            CutsceneDialog.text = "Slug";
             speech++;
-            DialogText.text = bossIntro[speech];
+            CutsceneText.text = bossIntro[speech];
             yield return new WaitForSeconds(4f);
             dialog.SetActive(false);
-            DialogText.text = "";
+            CutsceneDialog.text = "";
         }
         else if (BossScript.instance.phase == 2)
         {

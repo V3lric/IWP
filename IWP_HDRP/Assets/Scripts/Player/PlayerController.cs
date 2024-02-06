@@ -140,19 +140,23 @@ public class PlayerController : MonoBehaviour
         Vector3 spherePosition = new(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, Floor, QueryTriggerInteraction.Ignore);
     }
+    bool once = false;
     public void PlayerDeath()
     {
         StartCoroutine(Death());
     }
     IEnumerator Death()
     {
-        disabled = true;
-        yield return new WaitForSeconds(2f);
-        particleBurst.Play();
-        truffleBurst.Play();
-        yield return new WaitForSeconds(0.1f);
-        body.SetActive(false);
-        truffle.SetActive(false);
-
+        if (!once)
+        {
+            once = true;
+            disabled = true;
+            yield return new WaitForSeconds(2f);
+            particleBurst.Play();
+            truffleBurst.Play();
+            yield return new WaitForSeconds(0.1f);
+            body.SetActive(false);
+            truffle.SetActive(false);
+        }
     }
 }
