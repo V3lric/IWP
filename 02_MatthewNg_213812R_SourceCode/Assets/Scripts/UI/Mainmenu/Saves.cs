@@ -9,22 +9,23 @@ public class Saves : MonoBehaviour
     private PlayerData pData;
     public TMP_Text saveDate;
     // Start is called before the first frame update
-
+    string filePath;
     void Start()
     {
+        filePath = Application.persistentDataPath + "StatsData.json";
         pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
+        if (System.IO.File.Exists(filePath))
             saveDate.text = pData.stats.date.ToString();
     }
 
     public void LoadData()
     {
-        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
+        if (System.IO.File.Exists(filePath))
         {
             Debug.Log("save");
             pData.LoadFromJSON();

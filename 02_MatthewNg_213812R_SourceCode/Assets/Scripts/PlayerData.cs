@@ -68,16 +68,17 @@ public class PlayerData : MonoBehaviour
     {
         SavingData();
         string statsData = JsonUtility.ToJson(stats);
-        string filePath = "SaveFiles/StatsData.json";
+        string filePath = Application.persistentDataPath + "StatsData.json";
+
+        System.IO.File.WriteAllText(filePath, statsData);
         Debug.Log(filePath);
-        System.IO.File.WriteAllText(Application.streamingAssetsPath + filePath, statsData);
         Debug.Log("Save Created");
     }
 
     public void LoadFromJSON()//check if save file exists
     {
-        string filePath = "SaveFiles/StatsData.json";
-        string statsData = System.IO.File.ReadAllText(Application.streamingAssetsPath + filePath);
+        string filePath = Application.persistentDataPath + "StatsData.json";
+        string statsData = System.IO.File.ReadAllText(filePath);
         stats = JsonUtility.FromJson<Stats>(statsData);
         LoadData();
     }

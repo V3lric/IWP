@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{50B711D3-A021-20DA-118B-BA481F37AB4E}</ProjectGuid>
+    <ProjectGuid>{A5ED9500-AB8D-36BB-BD43-7D2225B8CF48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Puzzles\PushPuzzle\Goal.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\SwitchManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Mainmenu\MainMenuSettings.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractUI.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
