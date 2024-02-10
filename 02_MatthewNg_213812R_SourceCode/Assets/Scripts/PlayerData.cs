@@ -25,6 +25,7 @@ public class PlayerData : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
+        LoadFromJSON();
     }
 
     public void SetDifficulty(int set)

@@ -6,21 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class Saves : MonoBehaviour
 {
-    private PlayerData pData;
     public TMP_Text saveDate;
     // Start is called before the first frame update
     string filePath;
     void Start()
     {
         filePath = Application.persistentDataPath + "StatsData.json";
-        pData = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (System.IO.File.Exists(filePath))
-            saveDate.text = pData.stats.date.ToString();
+        saveDate.text = PlayerData.instance.GetDate();
     }
 
     public void LoadData()
@@ -28,7 +24,6 @@ public class Saves : MonoBehaviour
         if (System.IO.File.Exists(filePath))
         {
             Debug.Log("save");
-            pData.LoadFromJSON();
             SceneManager.LoadScene("HubScene");
         }
         else
