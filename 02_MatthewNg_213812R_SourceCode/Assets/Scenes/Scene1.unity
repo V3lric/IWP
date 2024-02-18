@@ -15202,6 +15202,36 @@ PrefabInstance:
       propertyPath: vCamTransform
       value: 
       objectReference: {fileID: 1271441499}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.4317603
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 11.15811
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.075976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.29116696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 5.079053
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811733116892068875, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.05226284
+      objectReference: {fileID: 0}
     - target: {fileID: 8606434290232689102, guid: 6a1ab2dd0bd02a84580232e52a9e5791,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66283,6 +66313,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1431007244963905802, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
+      propertyPath: m_TransparentLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 2517152727974170919, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66346,12 +66381,12 @@ PrefabInstance:
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001479963
+      value: -0.000000014799631
       objectReference: {fileID: 0}
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000017365436
+      value: -0.0000000017365437
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -66361,17 +66396,17 @@ PrefabInstance:
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08835955
+      value: -0.08835954
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -9.1320423e-10
+      value: 0.000000029699804
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.100692e-11
+      value: 0.0000000026345657
       objectReference: {fileID: 0}
     - target: {fileID: 4085043832954864249, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -66417,17 +66452,17 @@ PrefabInstance:
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08835955
+      value: -0.08835954
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -9.132046e-10
+      value: 0.000000029699802
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.100698e-11
+      value: 0.0000000026345655
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -115994,7 +116029,7 @@ GameObject:
   - component: {fileID: 2090309728}
   - component: {fileID: 2090309727}
   - component: {fileID: 2090309726}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -142,7 +142,7 @@ MonoBehaviour:
       DLSSInjectionPoint: 0
       DLSSUseOptimalSettings: 1
       DLSSSharpness: 0
-      fsrOverrideSharpness: 1
+      fsrOverrideSharpness: 0
       fsrSharpness: 0.92
       maxPercentage: 100
       minPercentage: 100

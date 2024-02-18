@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     public bool puzzle1, puzzle2 = false;
     PlayerData data;
     GameObject Spawn, Player;
-    private PlayableDirector _currentDirector;
-    private float _timeToSkipTo;
 
     [Header("Puzzle GameObject")]
     public GameObject hardGateEntrance;
