@@ -8297,6 +8297,7 @@ MonoBehaviour:
         m_CallState: 2
   puzzle1: 0
   puzzle2: 0
+  bubble: {fileID: 319629899}
   hardGateEntrance: {fileID: 499220200}
   HardGate: {fileID: 157043832}
   boulderPuzzle: {fileID: 775019791}
@@ -30185,7 +30186,7 @@ PrefabInstance:
     - target: {fileID: 5601690008323500037, guid: 14d2c99d56ed062498e6342dc18d8070,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5687440513812277018, guid: 14d2c99d56ed062498e6342dc18d8070,
         type: 3}
@@ -30236,6 +30237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168597816706485414, guid: 14d2c99d56ed062498e6342dc18d8070,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8006852616977766322, guid: 14d2c99d56ed062498e6342dc18d8070,
         type: 3}
@@ -59616,7 +59622,7 @@ GameObject:
   - component: {fileID: 1010083462}
   - component: {fileID: 1010083461}
   - component: {fileID: 1010083460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66128,7 +66134,7 @@ GameObject:
   - component: {fileID: 1269920146}
   - component: {fileID: 1269920145}
   - component: {fileID: 1269920144}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66315,6 +66321,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1431007244963905802, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
+      propertyPath: m_CollideAgainst.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431007244963905802, guid: f4bbbf210573b404d9ff5c51acd49ac8,
+        type: 3}
       propertyPath: m_TransparentLayers.m_Bits
       value: 256
       objectReference: {fileID: 0}
@@ -66381,12 +66392,12 @@ PrefabInstance:
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000014799631
+      value: -0.00000001479963
       objectReference: {fileID: 0}
     - target: {fileID: 3124107801729908778, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000017365437
+      value: -0.0000000017365436
       objectReference: {fileID: 0}
     - target: {fileID: 3252415113032175859, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -66457,12 +66468,12 @@ PrefabInstance:
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000029699802
+      value: 0.000000029699804
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000026345655
+      value: 0.0000000026345657
       objectReference: {fileID: 0}
     - target: {fileID: 6805153225392358398, guid: f4bbbf210573b404d9ff5c51acd49ac8,
         type: 3}
@@ -116029,7 +116040,7 @@ GameObject:
   - component: {fileID: 2090309728}
   - component: {fileID: 2090309727}
   - component: {fileID: 2090309726}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Sphere.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}

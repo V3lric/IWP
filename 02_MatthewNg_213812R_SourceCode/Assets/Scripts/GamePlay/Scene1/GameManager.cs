@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool puzzle1, puzzle2 = false;
     PlayerData data;
     GameObject Spawn, Player;
+    [SerializeField] ChatBubbleScript bubble;
 
     [Header("Puzzle GameObject")]
     public GameObject hardGateEntrance;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
         text.text = uiText[checkPoints];
         header.text = uiHeader[checkPoints];
         DialogManager.instance.Dialog();
+        bubble.DotBubble();
     }
 
     public Vector3 GetCheckPoint()

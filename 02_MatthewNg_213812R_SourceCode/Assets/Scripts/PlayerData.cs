@@ -12,9 +12,11 @@ public class PlayerData : MonoBehaviour
     [SerializeField] string savedDate;
     [SerializeField] int difficulty = 0;
     public bool Stage1, Stage2, StageBoss = false;
+    [SerializeField] public float musicValue;
+    [SerializeField] public float sfxValue;
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
     {
         //ensure theres one obj in each scene at all times
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Data");

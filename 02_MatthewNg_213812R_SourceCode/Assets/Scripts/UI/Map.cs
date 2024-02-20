@@ -5,16 +5,30 @@ using UnityEngine.SceneManagement;
 public class Map : MonoBehaviour
 {
     PlayerData data;
+    [SerializeField] GameObject home, scene1, sceneboss;
+    [SerializeField] string scene;
     // Start is called before the first frame update
     void Start()
     {
+        scene = SceneManager.GetActiveScene().name;
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<PlayerData>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (scene)
+        {
+            case "HubScene":
+                home.SetActive(true);
+                break;
+            case "Scene1":
+                scene1.SetActive(true);
+                break;
+            case "BossScene":
+                sceneboss.SetActive(true);
+                break;
+            case "BossRunScene":
+                sceneboss.SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 
     public void HubScene()

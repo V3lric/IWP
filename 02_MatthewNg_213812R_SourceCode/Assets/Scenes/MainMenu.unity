@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1989.6531, g: 2367.723, b: 2753.0198, a: 1}
+  m_IndirectSpecularColor: {r: 1626.8499, g: 2032.4749, b: 2513.051, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1607,18 +1607,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb340ca5f28b0c547825faefa8803356, type: 3}
---- !u!114 &131130458 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4538432797358802632, guid: bb340ca5f28b0c547825faefa8803356,
-    type: 3}
-  m_PrefabInstance: {fileID: 131130457}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 900aef836b75d3e48a809352fd874211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &147918597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5123,9 +5111,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131130458}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SFXVol
+      - m_Target: {fileID: 1525762595}
+        m_TargetAssemblyTypeName: MainMenuSettings, Assembly-CSharp
+        m_MethodName: SetSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7164,9 +7152,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131130458}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: MusicVol
+      - m_Target: {fileID: 1525762595}
+        m_TargetAssemblyTypeName: MainMenuSettings, Assembly-CSharp
+        m_MethodName: SetMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12449,6 +12437,8 @@ MonoBehaviour:
   eFalse: {fileID: 967904895}
   music: 0
   sfx: 0
+  MusicSlider: {fileID: 832489893}
+  SFXSlider: {fileID: 496610812}
 --- !u!1 &1538200968
 GameObject:
   m_ObjectHideFlags: 0
