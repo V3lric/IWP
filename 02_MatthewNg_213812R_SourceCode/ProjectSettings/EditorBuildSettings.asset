@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRunScene.unity
     guid: a686ce4ceb1695d4b9c8cc178f61ee38
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 18075362e8385a84baf6fec159160da0,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 46733d8171dcc834a9b065826e17692e, type: 2}
