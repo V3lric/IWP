@@ -81,9 +81,12 @@ void Start()
     public void LoadFromJSON()//check if save file exists
     {
         string filePath = Application.persistentDataPath + "StatsData.json";
-        string statsData = System.IO.File.ReadAllText(filePath);
-        stats = JsonUtility.FromJson<Stats>(statsData);
-        LoadData();
+        if (System.IO.File.Exists(filePath))
+        {
+            string statsData = System.IO.File.ReadAllText(filePath);
+            stats = JsonUtility.FromJson<Stats>(statsData);
+            LoadData();
+        }
     }
 }
 

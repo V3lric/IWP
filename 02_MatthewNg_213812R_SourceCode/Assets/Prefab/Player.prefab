@@ -1066,7 +1066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578328006657020066}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.116537444, y: -9.394129e-10, z: -1.1022824e-10, w: 0.9931863}
+  m_LocalRotation: {x: -0.11653747, y: 8.639713e-16, z: 1.9197965e-16, w: 0.9931863}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2424,7 +2424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3934819126168434457}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08835954, y: -0.0000000296998, z: -0.0000000026345652, w: 0.9960887}
+  m_LocalRotation: {x: -0.08835954, y: 0.000000029699804, z: 0.0000000026345657, w: 0.9960887}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4600,7 +4600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6093539988541276420}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0498137, y: 0.0000000021481275, z: -1.0713917e-10, w: 0.99875855}
+  m_LocalRotation: {x: 0.0498137, y: -0.0000000021481275, z: 1.0713917e-10, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4689,8 +4689,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6264753941757660873}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08835954, y: -0.0000000296998, z: -0.0000000026345652, w: 0.9960887}
-  m_LocalPosition: {x: -4.049119, y: 0.7252306, z: -8.360891}
+  m_LocalRotation: {x: -0.08835954, y: 0.000000029699804, z: 0.0000000026345657, w: 0.9960887}
+  m_LocalPosition: {x: -4.049119, y: 0.72523046, z: -8.360889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5217,7 +5217,7 @@ CharacterController:
   m_Height: 1.85
   m_Radius: 0.9
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.23, z: 0}
@@ -6196,8 +6196,9 @@ MonoBehaviour:
   DialogText: {fileID: 5937387604002802844}
   chatText:
   - You unlocked the treasure, lets get it!!!
-  - What this massive block do?
-  - Maybe these pillars on the switches represent something?
+  - Why is there a massive boulder there?
+  - Why are the pillars on the switches different, maybe they represent the order
+    of the switch?
   - Yay you did it!!!
   - Looks like the switches on the pillars are missing, lets go find them!!!
   - Same as last time! You got this!!!
@@ -7514,11 +7515,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 9
+    m_Bits: 1
   m_IgnoreTag: 
   m_TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0

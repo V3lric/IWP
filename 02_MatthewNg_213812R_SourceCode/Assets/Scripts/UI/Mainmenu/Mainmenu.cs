@@ -26,8 +26,7 @@ public class Mainmenu : MonoBehaviour
     public void SaveButton()
     {
         saveCam.SetActive(true);
-        if (System.IO.File.Exists("Assets/SaveFiles/StatsData.json"))
-            pData.LoadFromJSON();
+        pData.LoadFromJSON();
     }
 
     public void QuitButton()

@@ -24,6 +24,7 @@ public class Saves : MonoBehaviour
         if (System.IO.File.Exists(filePath))
         {
             Debug.Log("save");
+            Debug.Log(filePath);
             SceneManager.LoadScene("HubScene");
         }
         else
