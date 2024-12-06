@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Map : MonoBehaviour
 {
     PlayerData data;
-    [SerializeField] GameObject home, scene1, sceneboss;
+    [SerializeField] GameObject home, stage1, stage2, sceneboss;
     [SerializeField] string scene;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,11 @@ public class Map : MonoBehaviour
             case "HubScene":
                 home.SetActive(true);
                 break;
-            case "Scene1":
-                scene1.SetActive(true);
+            case "Stage1":
+                stage1.SetActive(true);
+                break;
+            case "Stage2":
+                stage2.SetActive(true);
                 break;
             case "BossScene":
                 sceneboss.SetActive(true);
@@ -45,10 +48,10 @@ public class Map : MonoBehaviour
     }
     public void Scene1()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene1"))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Stage1"))
         {
-            SceneManager.LoadScene("Scene1");
-            AudioManager.Instance.PlaySound("Scene1");
+            SceneManager.LoadScene("Stage1");
+            AudioManager.Instance.PlaySound("Stage1");
         }
         else
         {
@@ -58,9 +61,10 @@ public class Map : MonoBehaviour
 
     public void Scene2()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene2") && !data.Stage1)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Stage2") && data.Stage1)
         {
-            SceneManager.LoadScene("Scene2");
+            SceneManager.LoadScene("Stage2");
+            AudioManager.Instance.PlaySound("Stage2");
         }
         else
         {
@@ -70,9 +74,10 @@ public class Map : MonoBehaviour
 
     public void Scene3()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("BossScene") && data.Stage1)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("BossScene") && data.Stage2)
         {
             SceneManager.LoadScene("BossScene");
+            AudioManager.Instance.PlaySound("Stage3");
         }
         else
         {

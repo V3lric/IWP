@@ -64,7 +64,9 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\NPCs\NPCChat.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\PlatformManager.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Mainmenu.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\GameManagerRun.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\Shake.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Assets\Scripts\CutsceneDirector.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\GateClose.cs" />
     <Compile Include="Assets\Scripts\UI\Mainmenu\Saves.cs" />
     <Compile Include="Assets\Scripts\Player\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
@@ -89,11 +92,11 @@
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractUIBubble.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Stages\Checkpoints.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\FallingPlatform.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SwitchPuzzle\Switch.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\GateClose.cs" />
     <Compile Include="Assets\Scripts\Boss\PhaseStart.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Scene1\Checkpoints.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PressurePlate\PressurePlate.cs" />
@@ -109,15 +112,11 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Puzzles\InteractBlocks.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\PlatformManager.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\FallingPlatform.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\FallingWall.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\MissingSwitchManager.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Companion\DialogTrigger.cs" />
     <Compile Include="Assets\Scripts\Boss\BossHitBox.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\TriggerWin.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Companion\ChatBubbleScript.cs" />
@@ -139,7 +138,7 @@
     <Compile Include="Assets\Scripts\Boss\BossCamLock.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\BossRunLava.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Stages\GameManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\EndPoint.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushCirclePuzzle\DestructableObj.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PushPuzzle\ResetButton.cs" />
@@ -152,15 +151,16 @@
     <Compile Include="Assets\Scripts\Puzzles\PushCircles.cs" />
     <Compile Include="Assets\Scripts\Boss\MoveBossPos.cs" />
     <Compile Include="Assets\Scripts\Boss\TriggerShake.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\TriggerWin.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\FallingWall.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Scene1\GameManager.cs" />
     <Compile Include="Assets\Scripts\Puzzles\MissingSwitchPuzzle\SwitchSlot.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\StageBossRun\BossRunLava.cs" />
     <Compile Include="Assets\Scripts\VCamShake.cs" />
     <Compile Include="Assets\Scripts\Boss\BossScript.cs" />
     <Compile Include="Assets\Scripts\Puzzles\FallingBoulderPuzzle\SpawnBoulder.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\SceneBossRun\GameManagerRun.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
   </ItemGroup>
   <ItemGroup>

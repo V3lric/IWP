@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
-    public GameManager gm;
+    [SerializeField] GameManager gm;
     public bool hit = false;
     void Start()
     {

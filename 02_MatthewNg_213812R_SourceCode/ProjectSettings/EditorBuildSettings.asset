@@ -15,14 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/HubScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Scene1.unity
+    path: Assets/Scenes/Stage1.unity
     guid: 6025e4443e584d54b9d00c874a549a25
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 723e91a9b1826a6429ddce88fddef2c2
   - enabled: 1
     path: Assets/Scenes/BossScene.unity
     guid: 4d40735339ecbde4a98e1d0730e82e23
   - enabled: 1
     path: Assets/Scenes/BossRunScene.unity
-    guid: a686ce4ceb1695d4b9c8cc178f61ee38
+    guid: c501bf88467d4b440bcb9145dea99f55
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 18075362e8385a84baf6fec159160da0,
       type: 2}

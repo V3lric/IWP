@@ -21,7 +21,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] public int phase = 0;
     [SerializeField] public int lifes = 0;
     [SerializeField] int boulderCount;
-    [SerializeField] float timer,resetTimer,slamTimer = 60f;
+    [SerializeField] float timer,resetTimer,slamTimer = 55f;
     [SerializeField] float intervalTimer, resetIntervalTimer = 5f;
      bool once = false;
     [Header("Boss Run Stats")]
@@ -85,6 +85,7 @@ public class BossScript : MonoBehaviour
                                 intervalTimer = resetIntervalTimer;
                                 //play slam anim
                                 StartCoroutine(SpawnBoulder());
+                                TargettedBoulder();
                             }
 
                             slamTimer -= 1f * Time.deltaTime;
@@ -271,5 +272,12 @@ public class BossScript : MonoBehaviour
                 yield return new WaitForSeconds(0.3f);
             }
         }
+    }
+
+    public void TargettedBoulder()
+    {
+        Vector3 spawnPosition = PlayerController.Instance.gameObject.transform.position + new Vector3(0, 1.5f, 0);
+        GameObject go = Instantiate(boulder, spawnPosition, Quaternion.identity);
+        go.transform.parent = boulderSpawn[boulderCount].transform;
     }
 }

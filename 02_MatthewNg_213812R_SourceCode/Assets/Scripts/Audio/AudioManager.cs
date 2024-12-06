@@ -47,8 +47,8 @@ public class AudioManager : MonoBehaviour
                 PlaySound("MainMenu");
             else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("HubScene"))
                 PlaySound("HubScene");
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Scene1"))
-                PlaySound("Scene1");
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage1"))
+                PlaySound("Stage1");
             else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossScene"))
                 PlaySound("BossScene");
             else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BossRunScene"))
@@ -66,10 +66,10 @@ public class AudioManager : MonoBehaviour
             StopSound("MainMenu");
         else if (prevScene == SceneManager.GetSceneByName("HubScene"))
             StopSound("MainMenu");
-        else if (prevScene == SceneManager.GetSceneByName("Scene1"))
+        else if (prevScene == SceneManager.GetSceneByName("Stage1"))
             StopSound("HubScene");
         else if (prevScene == SceneManager.GetSceneByName("BossScene"))
-            StopSound("Scene1");
+            StopSound("Stage1");
     }
     public void PlaySound(string name)
     {
